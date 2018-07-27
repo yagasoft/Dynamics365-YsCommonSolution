@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms>
+  <systemform>
+    <formid>{1c616a34-91ce-4a1c-b131-e35b2fc677ae}</formid>
+    <IntroducedVersion>4.3.1.2</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form shownavigationbar="true" showImage="false" maxWidth="1900">
+      <tabs>
+        <tab verticallayout="true" id="{3caa6f22-bafd-4dc4-8b6b-5ef10f2b76a7}" IsUserDefined="1" labelid="{6292ec08-fec3-4e5a-a523-b9151c883a15}" name="{3caa6f22-bafd-4dc4-8b6b-5ef10f2b76a7}" locklevel="0" expanded="true" showlabel="false">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{19102333-ae4b-4170-a5ce-cc8b109e09ae}" labelid="{d4f45208-7bdf-415d-b4f1-d6b3ff3e0da0}" name="{19102333-ae4b-4170-a5ce-cc8b109e09ae}" columns="1" locklevel="0" labelwidth="150" celllabelalignment="Left" celllabelposition="Left">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{29d26a41-0628-4059-6433-c6578dd1ab57}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Foxit Printing Path" languagecode="1033" />
+                        </labels>
+                        <control id="ldv_foxitprintingpath" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ldv_foxitprintingpath" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{fe91229c-94f3-4a4e-a17a-1ee95a7113f2}" labelid="{9ba76dd8-048d-4352-a930-c5b807408be8}" showlabel="true" locklevel="0" visible="false">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="ldv_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ldv_name" uniqueid="{a67e5745-6101-1d67-577b-ba6b9245aa15}" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{128024ac-defd-4548-9f31-81e4c9ffa087}" labelid="{9d89fe22-a6da-4427-be9e-464faddabe87}" showlabel="true" locklevel="1" visible="false">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" uniqueid="{8b455a85-1dbb-b58d-a5d3-25971067eb76}" disabled="false">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <Navigation>
+        <NavBar></NavBar>
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1033" Text="Common" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1033" Text="Sales" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1033" Text="Service" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1033" Text="Marketing" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1033" Text="Process Sessions" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <controlDescriptions />
+      <DisplayConditions FallbackForm="true" Order="7">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="PDF Conversion" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Configuration for PDF conversion." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

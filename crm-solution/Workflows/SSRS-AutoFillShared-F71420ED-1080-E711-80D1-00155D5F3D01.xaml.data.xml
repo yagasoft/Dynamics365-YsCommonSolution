@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{f71420ed-1080-e711-80d1-00155d5f3d01}" Name="SSRS - Auto Fill Shared" Description="Click to add description">
+  <XamlFileName>/Workflows/SSRS-AutoFillShared-F71420ED-1080-E711-80D1-00155D5F3D01.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>2</Category>
+  <Mode>1</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>0</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <RunAs>1</RunAs>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>4.2.4.2</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <PrimaryEntity>ldv_genericconfiguration</PrimaryEntity>
+  <ProcessTriggers>
+    <ProcessTrigger processtriggerid="{e697a52a-1180-e711-80d1-00155d5f3d01}">
+      <controltype>1</controltype>
+      <formid>{e73608a4-18bc-4012-9ad2-7e8aa87c0e12}</formid>
+      <scope>1</scope>
+      <controlname>ldv_ssrssharedfolderpath</controlname>
+      <event>change</event>
+      <pipelinestage>0</pipelinestage>
+      <iscustomizable>1</iscustomizable>
+      <primaryentitytypecode>ldv_genericconfiguration</primaryentitytypecode>
+    </ProcessTrigger>
+    <ProcessTrigger processtriggerid="{e797a52a-1180-e711-80d1-00155d5f3d01}">
+      <formid>{e73608a4-18bc-4012-9ad2-7e8aa87c0e12}</formid>
+      <scope>1</scope>
+      <event>load</event>
+      <pipelinestage>0</pipelinestage>
+      <iscustomizable>1</iscustomizable>
+      <primaryentitytypecode>ldv_genericconfiguration</primaryentitytypecode>
+    </ProcessTrigger>
+  </ProcessTriggers>
+</Workflow>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource>
+  <WebResourceId>{1d4abdf3-933b-e611-80bc-00155d890101}</WebResourceId>
+  <Name>ldv_SdkMetadataQueryJs</Name>
+  <DisplayName>SDK Metadata Query JS</DisplayName>
+  <WebResourceType>3</WebResourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/ldv_SdkMetadataQueryJs1D4ABDF3-933B-E611-80BC-00155D890101</FileName>
+</WebResource>

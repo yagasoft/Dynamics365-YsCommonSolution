@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource>
+  <WebResourceId>{c8175b39-b18a-e811-80fe-00155d5f3d03}</WebResourceId>
+  <Name>ldv_/Generic/dna16.png</Name>
+  <DisplayName>Generic DNA 16 PNG</DisplayName>
+  <WebResourceType>5</WebResourceType>
+  <IntroducedVersion>7.5.1.2</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/ldv_Genericdna16pngC8175B39-B18A-E811-80FE-00155D5F3D03</FileName>
+</WebResource>

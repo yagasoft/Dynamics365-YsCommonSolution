@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource>
+  <WebResourceId>{298c1394-0273-e711-80cb-00155d5f3d01}</WebResourceId>
+  <Name>ldv_/Generic/png/jsTree32px.png</Name>
+  <DisplayName>jsTree 32px PNG</DisplayName>
+  <WebResourceType>5</WebResourceType>
+  <IntroducedVersion>3.1.5.3</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/ldv_GenericpngjsTree32pxpng298C1394-0273-E711-80CB-00155D5F3D01</FileName>
+</WebResource>

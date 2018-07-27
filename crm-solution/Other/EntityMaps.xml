@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityMaps>
+  <EntityMap>
+    <EntitySource>systemuser</EntitySource>
+    <EntityTarget>ldv_genericconfiguration</EntityTarget>
+    <AttributeMaps />
+  </EntityMap>
+</EntityMaps>

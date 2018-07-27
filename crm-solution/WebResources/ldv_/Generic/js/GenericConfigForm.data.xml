@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource>
+  <WebResourceId>{bdecd49f-38f9-e711-80e4-00155d5f3d03}</WebResourceId>
+  <Name>ldv_/Generic/js/GenericConfigForm</Name>
+  <DisplayName>Generic Configuration Form JS</DisplayName>
+  <WebResourceType>3</WebResourceType>
+  <IntroducedVersion>6.2.3.1</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/ldv_GenericjsGenericConfigFormBDECD49F-38F9-E711-80E4-00155D5F3D03</FileName>
+</WebResource>

@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms>
+  <systemform>
+    <formid>{e73608a4-18bc-4012-9ad2-7e8aa87c0e12}</formid>
+    <IntroducedVersion>4.2.4.2</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form shownavigationbar="true" showImage="false" maxWidth="1900">
+      <tabs>
+        <tab verticallayout="true" id="{3caa6f22-bafd-4dc4-8b6b-5ef10f2b76a7}" IsUserDefined="1" labelid="{1f191f17-843b-49e9-b513-a9396a584df1}" name="{3caa6f22-bafd-4dc4-8b6b-5ef10f2b76a7}" locklevel="0" expanded="true" showlabel="false">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="50%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{19102333-ae4b-4170-a5ce-cc8b109e09ae}" labelid="{b24bb32d-a2df-481e-abfd-bed70da16f3c}" name="{19102333-ae4b-4170-a5ce-cc8b109e09ae}" columns="1" locklevel="0" labelwidth="150" celllabelalignment="Left" celllabelposition="Left">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{50953c00-cc2d-d875-bcb1-4978a45739b9}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Report Service URL" languagecode="1033" />
+                        </labels>
+                        <control id="ldv_reportserviceurl" classid="{71716B6C-711E-476c-8AB8-5D11542BFB47}" datafieldname="ldv_reportserviceurl" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{858075e8-7d0c-a83c-a688-6379a7d018da}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Org Name On SSRS" languagecode="1033" />
+                        </labels>
+                        <control id="ldv_orgnameonssrs" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ldv_orgnameonssrs" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b5edc2b7-c554-9c67-9a30-25d9a792dc3b}" showlabel="true" locklevel="0" visible="false">
+                        <labels>
+                          <label description="SSRS Shared Folder Path" languagecode="1033" />
+                        </labels>
+                        <control id="ldv_ssrssharedfolderpath" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ldv_ssrssharedfolderpath" disabled="false" uniqueid="{5e0dca48-4ba3-c060-08cc-20ca22a2e54b}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{fe91229c-94f3-4a4e-a17a-1ee95a7113f2}" labelid="{c29b6346-de2b-4758-8693-6764a16ac1c8}" showlabel="true" locklevel="0" visible="false">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="ldv_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ldv_name" uniqueid="{c7a1230e-1aa3-2e3e-336c-36cd591a38c6}" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{128024ac-defd-4548-9f31-81e4c9ffa087}" labelid="{d32f3524-48ea-40a7-9c6b-d2c61cdd95a4}" showlabel="true" locklevel="1" visible="false">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" uniqueid="{147909b6-c7c1-59b3-a67a-4daa8847ebd4}" disabled="false">
+                          <parameters>
+                            <AutoResolve>true</AutoResolve>
+                            <DisableMru>false</DisableMru>
+                          </parameters>
+                        </control>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+            <column width="50%">
+              <sections>
+                <section name="{3caa6f22-bafd-4dc4-8b6b-5ef10f2b76a7}_section_2" showlabel="false" showbar="false" locklevel="0" id="{78113690-84e0-72e7-6aee-00254d2095aa}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115">
+                  <labels>
+                    <label description="Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{a0c06288-282c-17aa-8b7a-ce16dd1ce103}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="SSRS Domain" languagecode="1033" />
+                        </labels>
+                        <control id="ldv_ssrsdomain" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ldv_ssrsdomain" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{4451d478-0493-6615-210b-24185c275a80}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="SSRS User Name" languagecode="1033" />
+                        </labels>
+                        <control id="ldv_ssrsusername" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ldv_ssrsusername" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2d157e06-16e9-49a2-0417-4989b5846d90}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="SSRS Password" languagecode="1033" />
+                        </labels>
+                        <control id="ldv_ssrspassword" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ldv_ssrspassword" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <Navigation>
+        <NavBar></NavBar>
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1033" Text="Common" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1033" Text="Sales" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1033" Text="Service" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1033" Text="Marketing" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1033" Text="Process Sessions" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <controlDescriptions />
+      <DisplayConditions FallbackForm="true" Order="6">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="SSRS" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Configuration used to run reports on SSRS." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

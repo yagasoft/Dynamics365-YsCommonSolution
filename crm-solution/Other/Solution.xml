@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ImportExportXml version="8.2.0001.0176" SolutionPackageVersion="8.2" languagecode="1033" generatedBy="OnPremise" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SolutionManifest>
+    <UniqueName>GenericBaseSolution</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="Generic Base Solution" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="Refer to YagaSoft.com for any enquiries." languagecode="1033" />
+    </Descriptions>
+    <Version>1.0.0.2</Version>
+    <Managed>0</Managed>
+    <Publisher>
+      <UniqueName>linkdevelopment</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="LINK Development" languagecode="1033" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description description="The default publisher for link development" languagecode="1033" />
+      </Descriptions>
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl>http://www.linkdev.com</SupportingWebsiteUrl>
+      <CustomizationPrefix>ldv</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>75324</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true"></City>
+          <County xsi:nil="true"></County>
+          <Country xsi:nil="true"></Country>
+          <Fax xsi:nil="true"></Fax>
+          <FreightTermsCode xsi:nil="true"></FreightTermsCode>
+          <ImportSequenceNumber xsi:nil="true"></ImportSequenceNumber>
+          <Latitude xsi:nil="true"></Latitude>
+          <Line1 xsi:nil="true"></Line1>
+          <Line2 xsi:nil="true"></Line2>
+          <Line3 xsi:nil="true"></Line3>
+          <Longitude xsi:nil="true"></Longitude>
+          <Name xsi:nil="true"></Name>
+          <PostalCode xsi:nil="true"></PostalCode>
+          <PostOfficeBox xsi:nil="true"></PostOfficeBox>
+          <PrimaryContactName xsi:nil="true"></PrimaryContactName>
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true"></StateOrProvince>
+          <Telephone1 xsi:nil="true"></Telephone1>
+          <Telephone2 xsi:nil="true"></Telephone2>
+          <Telephone3 xsi:nil="true"></Telephone3>
+          <TimeZoneRuleVersionNumber xsi:nil="true"></TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true"></UPSZone>
+          <UTCOffset xsi:nil="true"></UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true"></UTCConversionTimeZoneCode>
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="ldv_genericconfiguration" behavior="0" />
+      <RootComponent type="9" schemaName="ldv_datefrequency" behavior="0" />
+      <RootComponent type="9" schemaName="ldv_filesplitmode" behavior="0" />
+      <RootComponent type="9" schemaName="ldv_loglevel" behavior="0" />
+      <RootComponent type="9" schemaName="ldv_logmode" behavior="0" />
+      <RootComponent type="60" id="{2c7edc5f-dceb-44a0-bdb2-3df771573ca8}" behavior="0" />
+      <RootComponent type="60" id="{c1c55496-ae8d-4cf2-8e24-f2ead7309739}" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/adapters/jquery.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/ckeditor.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/config.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/contents.css" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/af.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/ar.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/az.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/bg.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/bn.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/bs.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/ca.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/cs.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/cy.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/da.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/de.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/de_ch.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/el.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/en.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/en_au.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/en_ca.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/en_gb.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/eo.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/es.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/es_mx.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/et.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/eu.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/fa.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/fi.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/fo.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/fr.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/fr_ca.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/gl.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/gu.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/he.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/hi.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/hr.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/hu.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/id.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/is.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/it.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/ja.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/ka.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/km.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/ko.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/ku.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/lt.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/lv.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/mk.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/mn.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/ms.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/nb.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/nl.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/no.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/oc.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/pl.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/pt.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/pt_br.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/ro.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/ru.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/si.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/sk.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/sl.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/sq.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/sr.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/sr_latn.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/sv.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/th.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/tr.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/tt.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/ug.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/uk.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/vi.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/zh.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/lang/zh_cn.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/a11yhelp.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/af.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/ar.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/az.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/bg.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/ca.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/cs.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/cy.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/da.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/de.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/de_ch.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/el.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/en.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/en_gb.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/eo.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/es.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/es_mx.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/et.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/eu.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/fa.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/fi.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/fo.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/fr.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/fr_ca.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/gl.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/gu.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/he.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/hi.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/hr.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/hu.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/id.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/it.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/ja.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/km.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/ko.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/ku.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/lt.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/lv.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/mk.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/mn.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/nb.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/nl.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/no.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/oc.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/pl.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/pt.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/pt_br.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/ro.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/ru.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/si.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/sk.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/sl.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/sq.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/sr.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/sr_latn.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/sv.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/th.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/tr.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/tt.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/ug.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/uk.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/vi.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/zh.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/a11yhelp/dialogs/lang/zh_cn.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/about/dialogs/about.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/about/dialogs/hidpi/logo_ckeditor.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/about/dialogs/logo_ckeditor.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/colordialog/dialogs/colordialog.css" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/colordialog/dialogs/colordialog.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/copyformatting/styles/copyformatting.css" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/dialog/dialogDefinition.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/div/dialogs/div.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/find/dialogs/find.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/flash/dialogs/flash.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/flash/images/placeholder.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/forms/dialogs/button.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/forms/dialogs/checkbox.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/forms/dialogs/form.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/forms/dialogs/hiddenfield.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/forms/dialogs/radio.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/forms/dialogs/select.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/forms/dialogs/textarea.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/forms/dialogs/textfield.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/forms/images/hiddenfield.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/icons.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/icons_hidpi.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/iframe/dialogs/iframe.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/iframe/images/placeholder.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/image/dialogs/image.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/image/images/noimage.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/link/dialogs/anchor.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/link/dialogs/link.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/link/images/anchor.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/link/images/hidpi/anchor.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/liststyle/dialogs/liststyle.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/magicline/images/hidpi/icon.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/magicline/images/hidpi/iconrtl.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/magicline/images/icon.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/magicline/images/iconrtl.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/pagebreak/images/pagebreak.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/pastefromword/filter/default.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/preview/preview.html" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/scayt/dialogs/dialog.css" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/scayt/dialogs/options.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/scayt/dialogs/toolbar.css" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/scayt/skins/moonolisa/scayt.css" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/showblocks/images/block_address.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/showblocks/images/block_blockquote.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/showblocks/images/block_div.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/showblocks/images/block_h1.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/showblocks/images/block_h2.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/showblocks/images/block_h3.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/showblocks/images/block_h4.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/showblocks/images/block_h5.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/showblocks/images/block_h6.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/showblocks/images/block_p.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/showblocks/images/block_pre.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/dialogs/smiley.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/angel_smile.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/angel_smile.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/angry_smile.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/angry_smile.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/broken_heart.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/broken_heart.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/confused_smile.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/confused_smile.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/cry_smile.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/cry_smile.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/devil_smile.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/devil_smile.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/embaressed_smile.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/embarrassed_smile.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/embarrassed_smile.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/envelope.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/envelope.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/heart.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/heart.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/kiss.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/kiss.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/lightbulb.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/lightbulb.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/omg_smile.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/omg_smile.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/regular_smile.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/regular_smile.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/sad_smile.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/sad_smile.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/shades_smile.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/shades_smile.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/teeth_smile.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/teeth_smile.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/thumbs_down.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/thumbs_down.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/thumbs_up.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/thumbs_up.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/tongue_smile.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/tongue_smile.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/tounge_smile.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/whatchutalkingabout_smile.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/whatchutalkingabout_smile.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/wink_smile.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/smiley/images/wink_smile.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/af.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/ar.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/az.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/bg.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/ca.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/cs.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/cy.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/da.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/de.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/de_ch.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/el.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/en.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/en_au.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/en_ca.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/en_gb.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/eo.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/es.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/es_mx.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/et.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/eu.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/fa.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/fi.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/fr.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/fr_ca.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/gl.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/he.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/hr.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/hu.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/id.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/it.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/ja.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/km.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/ko.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/ku.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/lt.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/lv.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/nb.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/nl.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/no.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/oc.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/pl.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/pt.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/pt_br.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/ru.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/si.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/sk.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/sl.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/sq.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/sv.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/th.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/tr.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/tt.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/ug.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/uk.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/vi.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/zh.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/lang/zh_cn.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/specialchar/dialogs/specialchar.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/table/dialogs/table.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/tableselection/styles/tableselection.css" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/tabletools/dialogs/tableCell.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/templates/dialogs/templates.css" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/templates/dialogs/templates.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/templates/templates/default.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/templates/templates/images/template1.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/templates/templates/images/template2.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/templates/templates/images/template3.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/wsc/dialogs/ciframe.html" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/wsc/dialogs/tmpFrameset.html" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/wsc/dialogs/wsc.css" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/wsc/dialogs/wsc.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/wsc/dialogs/wsc_ie.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/plugins/wsc/skins/moonolisa/wsc.css" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/skins/moonolisa/dialog.css" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/skins/moonolisa/dialog_ie.css" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/skins/moonolisa/dialog_ie8.css" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/skins/moonolisa/dialog_iequirks.css" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/skins/moonolisa/editor.css" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/skins/moonolisa/editor_gecko.css" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/skins/moonolisa/editor_ie.css" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/skins/moonolisa/editor_ie8.css" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/skins/moonolisa/editor_iequirks.css" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/skins/moonolisa/icons.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/skins/moonolisa/icons_hidpi.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/skins/moonolisa/images/arrow.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/skins/moonolisa/images/close.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/skins/moonolisa/images/hidpi/close.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/skins/moonolisa/images/hidpi/lock.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/skins/moonolisa/images/hidpi/lockopen.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/skins/moonolisa/images/hidpi/refresh.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/skins/moonolisa/images/lock.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/skins/moonolisa/images/lockopen.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/skins/moonolisa/images/refresh.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/skins/moonolisa/images/spinner.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/CkRichEditor/styles.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/Clone/AppRibbon.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/css/FontAwesome.min.css" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/css/FontAwesome.otf" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/css/FontAwesomeFont.eot" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/css/FontAwesomeFont.svg" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/css/FontAwesomeFont.ttf" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/css/FontAwesomeFont.woff" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/css/FontAwesomeFont.woff2" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/css/FontAwesomeFontFix.eot" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/css/jsTree.style.css" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/dna16.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/dna32.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/gif/throbber.gif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/js/GenericConfigForm" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/js/jQuery.min.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/js/jsTree.min.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/js/purl.min.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/js/vkBeautify.min.js" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/png/jsTree32px.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/png/jsTree40px.png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/png/Notification16" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/png/Notification32" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/png/Routing16" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_/Generic/png/Routing32" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_AdvancedFindHtml" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_BellPng16" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_BellPng32" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_CommonGenericJs" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_CommonGenericSchemaJs" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_crmlogconfig16png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_crmlogconfig32png" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_DraftPng16" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_DraftPng32" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_GlobeGlowPng52" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_GlobePng52" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_JobPng16" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_JobPng32" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_loadergif" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_MultiSelectHtml" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_notification16" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_notification32" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_notification66" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_NotificationsCentreRibbonJs" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_PlusGreyIconPng25" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_PushPng16" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_PushPng32" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_QueuePng16" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_QueuePng32" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_ReadHighlightPng15" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_ReadIconPng15" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_RecurrencePng16" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_RecurrencePng32" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_RetryPng16" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_RetryPng32" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_SdkMetadataQueryJs" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_SdkSoapjs" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_SmoothLoadingGif20" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_StopPng16" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_StopPng32" behavior="0" />
+      <RootComponent type="61" schemaName="mag_/css/notify.css" behavior="0" />
+      <RootComponent type="61" schemaName="mag_/img/notify.png" behavior="0" />
+      <RootComponent type="61" schemaName="mag_/img/notify_load.gif" behavior="0" />
+      <RootComponent type="91" schemaName="LinkDev.Plugins.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=96f110ab5b32e2f5" behavior="0" />
+    </RootComponents>
+    <MissingDependencies />
+  </SolutionManifest>
+</ImportExportXml>

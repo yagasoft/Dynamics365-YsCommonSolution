@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms>
+  <systemform>
+    <formid>{2c7edc5f-dceb-44a0-bdb2-3df771573ca8}</formid>
+    <IntroducedVersion>1.4.5.2</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form shownavigationbar="true" showImage="false" maxWidth="1900">
+      <tabs>
+        <tab verticallayout="true" id="{3caa6f22-bafd-4dc4-8b6b-5ef10f2b76a7}" IsUserDefined="1" name="{3caa6f22-bafd-4dc4-8b6b-5ef10f2b76a7}" locklevel="0" expanded="true" showlabel="false">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{19102333-ae4b-4170-a5ce-cc8b109e09ae}" name="{19102333-ae4b-4170-a5ce-cc8b109e09ae}" columns="1" locklevel="0" labelwidth="175" celllabelalignment="Left" celllabelposition="Left">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{fe91229c-94f3-4a4e-a17a-1ee95a7113f2}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="ldv_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ldv_name" uniqueid="{dd505c56-789d-e375-0dde-39bbd9348bac}" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{128024ac-defd-4548-9f31-81e4c9ffa087}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{64b1b4bd-e053-ec09-21c1-b9594cbc0338}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Organisation Base URL" languagecode="1033" />
+                        </labels>
+                        <control id="ldv_organisationbaseurl" classid="{71716B6C-711E-476c-8AB8-5D11542BFB47}" datafieldname="ldv_organisationbaseurl" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{704596d7-de4b-7748-9501-a37522da9c12}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Default Routing User" languagecode="1033" />
+                        </labels>
+                        <control id="ldv_defaultroutinguser" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ldv_defaultroutinguser" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ce6de150-58d6-74eb-e1b5-da22cba160b0}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Configuration Cache Duration" languagecode="1033" />
+                        </labels>
+                        <control id="ldv_configurationcacheduration" classid="{AA987274-CE4E-4271-A803-66164311A958}" datafieldname="ldv_configurationcacheduration" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c08bec11-0190-6d90-18e3-64d6d7a8e1d6}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Metadata Cache Duration" languagecode="1033" />
+                        </labels>
+                        <control id="ldv_metadatacacheduration" classid="{AA987274-CE4E-4271-A803-66164311A958}" datafieldname="ldv_metadatacacheduration" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c5386019-279b-7be7-d8ec-4db1ca932834}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Default Calendar" languagecode="1033" />
+                        </labels>
+                        <control id="ldv_defaultcalendar" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ldv_defaultcalendar" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <Navigation>
+        <NavBar></NavBar>
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1033" Text="Common" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1033" Text="Sales" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1033" Text="Service" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1033" Text="Marketing" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1033" Text="Process Sessions" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <formLibraries>
+        <Library name="ldv_CommonGenericJs" libraryUniqueId="{20b006de-7a52-3dac-e60e-aa592170961b}" />
+        <Library name="ldv_CommonGenericSchemaJs" libraryUniqueId="{e4b70a37-45c8-cde7-68e6-4b0672ae1930}" />
+        <Library name="ldv_/Generic/js/GenericConfigForm" libraryUniqueId="{58be54ee-62d1-d030-7481-da02be60b321}" />
+      </formLibraries>
+      <events>
+        <event name="onload" application="false" active="false">
+          <Handlers>
+            <Handler handlerUniqueId="{6b82a902-6cdd-a91d-d0c1-c0de791bcd1a}" functionName="Ldv.GenericConfigForm_OnLoad" libraryName="ldv_/Generic/js/GenericConfigForm" enabled="true" passExecutionContext="false" parameters="" />
+          </Handlers>
+        </event>
+      </events>
+      <controlDescriptions />
+      <DisplayConditions FallbackForm="true" Order="1">
+        <Everyone />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="General" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>

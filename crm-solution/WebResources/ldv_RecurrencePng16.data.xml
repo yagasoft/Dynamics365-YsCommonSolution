@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource>
+  <WebResourceId>{b5a77aa1-5e94-e611-80c2-00155d5f3d02}</WebResourceId>
+  <Name>ldv_RecurrencePng16</Name>
+  <DisplayName>Recurrence PNG 16</DisplayName>
+  <WebResourceType>5</WebResourceType>
+  <IntroducedVersion>1.5.5.3</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/ldv_RecurrencePng16B5A77AA1-5E94-E611-80C2-00155D5F3D02</FileName>
+</WebResource>

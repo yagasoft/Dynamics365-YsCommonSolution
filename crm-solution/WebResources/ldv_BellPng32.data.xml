@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource>
+  <WebResourceId>{237ea562-7eca-e611-80c2-00155d5f3d01}</WebResourceId>
+  <Name>ldv_BellPng32</Name>
+  <DisplayName>Bell PNG 32</DisplayName>
+  <WebResourceType>5</WebResourceType>
+  <IntroducedVersion>0.1.1.1</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/ldv_BellPng32237EA562-7ECA-E611-80C2-00155D5F3D01</FileName>
+</WebResource>

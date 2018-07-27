@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource>
+  <WebResourceId>{8d02779d-0773-e711-80cb-00155d5f3d01}</WebResourceId>
+  <Name>ldv_/Generic/css/FontAwesome.otf</Name>
+  <DisplayName>Font Awesome OTF</DisplayName>
+  <WebResourceType>2</WebResourceType>
+  <IntroducedVersion>3.1.5.3</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/ldv_GenericcssFontAwesomeotf8D02779D-0773-E711-80CB-00155D5F3D01</FileName>
+</WebResource>

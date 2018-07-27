@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EntityRelationships>
+  <EntityRelationship Name="business_unit_ldv_genericconfiguration" />
+  <EntityRelationship Name="ldv_systemuser_ldv_genericconfiguration_DefaultFromUserId" />
+  <EntityRelationship Name="ldv_systemuser_ldv_genericconfiguration_DefaultRoutingUser" />
+  <EntityRelationship Name="lk_ldv_genericconfiguration_createdby" />
+  <EntityRelationship Name="lk_ldv_genericconfiguration_modifiedby" />
+  <EntityRelationship Name="owner_ldv_genericconfiguration" />
+  <EntityRelationship Name="team_ldv_genericconfiguration" />
+  <EntityRelationship Name="user_ldv_genericconfiguration" />
+</EntityRelationships>

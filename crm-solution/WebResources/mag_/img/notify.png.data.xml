@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource>
+  <WebResourceId>{1f6e2e3e-003b-e511-80c6-00155d048d13}</WebResourceId>
+  <Name>mag_/img/notify.png</Name>
+  <DisplayName>/img/notify.png</DisplayName>
+  <WebResourceType>5</WebResourceType>
+  <IntroducedVersion>1.0.0.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/mag_imgnotifypng1F6E2E3E-003B-E511-80C6-00155D048D13</FileName>
+</WebResource>
