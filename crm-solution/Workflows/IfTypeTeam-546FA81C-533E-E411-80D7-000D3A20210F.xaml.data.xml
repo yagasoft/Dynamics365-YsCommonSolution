@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{546fa81c-533e-e411-80d7-000d3a20210f}" Name="If Type = Team" Description="Click to add description">
+  <XamlFileName>/Workflows/IfTypeTeam-546FA81C-533E-E411-80D7-000D3A20210F.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>2</Category>
+  <Mode>1</Mode>
+  <Scope>4</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>0</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>0</SyncWorkflowLogOnFailure>
+  <StateCode>1</StateCode>
+  <StatusCode>2</StatusCode>
+  <RunAs>1</RunAs>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <PrimaryEntity>ldv_roleconfiguration</PrimaryEntity>
+  <ProcessTriggers>
+    <ProcessTrigger processtriggerid="{5c384bc7-df69-e611-80bb-00155d890104}">
+      <controltype>1</controltype>
+      <formid>{7f0702ef-bd89-47f5-8d93-c01e397e0cea}</formid>
+      <scope>1</scope>
+      <controlname>ldv_type</controlname>
+      <event>change</event>
+      <pipelinestage>0</pipelinestage>
+      <iscustomizable>1</iscustomizable>
+      <primaryentitytypecode>ldv_roleconfiguration</primaryentitytypecode>
+    </ProcessTrigger>
+    <ProcessTrigger processtriggerid="{5d384bc7-df69-e611-80bb-00155d890104}">
+      <formid>{7f0702ef-bd89-47f5-8d93-c01e397e0cea}</formid>
+      <scope>1</scope>
+      <event>load</event>
+      <pipelinestage>0</pipelinestage>
+      <iscustomizable>1</iscustomizable>
+      <primaryentitytypecode>ldv_roleconfiguration</primaryentitytypecode>
+    </ProcessTrigger>
+  </ProcessTriggers>
+</Workflow>

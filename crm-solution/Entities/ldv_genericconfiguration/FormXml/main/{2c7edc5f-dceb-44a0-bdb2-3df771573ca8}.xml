@@ -44,14 +44,6 @@
                       </cell>
                     </row>
                     <row>
-                      <cell id="{704596d7-de4b-7748-9501-a37522da9c12}" showlabel="true" locklevel="0">
-                        <labels>
-                          <label description="Default Routing User" languagecode="1033" />
-                        </labels>
-                        <control id="ldv_defaultroutinguser" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ldv_defaultroutinguser" disabled="false" />
-                      </cell>
-                    </row>
-                    <row>
                       <cell id="{ce6de150-58d6-74eb-e1b5-da22cba160b0}" showlabel="true" locklevel="0">
                         <labels>
                           <label description="Configuration Cache Duration" languagecode="1033" />

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource>
+  <WebResourceId>{f261361a-9e36-e411-80cd-000d3a20210f}</WebResourceId>
+  <Name>new_roleconfig16.png</Name>
+  <DisplayName>roleconfig16.png</DisplayName>
+  <WebResourceType>5</WebResourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/new_roleconfig16pngF261361A-9E36-E411-80CD-000D3A20210F</FileName>
+</WebResource>

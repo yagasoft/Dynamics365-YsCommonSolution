@@ -1,8 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EntityMaps>
   <EntityMap>
+    <EntitySource>queue</EntitySource>
+    <EntityTarget>ldv_roleconfiguration</EntityTarget>
+    <AttributeMaps />
+  </EntityMap>
+  <EntityMap>
     <EntitySource>systemuser</EntitySource>
-    <EntityTarget>ldv_genericconfiguration</EntityTarget>
+    <EntityTarget>ldv_roleconfiguration</EntityTarget>
+    <AttributeMaps />
+  </EntityMap>
+  <EntityMap>
+    <EntitySource>team</EntitySource>
+    <EntityTarget>ldv_roleconfiguration</EntityTarget>
     <AttributeMaps />
   </EntityMap>
 </EntityMaps>

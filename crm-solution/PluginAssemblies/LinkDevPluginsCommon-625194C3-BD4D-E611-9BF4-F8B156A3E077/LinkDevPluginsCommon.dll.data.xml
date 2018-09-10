@@ -5,17 +5,14 @@
   <IntroducedVersion>1.0</IntroducedVersion>
   <FileName>/PluginAssemblies/LinkDevPluginsCommon-625194C3-BD4D-E611-9BF4-F8B156A3E077/LinkDevPluginsCommon.dll</FileName>
   <PluginTypes>
-    <PluginType AssemblyQualifiedName="LinkDev.Plugins.Common.ProcessLogPayload, LinkDev.Plugins.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=96f110ab5b32e2f5" Name="LinkDev.Plugins.Common.ProcessLogPayload">
-      <FriendlyName>ProcessLogPayload</FriendlyName>
-    </PluginType>
     <PluginType AssemblyQualifiedName="LinkDev.Plugins.Common.RecurrenceExceptionHandler, LinkDev.Plugins.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=96f110ab5b32e2f5" Name="LinkDev.Plugins.Common.RecurrenceExceptionHandler">
       <FriendlyName>RecurrenceExceptionHandler</FriendlyName>
     </PluginType>
     <PluginType AssemblyQualifiedName="LinkDev.Plugins.Common.RecurrenceHandler, LinkDev.Plugins.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=96f110ab5b32e2f5" Name="LinkDev.Plugins.Common.RecurrenceHandler">
       <FriendlyName>RecurrenceHandler</FriendlyName>
     </PluginType>
-    <PluginType AssemblyQualifiedName="LinkDev.Plugins.Common.ResetConfigCache, LinkDev.Plugins.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=96f110ab5b32e2f5" Name="LinkDev.Plugins.Common.ResetConfigCache">
-      <FriendlyName>ResetConfigCache</FriendlyName>
+    <PluginType AssemblyQualifiedName="LinkDev.Plugins.Common.ValidateSingleRecord, LinkDev.Plugins.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=96f110ab5b32e2f5" Name="LinkDev.Plugins.Common.ValidateSingleRecord">
+      <FriendlyName>ValidateSingleRecord</FriendlyName>
     </PluginType>
   </PluginTypes>
 </PluginAssembly>

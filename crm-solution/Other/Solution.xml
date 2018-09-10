@@ -2,13 +2,9 @@
 <ImportExportXml version="8.2.0001.0176" SolutionPackageVersion="8.2" languagecode="1033" generatedBy="OnPremise" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>GenericBaseSolution</UniqueName>
-    <LocalizedNames>
-      <LocalizedName description="Generic Base Solution" languagecode="1033" />
-    </LocalizedNames>
-    <Descriptions>
-      <Description description="Refer to YagaSoft.com for any enquiries." languagecode="1033" />
-    </Descriptions>
-    <Version>1.0.0.2</Version>
+    <LocalizedNames />
+    <Descriptions />
+    <Version>2.1.1.1</Version>
     <Managed>0</Managed>
     <Publisher>
       <UniqueName>linkdevelopment</UniqueName>
@@ -83,12 +79,19 @@
     </Publisher>
     <RootComponents>
       <RootComponent type="1" schemaName="ldv_genericconfiguration" behavior="0" />
+      <RootComponent type="1" schemaName="ldv_recurrencerule" behavior="0" />
+      <RootComponent type="1" schemaName="ldv_recurrenceruleexception" behavior="0" />
+      <RootComponent type="1" schemaName="ldv_recurrenceruleexceptiongrouping" behavior="0" />
+      <RootComponent type="1" schemaName="ldv_roleconfiguration" behavior="0" />
       <RootComponent type="9" schemaName="ldv_datefrequency" behavior="0" />
       <RootComponent type="9" schemaName="ldv_filesplitmode" behavior="0" />
       <RootComponent type="9" schemaName="ldv_loglevel" behavior="0" />
       <RootComponent type="9" schemaName="ldv_logmode" behavior="0" />
+      <RootComponent type="9" schemaName="ldv_monthlydayoccurrence" behavior="0" />
+      <RootComponent type="9" schemaName="ldv_monthoftheyear" behavior="0" />
+      <RootComponent type="9" schemaName="ldv_recurrence" behavior="0" />
+      <RootComponent type="9" schemaName="ldv_weekday" behavior="0" />
       <RootComponent type="60" id="{2c7edc5f-dceb-44a0-bdb2-3df771573ca8}" behavior="0" />
-      <RootComponent type="60" id="{c1c55496-ae8d-4cf2-8e24-f2ead7309739}" behavior="0" />
       <RootComponent type="61" schemaName="ldv_/CkRichEditor/adapters/jquery.js" behavior="0" />
       <RootComponent type="61" schemaName="ldv_/CkRichEditor/ckeditor.js" behavior="0" />
       <RootComponent type="61" schemaName="ldv_/CkRichEditor/config.js" behavior="0" />
@@ -420,7 +423,6 @@
       <RootComponent type="61" schemaName="ldv_/CkRichEditor/skins/moonolisa/images/refresh.png" behavior="0" />
       <RootComponent type="61" schemaName="ldv_/CkRichEditor/skins/moonolisa/images/spinner.gif" behavior="0" />
       <RootComponent type="61" schemaName="ldv_/CkRichEditor/styles.js" behavior="0" />
-      <RootComponent type="61" schemaName="ldv_/Generic/Clone/AppRibbon.js" behavior="0" />
       <RootComponent type="61" schemaName="ldv_/Generic/css/FontAwesome.min.css" behavior="0" />
       <RootComponent type="61" schemaName="ldv_/Generic/css/FontAwesome.otf" behavior="0" />
       <RootComponent type="61" schemaName="ldv_/Generic/css/FontAwesomeFont.eot" behavior="0" />
@@ -430,8 +432,6 @@
       <RootComponent type="61" schemaName="ldv_/Generic/css/FontAwesomeFont.woff2" behavior="0" />
       <RootComponent type="61" schemaName="ldv_/Generic/css/FontAwesomeFontFix.eot" behavior="0" />
       <RootComponent type="61" schemaName="ldv_/Generic/css/jsTree.style.css" behavior="0" />
-      <RootComponent type="61" schemaName="ldv_/Generic/dna16.png" behavior="0" />
-      <RootComponent type="61" schemaName="ldv_/Generic/dna32.png" behavior="0" />
       <RootComponent type="61" schemaName="ldv_/Generic/gif/throbber.gif" behavior="0" />
       <RootComponent type="61" schemaName="ldv_/Generic/js/GenericConfigForm" behavior="0" />
       <RootComponent type="61" schemaName="ldv_/Generic/js/jQuery.min.js" behavior="0" />
@@ -440,10 +440,6 @@
       <RootComponent type="61" schemaName="ldv_/Generic/js/vkBeautify.min.js" behavior="0" />
       <RootComponent type="61" schemaName="ldv_/Generic/png/jsTree32px.png" behavior="0" />
       <RootComponent type="61" schemaName="ldv_/Generic/png/jsTree40px.png" behavior="0" />
-      <RootComponent type="61" schemaName="ldv_/Generic/png/Notification16" behavior="0" />
-      <RootComponent type="61" schemaName="ldv_/Generic/png/Notification32" behavior="0" />
-      <RootComponent type="61" schemaName="ldv_/Generic/png/Routing16" behavior="0" />
-      <RootComponent type="61" schemaName="ldv_/Generic/png/Routing32" behavior="0" />
       <RootComponent type="61" schemaName="ldv_AdvancedFindHtml" behavior="0" />
       <RootComponent type="61" schemaName="ldv_BellPng16" behavior="0" />
       <RootComponent type="61" schemaName="ldv_BellPng32" behavior="0" />
@@ -453,36 +449,26 @@
       <RootComponent type="61" schemaName="ldv_crmlogconfig32png" behavior="0" />
       <RootComponent type="61" schemaName="ldv_DraftPng16" behavior="0" />
       <RootComponent type="61" schemaName="ldv_DraftPng32" behavior="0" />
-      <RootComponent type="61" schemaName="ldv_GlobeGlowPng52" behavior="0" />
-      <RootComponent type="61" schemaName="ldv_GlobePng52" behavior="0" />
-      <RootComponent type="61" schemaName="ldv_JobPng16" behavior="0" />
-      <RootComponent type="61" schemaName="ldv_JobPng32" behavior="0" />
-      <RootComponent type="61" schemaName="ldv_loadergif" behavior="0" />
       <RootComponent type="61" schemaName="ldv_MultiSelectHtml" behavior="0" />
-      <RootComponent type="61" schemaName="ldv_notification16" behavior="0" />
-      <RootComponent type="61" schemaName="ldv_notification32" behavior="0" />
-      <RootComponent type="61" schemaName="ldv_notification66" behavior="0" />
-      <RootComponent type="61" schemaName="ldv_NotificationsCentreRibbonJs" behavior="0" />
-      <RootComponent type="61" schemaName="ldv_PlusGreyIconPng25" behavior="0" />
-      <RootComponent type="61" schemaName="ldv_PushPng16" behavior="0" />
-      <RootComponent type="61" schemaName="ldv_PushPng32" behavior="0" />
       <RootComponent type="61" schemaName="ldv_QueuePng16" behavior="0" />
       <RootComponent type="61" schemaName="ldv_QueuePng32" behavior="0" />
-      <RootComponent type="61" schemaName="ldv_ReadHighlightPng15" behavior="0" />
-      <RootComponent type="61" schemaName="ldv_ReadIconPng15" behavior="0" />
       <RootComponent type="61" schemaName="ldv_RecurrencePng16" behavior="0" />
       <RootComponent type="61" schemaName="ldv_RecurrencePng32" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_RecurrenceRuleExceptionJs" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_RecurrenceRuleJs" behavior="0" />
       <RootComponent type="61" schemaName="ldv_RetryPng16" behavior="0" />
       <RootComponent type="61" schemaName="ldv_RetryPng32" behavior="0" />
       <RootComponent type="61" schemaName="ldv_SdkMetadataQueryJs" behavior="0" />
       <RootComponent type="61" schemaName="ldv_SdkSoapjs" behavior="0" />
-      <RootComponent type="61" schemaName="ldv_SmoothLoadingGif20" behavior="0" />
       <RootComponent type="61" schemaName="ldv_StopPng16" behavior="0" />
       <RootComponent type="61" schemaName="ldv_StopPng32" behavior="0" />
       <RootComponent type="61" schemaName="mag_/css/notify.css" behavior="0" />
       <RootComponent type="61" schemaName="mag_/img/notify.png" behavior="0" />
       <RootComponent type="61" schemaName="mag_/img/notify_load.gif" behavior="0" />
+      <RootComponent type="61" schemaName="new_roleconfig16.png" behavior="0" />
+      <RootComponent type="61" schemaName="new_roleconfig32.png" behavior="0" />
       <RootComponent type="91" schemaName="LinkDev.Plugins.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=96f110ab5b32e2f5" behavior="0" />
+      <RootComponent type="91" schemaName="LinkDev.Steps.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=96f110ab5b32e2f5" behavior="0" />
     </RootComponents>
     <MissingDependencies />
   </SolutionManifest>

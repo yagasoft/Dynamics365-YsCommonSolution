@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EntityRelationships>
-  <EntityRelationship Name="ldv_systemuser_ldv_genericconfiguration_DefaultFromUserId">
+  <EntityRelationship Name="ldv_systemuser_ldv_roleconfiguration_User">
     <EntityRelationshipType>OneToMany</EntityRelationshipType>
     <IsCustomizable>1</IsCustomizable>
-    <IntroducedVersion>4.2.4.2</IntroducedVersion>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
     <IsHierarchical>0</IsHierarchical>
-    <ReferencingEntityName>ldv_genericconfiguration</ReferencingEntityName>
+    <ReferencingEntityName>ldv_roleconfiguration</ReferencingEntityName>
     <ReferencedEntityName>SystemUser</ReferencedEntityName>
     <CascadeAssign>NoCascade</CascadeAssign>
     <CascadeDelete>RemoveLink</CascadeDelete>
@@ -14,10 +14,10 @@
     <CascadeUnshare>NoCascade</CascadeUnshare>
     <CascadeRollupView>NoCascade</CascadeRollupView>
     <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-    <ReferencingAttributeName>ldv_DefaultFromUserId</ReferencingAttributeName>
+    <ReferencingAttributeName>ldv_User</ReferencingAttributeName>
     <RelationshipDescription>
       <Descriptions>
-        <Description description="The default notification user; appears in the 'from' in emails." languagecode="1033" />
+        <Description description="Unique identifier for User associated with Role Configuration." languagecode="1033" />
       </Descriptions>
     </RelationshipDescription>
     <EntityRelationshipRoles>
@@ -25,51 +25,14 @@
         <NavPaneDisplayOption>UseCollectionName</NavPaneDisplayOption>
         <NavPaneArea>Details</NavPaneArea>
         <NavPaneOrder>10000</NavPaneOrder>
-        <NavigationPropertyName>ldv_DefaultFromUserId</NavigationPropertyName>
+        <NavigationPropertyName>ldv_User</NavigationPropertyName>
         <CustomLabels>
           <CustomLabel description="" languagecode="1033" />
         </CustomLabels>
         <RelationshipRoleType>1</RelationshipRoleType>
       </EntityRelationshipRole>
       <EntityRelationshipRole>
-        <NavigationPropertyName>ldv_systemuser_ldv_genericconfiguration_DefaultFromUserId</NavigationPropertyName>
-        <RelationshipRoleType>0</RelationshipRoleType>
-      </EntityRelationshipRole>
-    </EntityRelationshipRoles>
-  </EntityRelationship>
-  <EntityRelationship Name="ldv_systemuser_ldv_genericconfiguration_DefaultRoutingUser">
-    <EntityRelationshipType>OneToMany</EntityRelationshipType>
-    <IsCustomizable>1</IsCustomizable>
-    <IntroducedVersion>1.4.7.5</IntroducedVersion>
-    <IsHierarchical>0</IsHierarchical>
-    <ReferencingEntityName>ldv_genericconfiguration</ReferencingEntityName>
-    <ReferencedEntityName>SystemUser</ReferencedEntityName>
-    <CascadeAssign>NoCascade</CascadeAssign>
-    <CascadeDelete>RemoveLink</CascadeDelete>
-    <CascadeReparent>NoCascade</CascadeReparent>
-    <CascadeShare>NoCascade</CascadeShare>
-    <CascadeUnshare>NoCascade</CascadeUnshare>
-    <CascadeRollupView>NoCascade</CascadeRollupView>
-    <IsValidForAdvancedFind>1</IsValidForAdvancedFind>
-    <ReferencingAttributeName>ldv_DefaultRoutingUser</ReferencingAttributeName>
-    <RelationshipDescription>
-      <Descriptions>
-        <Description description="" languagecode="1033" />
-      </Descriptions>
-    </RelationshipDescription>
-    <EntityRelationshipRoles>
-      <EntityRelationshipRole>
-        <NavPaneDisplayOption>UseCollectionName</NavPaneDisplayOption>
-        <NavPaneArea>Details</NavPaneArea>
-        <NavPaneOrder>10000</NavPaneOrder>
-        <NavigationPropertyName>ldv_DefaultRoutingUser</NavigationPropertyName>
-        <CustomLabels>
-          <CustomLabel description="" languagecode="1033" />
-        </CustomLabels>
-        <RelationshipRoleType>1</RelationshipRoleType>
-      </EntityRelationshipRole>
-      <EntityRelationshipRole>
-        <NavigationPropertyName>ldv_systemuser_ldv_genericconfiguration_DefaultRoutingUser</NavigationPropertyName>
+        <NavigationPropertyName>ldv_systemuser_ldv_roleconfiguration_User</NavigationPropertyName>
         <RelationshipRoleType>0</RelationshipRoleType>
       </EntityRelationshipRole>
     </EntityRelationshipRoles>
@@ -112,12 +75,240 @@
       </Descriptions>
     </RelationshipDescription>
   </EntityRelationship>
+  <EntityRelationship Name="lk_ldv_recurrencerule_createdby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.5.2.1</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>ldv_recurrencerule</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_ldv_recurrencerule_modifiedby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.5.2.1</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>ldv_recurrencerule</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_ldv_recurrenceruleexception_createdby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.5.3.1</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>ldv_recurrenceruleexception</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_ldv_recurrenceruleexception_modifiedby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.5.3.1</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>ldv_recurrenceruleexception</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_ldv_recurrenceruleexceptiongrouping_createdby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.5.3.1</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>ldv_recurrenceruleexceptiongrouping</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_ldv_recurrenceruleexceptiongrouping_modifiedby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.5.3.1</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>ldv_recurrenceruleexceptiongrouping</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_ldv_roleconfiguration_createdby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>ldv_roleconfiguration</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="lk_ldv_roleconfiguration_modifiedby">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>ldv_roleconfiguration</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
   <EntityRelationship Name="user_ldv_genericconfiguration">
     <EntityRelationshipType>OneToMany</EntityRelationshipType>
     <IsCustomizable>1</IsCustomizable>
     <IntroducedVersion>1.4.5.2</IntroducedVersion>
     <IsHierarchical>0</IsHierarchical>
     <ReferencingEntityName>ldv_genericconfiguration</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningUser</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the user that owns the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="user_ldv_recurrencerule">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.5.2.1</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>ldv_recurrencerule</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningUser</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the user that owns the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="user_ldv_recurrenceruleexception">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.5.3.1</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>ldv_recurrenceruleexception</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningUser</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the user that owns the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="user_ldv_recurrenceruleexceptiongrouping">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.5.3.1</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>ldv_recurrenceruleexceptiongrouping</ReferencingEntityName>
+    <ReferencedEntityName>SystemUser</ReferencedEntityName>
+    <CascadeAssign>NoCascade</CascadeAssign>
+    <CascadeDelete>NoCascade</CascadeDelete>
+    <CascadeReparent>NoCascade</CascadeReparent>
+    <CascadeShare>NoCascade</CascadeShare>
+    <CascadeUnshare>NoCascade</CascadeUnshare>
+    <ReferencingAttributeName>OwningUser</ReferencingAttributeName>
+    <RelationshipDescription>
+      <Descriptions>
+        <Description description="Unique identifier for the user that owns the record." languagecode="1033" />
+      </Descriptions>
+    </RelationshipDescription>
+  </EntityRelationship>
+  <EntityRelationship Name="user_ldv_roleconfiguration">
+    <EntityRelationshipType>OneToMany</EntityRelationshipType>
+    <IsCustomizable>1</IsCustomizable>
+    <IntroducedVersion>1.0.0.0</IntroducedVersion>
+    <IsHierarchical>0</IsHierarchical>
+    <ReferencingEntityName>ldv_roleconfiguration</ReferencingEntityName>
     <ReferencedEntityName>SystemUser</ReferencedEntityName>
     <CascadeAssign>NoCascade</CascadeAssign>
     <CascadeDelete>NoCascade</CascadeDelete>
