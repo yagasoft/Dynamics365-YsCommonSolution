@@ -11,8 +11,8 @@
     <layoutxml>
       <grid name="resultset" object="10080" jump="ldv_name" select="1" icon="1" preview="1">
         <row name="result" id="ldv_roleconfigurationid">
-          <cell name="ldv_name" width="100" />
-          <cell name="ldv_type" width="100" />
+          <cell name="ldv_name" width="200" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
+          <cell name="ldv_type" width="125" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
           <cell name="createdon" width="125" />
         </row>
       </grid>
@@ -22,7 +22,7 @@
       <fetch version="1.0" mapping="logical">
         <entity name="ldv_roleconfiguration">
           <attribute name="createdon" />
-          <order attribute="createdon" descending="false" />
+          <order attribute="ldv_name" descending="false" />
           <filter type="and">
             <condition attribute="statecode" operator="eq" value="0" />
           </filter>

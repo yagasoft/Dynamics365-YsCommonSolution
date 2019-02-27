@@ -2,22 +2,22 @@
 <ImportExportXml version="8.2.0001.0176" SolutionPackageVersion="8.2" languagecode="1033" generatedBy="OnPremise" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SolutionManifest>
     <UniqueName>GenericBaseSolution</UniqueName>
-    <LocalizedNames />
+    <LocalizedNames>
+      <LocalizedName description="GenericBaseSolution" languagecode="1033" />
+    </LocalizedNames>
     <Descriptions />
-    <Version>2.1.1.1</Version>
+    <Version>3.1.1.1</Version>
     <Managed>0</Managed>
     <Publisher>
-      <UniqueName>linkdevelopment</UniqueName>
+      <UniqueName>yagasoft</UniqueName>
       <LocalizedNames>
-        <LocalizedName description="LINK Development" languagecode="1033" />
+        <LocalizedName description="Yagasoft" languagecode="1033" />
       </LocalizedNames>
-      <Descriptions>
-        <Description description="The default publisher for link development" languagecode="1033" />
-      </Descriptions>
-      <EMailAddress xsi:nil="true"></EMailAddress>
-      <SupportingWebsiteUrl>http://www.linkdev.com</SupportingWebsiteUrl>
-      <CustomizationPrefix>ldv</CustomizationPrefix>
-      <CustomizationOptionValuePrefix>75324</CustomizationOptionValuePrefix>
+      <Descriptions />
+      <EMailAddress>mail@yagasoft.com</EMailAddress>
+      <SupportingWebsiteUrl>http://yagasoft.com</SupportingWebsiteUrl>
+      <CustomizationPrefix>ys</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>71786</CustomizationOptionValuePrefix>
       <Addresses>
         <Address>
           <AddressNumber>1</AddressNumber>
@@ -450,8 +450,11 @@
       <RootComponent type="61" schemaName="ldv_DraftPng16" behavior="0" />
       <RootComponent type="61" schemaName="ldv_DraftPng32" behavior="0" />
       <RootComponent type="61" schemaName="ldv_MultiSelectHtml" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_PlusGreyIconPng25" behavior="0" />
       <RootComponent type="61" schemaName="ldv_QueuePng16" behavior="0" />
       <RootComponent type="61" schemaName="ldv_QueuePng32" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_ReadHighlightPng15" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_ReadIconPng15" behavior="0" />
       <RootComponent type="61" schemaName="ldv_RecurrencePng16" behavior="0" />
       <RootComponent type="61" schemaName="ldv_RecurrencePng32" behavior="0" />
       <RootComponent type="61" schemaName="ldv_RecurrenceRuleExceptionJs" behavior="0" />
@@ -460,6 +463,7 @@
       <RootComponent type="61" schemaName="ldv_RetryPng32" behavior="0" />
       <RootComponent type="61" schemaName="ldv_SdkMetadataQueryJs" behavior="0" />
       <RootComponent type="61" schemaName="ldv_SdkSoapjs" behavior="0" />
+      <RootComponent type="61" schemaName="ldv_SmoothLoadingGif20" behavior="0" />
       <RootComponent type="61" schemaName="ldv_StopPng16" behavior="0" />
       <RootComponent type="61" schemaName="ldv_StopPng32" behavior="0" />
       <RootComponent type="61" schemaName="mag_/css/notify.css" behavior="0" />
@@ -467,8 +471,8 @@
       <RootComponent type="61" schemaName="mag_/img/notify_load.gif" behavior="0" />
       <RootComponent type="61" schemaName="new_roleconfig16.png" behavior="0" />
       <RootComponent type="61" schemaName="new_roleconfig32.png" behavior="0" />
-      <RootComponent type="91" schemaName="LinkDev.Plugins.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=96f110ab5b32e2f5" behavior="0" />
-      <RootComponent type="91" schemaName="LinkDev.Steps.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=96f110ab5b32e2f5" behavior="0" />
+      <RootComponent type="91" schemaName="Yagasoft.Plugins.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=96f110ab5b32e2f5" behavior="0" />
+      <RootComponent type="91" schemaName="Yagasoft.Steps.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=96f110ab5b32e2f5" behavior="0" />
     </RootComponents>
     <MissingDependencies />
   </SolutionManifest>

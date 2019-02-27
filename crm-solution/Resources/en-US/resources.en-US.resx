@@ -300,13 +300,13 @@
     <value>Unique identifier for the user that owns the record.</value>
     <comment>ldv_roleconfiguration Description for EntityRelationship 'user_ldv_roleconfiguration'</comment>
   </data>
-  <data name="15062:Description,linkdevelopmentldv75324" xml:space="preserve">
-    <value>The default publisher for link development</value>
-    <comment> 'linkdevelopment' : Description for Solution Publisher</comment>
+  <data name="15062:LocalizedName,GenericBaseSolution" xml:space="preserve">
+    <value>GenericBaseSolution</value>
+    <comment> 'GenericBaseSolution' : LocalizedName for Solution</comment>
   </data>
-  <data name="15062:LocalizedName,linkdevelopmentldv75324" xml:space="preserve">
-    <value>LINK Development</value>
-    <comment> 'linkdevelopment' : LocalizedName for Solution Publisher</comment>
+  <data name="15062:LocalizedName,yagasoftys71786" xml:space="preserve">
+    <value>Yagasoft</value>
+    <comment> 'yagasoft' : LocalizedName for Solution Publisher</comment>
   </data>
   <data name="1:Description,Generic Configuration{2c7edc5f-dceb-44a0-bdb2-3df771573ca8}" xml:space="preserve">
     <value>A form for this entity.</value>
