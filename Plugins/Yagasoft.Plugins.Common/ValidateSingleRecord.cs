@@ -3,9 +3,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Yagasoft.Libraries.Common;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
+using Yagasoft.Libraries.Common;
 
 #endregion
 
@@ -46,37 +46,20 @@ namespace Yagasoft.Plugins.Common
 
 		protected override void ExecuteLogic()
 		{
-			// get the triggering record
-			var target = (Entity)context.InputParameters["Target"];
-
-			Libraries.Common.CrmHelpers.LogAttributeValues(target.Attributes, target, log);
-
-			tracingService.Trace("Getting the count of records ...");
-
-			if (context.MessageName == "Update" && !context.PostEntityImages.Any())
-			{
-				throw new InvalidPluginExecutionException("'Update' message in uniqueness validator requires a full post image.");
-			}
-
-			// get all attributes in the entity and image
-			tracingService.Trace("Parsing image ...");
-			foreach (var attribute in context.PostEntityImages
-				.SelectMany(entityImage => entityImage.Value.Attributes))
-			{
-				target[attribute.Key] = attribute.Value;
-			}
+			var image = GetPostImage();
 
 			tracingService.Trace("Building query.");
-			var query = new QueryExpression(target.LogicalName)
-						{
-							ColumnSet = new ColumnSet(false),
-							NoLock = true
-						};
+			var query =
+				new QueryExpression(image.LogicalName)
+				{
+					ColumnSet = new ColumnSet(false),
+					NoLock = true
+				};
 
 			tracingService.Trace("Adding conditions ...");
 			foreach (var field in fieldsCompare)
 			{
-				var fieldValue = target.GetAttributeValue<object>(field);
+				var fieldValue = image.GetAttributeValue<object>(field);
 
 				// compare null value
 				if (fieldValue == null)
@@ -105,7 +88,7 @@ namespace Yagasoft.Plugins.Common
 				}
 			}
 
-			var isActivity = target.Contains("activityid");
+			var isActivity = image.Contains("activityid");
 
 			query.Criteria.AddCondition(isActivity ? "activityid" : context.PrimaryEntityName + "id",
 				ConditionOperator.NotEqual, context.PrimaryEntityId);
@@ -128,5 +111,4 @@ namespace Yagasoft.Plugins.Common
 			return context.MessageName == "Create" || context.MessageName == "Update";
 		}
 	}
-
 }
