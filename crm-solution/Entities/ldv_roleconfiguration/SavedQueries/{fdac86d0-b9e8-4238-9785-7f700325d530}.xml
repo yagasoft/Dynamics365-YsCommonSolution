@@ -6,10 +6,9 @@
     <isquickfindquery>0</isquickfindquery>
     <isprivate>0</isprivate>
     <isdefault>0</isdefault>
-    <returnedtypecode>10080</returnedtypecode>
     <savedqueryid>{fdac86d0-b9e8-4238-9785-7f700325d530}</savedqueryid>
     <layoutxml>
-      <grid name="resultset" object="10080" jump="ldv_name" select="1" icon="1" preview="1">
+      <grid name="resultset" jump="ldv_name" select="1" icon="1" preview="1">
         <row name="result" id="ldv_roleconfigurationid">
           <cell name="ldv_name" width="300" />
           <cell name="createdon" width="125" />

@@ -1,10 +1,10 @@
-/// <reference path="Sdk.Soap.vsdoc.js" />
+﻿/// <reference path="Sdk.Soap.vsdoc.js" />
 /// <reference path="jquery-1.11.1.js" />
 /// <reference path="Sdk.Soap.vsdoc.js" />
-/// <reference path="xrm.page.365.d.ts" />
+/// <reference path="AnchoredExecutionContext.getFormContext().365.d.ts" />
 
-// Author: Ahmed el-Sawalhy
-// Version: 1.11.5
+// Author: Ahmed Elsawalhy (yagasoft.com)
+// Version: 1.12.1
 
 var IsCommonGenericLibraryLoaded = true;
 var $ = window.$ || parent.$;
@@ -16,14 +16,24 @@ window.onerror = function(msg, url, line)
 	console.log("Line number : " + line);
 };
 
+function SetAnchoredExecutionContext(executionContext)
+{
+    AnchoredExecutionContext = executionContext;
+}
+
+function BuildAnchoredExecutionContext(formContext)
+{
+    AnchoredExecutionContext = window.AnchoredExecutionContext || { getFormContext: () => formContext };
+}
+
 /////////////////////////////////////////////////////
 //#region >>>>>>>>> UI custom controls <<<<<<<<<<< //
 
-function LoadRichEditor(fieldName, suffix, callback)
+function LoadRichEditor(fieldName, suffix, callback, isDelayApplied)
 {
 	/// <summary>
 	///     Appends the rich editor frame to the specified field and hides the field using the DOM.<br />
-	///     Author: Ahmed el-Sawalhy, Tarek Selem
+	///     Author: Ahmed Elsawalhy, Tarek Selem
 	/// </summary>
 	/// <param name="fieldName" type="String">The logical name of the field to replace.</param>
 	/// <param name="suffix" type="String">Editor frame DIV suffix. Must be passed if more than one editor on form.</param>
@@ -34,7 +44,20 @@ function LoadRichEditor(fieldName, suffix, callback)
 		throw message;
 	}
 
-	suffix = suffix || '';
+    suffix = suffix || '';
+    const id = 'ckWysiwyg_' + suffix;
+
+    if ($('#' + id, parent.document).length > 0
+        || $('#' + id).length > 0)
+    {
+        return;
+    }
+
+	if (!isDelayApplied)
+    {
+        setTimeout(() => LoadRichEditor(fieldName, suffix, callback, true), 500);
+        return;
+    }
 
 	var fieldContainer = GetInsertionRow(fieldName);
 
@@ -45,12 +68,14 @@ function LoadRichEditor(fieldName, suffix, callback)
 
 	var isSkipFireOnChange = false;
 
-	var editorJsUrl = Xrm.Page.context.getClientUrl() + '/WebResources/ldv_/CkRichEditor/ckeditor.js';
+	var editorJsUrl = Xrm.Utility.getGlobalContext().getClientUrl() + '/WebResources/ldv_/CkRichEditor/ckeditor.js';
+
+    fieldContainer.hide();
 
     // add the control that is going to be replaced by CK Editor
-	fieldContainer.before('<tr><td colspan="2">' +
-		'<textarea name="ckWysiwyg_' + suffix + '" id="ckWysiwyg_' + suffix + '"></textarea>' +
-		'</td></tr>');
+	fieldContainer.after('<div>' +
+		'<textarea name="' + id + '" id="' + id + '"></textarea>' +
+		'</div>');
 
 	// load CKEditor script
 	var headTag = parent.document.getElementsByTagName("head")[0];
@@ -61,9 +86,9 @@ function LoadRichEditor(fieldName, suffix, callback)
 	// form the editor and its events
 	jqTag.onload = function ()
 	{
-		parent.CKEDITOR.replace('ckWysiwyg_' + suffix);
+		parent.CKEDITOR.replace(id);
 
-		var editor = parent.CKEDITOR.dom.element.get('ckWysiwyg_' + suffix).getEditor();
+		var editor = parent.CKEDITOR.dom.element.get(id).getEditor();
 
 		if (editor)
 		{
@@ -77,7 +102,7 @@ function LoadRichEditor(fieldName, suffix, callback)
 					return;
 				}
 
-				parent.CKEDITOR.instances['ckWysiwyg_' + suffix].setData(Xrm.Page.getAttribute(fieldName).getValue());
+				parent.CKEDITOR.instances[id].setData(AnchoredExecutionContext.getFormContext().getAttribute(fieldName).getValue());
 
                 var editorFindLoop =
 					function()
@@ -96,7 +121,7 @@ function LoadRichEditor(fieldName, suffix, callback)
 											setTimeout(
 												function()
 												{
-													Xrm.Page.data.save();
+													AnchoredExecutionContext.getFormContext().data.save();
 												}, 100);
 
 											event.preventDefault();
@@ -115,7 +140,7 @@ function LoadRichEditor(fieldName, suffix, callback)
 			};
 
 			// add an OnChange event to copy field data to editor
-            Xrm.Page.getAttribute(fieldName).addOnChange(setEditorData);
+            AnchoredExecutionContext.getFormContext().getAttribute(fieldName).addOnChange(setEditorData);
 
 			setEditorData();
 
@@ -123,10 +148,10 @@ function LoadRichEditor(fieldName, suffix, callback)
 			editor.on('change',
 				function ()
 				{
-                    Xrm.Page.getAttribute(fieldName).setValue(editor.getData());
+                    AnchoredExecutionContext.getFormContext().getAttribute(fieldName).setValue(editor.getData());
 					// prevent looping
 					isSkipFireOnChange = true;
-                    Xrm.Page.getAttribute(fieldName).fireOnChange();
+                    AnchoredExecutionContext.getFormContext().getAttribute(fieldName).fireOnChange();
 				});
 		}
 
@@ -137,47 +162,6 @@ function LoadRichEditor(fieldName, suffix, callback)
 	};
 
     headTag.appendChild(jqTag);
-
-	var hide = function(fieldName)
-	{
-		var fieldContainer = GetFieldContainer(fieldName);
-
-		if (fieldContainer == null)
-		{
-			return;
-		}
-
-		var found = false;
-		var set = false;
-		var trs = $('tr', fieldContainer.parent());
-
-		trs.each(function(tr)
-		{
-			if (set)
-			{
-				return;
-			}
-
-			if (trs[tr].innerHTML === fieldContainer[0].innerHTML)
-			{
-				$(trs[tr]).hide();
-				found = true;
-				return;
-			}
-
-			if (found && !trs[tr].innerHTML)
-			{
-				$(trs[tr]).hide();
-			}
-
-			if (found && trs[tr].innerHTML)
-			{
-				set = true;
-			}
-		});
-	};
-
-	hide(fieldName);
 }
 
 var AdvancedFindMap = window.AdvancedFindMap || {};
@@ -186,7 +170,7 @@ function LoadAdvancedFind(fieldName, logicalName, height, entityNameFieldName)
 {
 	/// <summary>
 	///     Appends the advanced find frame to the specified field using the DOM.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="fieldName" type="String">The logical name of the field to replace.</param>
 	/// <param name="logicalName" type="String">
@@ -220,6 +204,7 @@ function LoadAdvancedFind(fieldName, logicalName, height, entityNameFieldName)
 
 	if (!fieldContainer)
 	{
+        setTimeout(() => LoadAdvancedFind(fieldName, logicalName, height, entityNameFieldName), 1000);
 		return;
 	}
 
@@ -228,21 +213,21 @@ function LoadAdvancedFind(fieldName, logicalName, height, entityNameFieldName)
 		parent.AdvancedFindMap = AdvancedFindMap;
 	}
 
-	var iFrameUrl = Xrm.Page.context.getClientUrl() + '/WebResources/ldv_AdvancedFindHtml#' + fieldName +
+	var iFrameUrl = Xrm.Utility.getGlobalContext().getClientUrl() + '/WebResources/ldv_AdvancedFindHtml#' + fieldName +
         '#' + logicalName + '#' + 5;
 
 	// insert editor frame right after the field as a new row
-	fieldContainer.before('<tr id="advancedFindRow_' + fieldName + '"><td colspan="2">' +
+	fieldContainer.after('<div id="advancedFindRow_' + fieldName + '">' +
 		'<iframe id="advancedFindFrame_' + fieldName + '"' +
-		'src="' +iFrameUrl + '" frameborder="0" scrolling="no"></iframe>' +
-		'</td></tr>');
+		'src="' +iFrameUrl + '" frameborder="0" scrolling="no" style="width: 100%;"></iframe>' +
+		'</div>');
 }
 
 function IsAdvancedFindLoaded(fieldName)
 {
 	/// <summary>
 	///     Checks whether the advanced-find frame is loaded on the given field or not.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	var oldFrame = $('#advancedFindFrame_' + fieldName, parent.document);
 
@@ -259,7 +244,7 @@ function RemoveAdvancedFind(fieldName)
 {
 	/// <summary>
 	///     Removes the frame from the form by deleting its DOM elements.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	var oldFrameRow = $('#advancedFindRow_' + fieldName, parent.document);
 
@@ -285,7 +270,7 @@ function LoadAutoAdvancedFind(fieldName, entityNameFieldName, height, callback)
 	/// <summary>
 	///     Appends the advanced find frame to the specified field using the DOM.<br />
 	///     It also adds entity auto-complete to the field, and an event to detect changes<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="fieldName" type="String">The logical name of the field to replace.</param>
 	/// <param name="entityNameFieldName" type="String">The logical name of the entity name field.</param>
@@ -332,11 +317,11 @@ function LoadAutoAdvancedFind(fieldName, entityNameFieldName, height, callback)
 var MultiSelectPool = window.MultiSelectPool || {};
 
 function LoadMultiSelect(fieldName, options, title, height, callback, isSingleMode, isSkipSort, isKeepVisible,
-		isDisableFlowUi, isVisualiseIndent)
+		isDisableFlowUi, isVisualiseIndent, isDelayApplied)
 	{
 		/// <summary>
 		///     Appends the multi-select frame to the specified field using the DOM.<br />
-		///     Author: Ahmed el-Sawalhy
+		///     Author: Ahmed Elsawalhy
 		/// </summary>
 		/// <param name="fieldName" type="String" optional="false">
 		///     The logical name of the field to replace.<br />
@@ -376,7 +361,18 @@ function LoadMultiSelect(fieldName, options, title, height, callback, isSingleMo
 			throw message;
 		}
 
-		if (typeof options === "string" && !Xrm.Page.getAttribute(options))
+        var split = fieldName.split(':');
+        fieldName = split[0];
+        var controlSuffix = split[1];
+        var controlName = fieldName + (controlSuffix || '');
+
+        if ($('#multiSelectRow_' + controlName, parent.document).length > 0
+            || $('#multiSelectRow_' + controlName).length > 0)
+        {
+            return;
+        }
+
+		if (typeof options === "string" && !AnchoredExecutionContext.getFormContext().getAttribute(options))
 		{
 			var message = "Couldn't load options from field: '" + options + "'";
 			console.error(message);
@@ -389,12 +385,12 @@ function LoadMultiSelect(fieldName, options, title, height, callback, isSingleMo
 			throw message;
 		}
 
-		var split = fieldName.split(':');
-		fieldName = split[0];
-		var controlSuffix = split[1];
-		var controlName = fieldName + (controlSuffix || '');
-
-		RemoveMultiSelect(controlName);
+        if (!isDelayApplied)
+        {
+            setTimeout(() => LoadMultiSelect(fieldName, options, title, height, callback, isSingleMode, isSkipSort, isKeepVisible,
+                isDisableFlowUi, isVisualiseIndent, true), 500);
+            return;
+        }
 
 		var fieldContainer = GetInsertionRow(controlName);
 
@@ -416,18 +412,14 @@ function LoadMultiSelect(fieldName, options, title, height, callback, isSingleMo
 		{
 			MultiSelectPool[fieldName] = options;
 
-			if ($('#multiSelectRow_' + controlName, parent.document).length > 0
-				|| $('#multiSelectRow_' + controlName).length > 0)
-			{
-				return;
-			}
-
-			var iFrameUrl = Xrm.Page.context.getClientUrl() + '/WebResources/ldv_MultiSelectHtml#' + fieldName +
+			var iFrameUrl = Xrm.Utility.getGlobalContext().getClientUrl() + '/WebResources/ldv_MultiSelectHtml#' + fieldName +
 				'#' + encodeURI(title) + '#' + (height || 200) + '#' + (isSingleMode === true) + '#' + (isSkipSort === true) +
 				'#' + (isDisableFlowUi === true) + '#' + (isVisualiseIndent === true);
 
+            fieldContainer.hide();
+
 			// insert editor frame right after the field as a new row
-			fieldContainer.before('<tr id="multiSelectRow_' + controlName + '"><td colspan="2">' +
+			fieldContainer.after('<div id="multiSelectRow_' + controlName + '">' +
 				// auto size iFrame
 				'<script type="text/javascript">' +
 				'function AutoSizeMultiSelect(controlName) {' +
@@ -435,12 +427,12 @@ function LoadMultiSelect(fieldName, options, title, height, callback, isSingleMo
 				'if (!document.getElementById("multiSelectFrame_' + controlName + '")' +
 				' || !document.getElementById("multiSelectFrame_' + controlName + '").contentWindow' +
 				' || !document.getElementById("multiSelectFrame_' + controlName + '").contentWindow.IsFrameLoaded) {' +
-				'setTimeout(function () { AutoSizeMultiSelect(controlName); }, 200);' +
+				'setTimeout(function () { AutoSizeMultiSelect(controlName); }, 50);' +
 				'return;' +
 				'}' +
 				// resize frame to the editor size + 5 for padding
 				'setTimeout(function() { $("#multiSelectFrame_" + controlName).height($("body",' +
-				' $("#multiSelectFrame_" + controlName).contents()).height() + 17); }, 1000);' +
+				' $("#multiSelectFrame_" + controlName).contents()).height() + 17); }, 300);' +
 				'}' +
 				// add an event for window resize
 				'$(window).resize(function () { AutoSizeMultiSelect("' + controlName + '"); });' +
@@ -450,50 +442,12 @@ function LoadMultiSelect(fieldName, options, title, height, callback, isSingleMo
 				'" onload="AutoSizeMultiSelect(\'' + controlName + '\')" src="' +
 				iFrameUrl +
 				'" frameborder="0" scrolling="no"></iframe>' +
-				'</td></tr>');
+				'</div>');
 
-			var hide = function()
-			{
-				if (!isKeepVisible)
-				{
-					var fieldContainer = GetFieldContainer(controlName);
-
-					if (fieldContainer == null)
-					{
-						return;
-					}
-
-					var found = false;
-					var trs = $('tr', fieldContainer.parent());
-
-					for (var i = 0; i < trs.length; i++)
-					{
-						if (trs[i].innerHTML === fieldContainer[0].innerHTML)
-						{
-							$(trs[i]).hide();
-							found = true;
-							continue;
-						}
-
-						if (found && !trs[i].innerHTML)
-						{
-							$(trs[i]).hide();
-						}
-
-						if (found && trs[i].innerHTML)
-						{
-							break;
-						}
-					}
-				}
-
-				if (callback)
-				{
-					setTimeout(callback, 500);
-				}
-			};
-
-			hide();
+            if (callback)
+            {
+                setTimeout(callback, 500);
+            }
 		};
 
 		// process relationship if passed as param
@@ -556,7 +510,7 @@ function LoadMultiSelect(fieldName, options, title, height, callback, isSingleMo
 		}
 		else
 		{
-			setTimeout(buildControl, 200);
+			setTimeout(buildControl, 10);
 		}
 	}
 
@@ -564,7 +518,7 @@ function IsMultiSelectLoaded(fieldName)
 {
 	/// <summary>
 	///     Checks whether the multi-select frame is loaded on the given field or not.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	var split = fieldName.split(':');
 	fieldName = split[0];
@@ -586,7 +540,7 @@ function RemoveMultiSelect(fieldName, callback, isKeepHidden)
 {
 	/// <summary>
 	///     Removes the frame from the form by deleting its DOM elements.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	var split = fieldName.split(':');
 	fieldName = split[0];
@@ -618,29 +572,8 @@ function RemoveMultiSelect(fieldName, callback, isKeepHidden)
 				return;
 			}
 
-			var found = false;
-			var trs = $('tr', fieldContainer.parent());
-
-			for (var i = 0; i < trs.length; i++)
-			{
-				if (trs[i].innerHTML === fieldContainer[0].innerHTML)
-				{
-					$(trs[i]).show();
-					found = true;
-					continue;
-				}
-
-				if (found && !trs[i].innerHTML)
-				{
-					$(trs[i]).show();
-				}
-
-				if (found && trs[i].innerHTML)
-				{
-					break;
-				}
-			}
-		}
+            fieldContainer.show();
+        }
 
 		if (callback)
 		{
@@ -651,30 +584,24 @@ function RemoveMultiSelect(fieldName, callback, isKeepHidden)
 	show();
 }
 
-function GetFieldContainer(fieldName)
+function GetFieldContainer(fieldName, tries)
 {
 	/// <summary>
 	/// Internal use only!
 	/// </summary>
 	// get field table row to insert frame after it later
-	var field = $('#' + fieldName + '_d');
 
-	// CRM 2016+
-	if (field.length <= 0)
-	{
-		field = $('#' + fieldName + '_d', parent.document);
-	}
+	if (tries <= 0)
+    {
+        return null;
+    }
 
-	var fieldContainer = field.parent();
+    var fieldContainer = $('[data-id="' + fieldName + (tries || '') + '"]').parent();
 
 	if (fieldContainer.length <= 0)
 	{
-		return null;
-	}
-
-	while (!fieldContainer.is('tr'))
-	{
-		fieldContainer = fieldContainer.parent();
+        tries = tries || 3;
+		return GetFieldContainer(fieldName, --tries);
 	}
 
 	return fieldContainer;
@@ -693,30 +620,6 @@ function GetInsertionRow(fieldName)
 		return null;
 	}
 
-	var found = false;
-	var set = false;
-	var trs = $('tr', fieldContainer.parent());
-
-	trs.each(function(tr)
-	{
-		if (set)
-		{
-			return;
-		}
-
-		if (trs[tr].innerHTML === fieldContainer[0].innerHTML)
-		{
-			found = true;
-			return;
-		}
-
-		if (found && trs[tr].innerHTML)
-		{
-			fieldContainer = $(trs[tr]);
-			set = true;
-		}
-	});
-
 	return fieldContainer;
 }
 
@@ -726,7 +629,7 @@ function ShowBusyIndicator(text, id)
 {
 	/// <summary>
 	///     Shows a busy frame at the top right of the screen that fits its text.<br />
-	///     Author: Ahmed el-Sawalhy<br />
+	///     Author: Ahmed Elsawalhy<br />
 	///     credits: http://andreaswijayablog.blogspot.pt/2011/09/crm-2011-ajax-loading-message-screen.html
 	/// </summary>
 	/// <param name="text" type="String" mayBeNull="false" optional="false">
@@ -842,7 +745,7 @@ function HideBusyIndicator(id)
 {
 	/// <summary>
 	///     Hides the busy indicator. If an 'ID' is not given, the latest added one will be hidden.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	try
 	{
@@ -1016,14 +919,14 @@ function ValidateDateFieldInFuture(fieldName, isResetDateOnError, dateErrorMsg)
 	/// </summary>
 
 	// get dates from the form
-	var startTime = Xrm.Page.getAttribute(fieldName).getValue();
+	var startTime = AnchoredExecutionContext.getFormContext().getAttribute(fieldName).getValue();
 
 	// make sure that the expected time is in the future
 	if (startTime && CompareDate(startTime, new Date()) > 0)
 	{
 		if (isResetDateOnError)
 		{
-			Xrm.Page.getAttribute(fieldName).setValue();
+			AnchoredExecutionContext.getFormContext().getAttribute(fieldName).setValue();
 		}
 
 		ShowControlError(fieldName, dateErrorMsg ||
@@ -1047,8 +950,8 @@ function ValidateDateFieldsOrder(initialFieldName, nextFieldName, isResetEndDate
 	/// </summary>
 
 	// get dates from the form
-		var startTime = Xrm.Page.getAttribute(initialFieldName).getValue();
-		var endTime = Xrm.Page.getAttribute(nextFieldName).getValue();
+		var startTime = AnchoredExecutionContext.getFormContext().getAttribute(initialFieldName).getValue();
+		var endTime = AnchoredExecutionContext.getFormContext().getAttribute(nextFieldName).getValue();
 
 		if (!startTime && !endTime)
 		{
@@ -1061,7 +964,7 @@ function ValidateDateFieldsOrder(initialFieldName, nextFieldName, isResetEndDate
 		{
 			if (isResetEndDateOnError)
 			{
-				Xrm.Page.getAttribute(nextFieldName).setValue();
+				AnchoredExecutionContext.getFormContext().getAttribute(nextFieldName).setValue();
 			}
 
 			ShowControlError(nextFieldName, startDateMissingErrorMsg ||
@@ -1074,7 +977,7 @@ function ValidateDateFieldsOrder(initialFieldName, nextFieldName, isResetEndDate
 		{
 			if (isResetEndDateOnError)
 			{
-				Xrm.Page.getAttribute(nextFieldName).setValue();
+				AnchoredExecutionContext.getFormContext().getAttribute(nextFieldName).setValue();
 			}
 
 			ShowControlError(nextFieldName, endDateBeforeStartErrorMsg ||
@@ -1090,9 +993,9 @@ function ValidateDateFieldsOrder(initialFieldName, nextFieldName, isResetEndDate
 
 function ValidateArabicCharacters(fieldname)
 {
-	Xrm.Page.getControl(fieldname).clearNotification();
+	AnchoredExecutionContext.getFormContext().getControl(fieldname).clearNotification();
 
-	var e = Xrm.Page.getAttribute(fieldname).getValue();
+	var e = AnchoredExecutionContext.getFormContext().getAttribute(fieldname).getValue();
 
 	if (e)
 	{
@@ -1105,8 +1008,8 @@ function ValidateArabicCharacters(fieldname)
 			if ((unicode < 0x0600 || unicode > 0x06FF) || (unicode >= 0xFE70 && unicode <= 0xFEFF))
 			{
 				var message = "You must enter a valid arabic letters.";
-				Xrm.Page.getControl(fieldname).setNotification(message);
-				Xrm.Page.getControl(fieldname).setFocus();
+				AnchoredExecutionContext.getFormContext().getControl(fieldname).setNotification(message);
+				AnchoredExecutionContext.getFormContext().getControl(fieldname).setFocus();
 				return false;
 			}
 		}
@@ -1118,27 +1021,27 @@ function ValidateArabicCharacters(fieldname)
 
 function ValidateEnglishCharacters(fieldname)
 {
-	Xrm.Page.getControl(fieldname).clearNotification();
+	AnchoredExecutionContext.getFormContext().getControl(fieldname).clearNotification();
 
-	if (Xrm.Page.getAttribute(fieldname).getValue() == null)
+	if (AnchoredExecutionContext.getFormContext().getAttribute(fieldname).getValue() == null)
 	{
 		return true;
 	}
 	else
 	{
 		var english = /^[A-Za-z0-9]*$/;
-		var fld = Xrm.Page.getAttribute(fieldname).getValue().replace(/\s/g, '');
+		var fld = AnchoredExecutionContext.getFormContext().getAttribute(fieldname).getValue().replace(/\s/g, '');
 
 		if (fld != null && !english.test(fld))
 		{
 			var message = "You must enter a valid English letters.";
-			Xrm.Page.getControl(fieldname).setNotification(message);
-			Xrm.Page.getControl(fieldname).setFocus();
+			AnchoredExecutionContext.getFormContext().getControl(fieldname).setNotification(message);
+			AnchoredExecutionContext.getFormContext().getControl(fieldname).setFocus();
 			return false;
 		}
 		else
 		{
-			Xrm.Page.getControl(fieldname).clearNotification();
+			AnchoredExecutionContext.getFormContext().getControl(fieldname).clearNotification();
 		}
 
 		return true;
@@ -1165,17 +1068,17 @@ function SetFormNotification(englishMessage, arabicMessage, level, id)
 	/// Use the 'NotificationLevel' object to pass the notification level.<br />
 	///     Author: Ahmed elSawalhy
 	/// </summary>
-	var language = Xrm.Page.context.getUserLcid();
+	var language = Xrm.Utility.getGlobalContext().getUserLcid();
 
 	ClearFormNotification(id);
 
 	if (language === 1025)
 	{
-		Xrm.Page.ui.setFormNotification(arabicMessage || englishMessage, level, id);
+		AnchoredExecutionContext.getFormContext().ui.setFormNotification(arabicMessage || englishMessage, level, id);
 	}
 	else
 	{
-		Xrm.Page.ui.setFormNotification(englishMessage || arabicMessage, level, id);
+		AnchoredExecutionContext.getFormContext().ui.setFormNotification(englishMessage || arabicMessage, level, id);
 	}
 
 	FormNotifications.push(id);
@@ -1194,7 +1097,7 @@ function ClearFormNotification(id)
 		return;
 	}
 
-	Xrm.Page.ui.clearFormNotification(id);
+	AnchoredExecutionContext.getFormContext().ui.clearFormNotification(id);
 	FormNotifications.splice(index, 1);
 }
 
@@ -1212,12 +1115,12 @@ function ClearFormNotifications()
 
 function ShowControlError(controlName, message)
 {
-	Xrm.Page.getControl(controlName).setNotification(message);
+	AnchoredExecutionContext.getFormContext().getControl(controlName).setNotification(message);
 }
 
 function ClearControlError(controlName)
 {
-	Xrm.Page.getControl(controlName).clearNotification();
+	AnchoredExecutionContext.getFormContext().getControl(controlName).clearNotification();
 }
 
 //#endregion
@@ -1239,9 +1142,9 @@ function GetFormType()
 {
 	/// <summary>
 	///     Returns the form type. 'FormType' global object can be used to compare values.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
-	return Xrm.Page.ui.getFormType();
+	return AnchoredExecutionContext.getFormContext().ui.getFormType();
 }
 
 function SetFormLocked(locked, exceptions)
@@ -1249,15 +1152,15 @@ function SetFormLocked(locked, exceptions)
 	/// <summary>
 	///     Loops over all fields on the form, and locks them.<br />
 	/// credit: http://crmexplorer.com/2011/11/disable-wnable-fields-sections-tabs-and-the-whole-form-in-crm-2011/ <br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
-	var attributes = Xrm.Page.data.entity.attributes.get();
+	var attributes = AnchoredExecutionContext.getFormContext().data.entity.attributes.get();
 
 	for (var i in attributes)
 	{
 		if (attributes.hasOwnProperty(i))
 		{
-			var attribute = Xrm.Page.data.entity.attributes.get(attributes[i].getName());
+			var attribute = AnchoredExecutionContext.getFormContext().data.entity.attributes.get(attributes[i].getName());
 			var name = attribute.getName();
 
 			try
@@ -1278,10 +1181,10 @@ function IsFormDirty()
 {
 	/// <summary>
 	///     Checks all fields on the form and returns true if a field has an unsaved value.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <returns type="bool">'true' if there is an unsaved value.</returns>
-	return Xrm.Page.data.entity.getIsDirty();
+	return AnchoredExecutionContext.getFormContext().data.entity.getIsDirty();
 }
 
 var SaveMode = {
@@ -1294,24 +1197,24 @@ function SaveForm(saveMode)
 {
 	/// <summary>
 	///     Saves the form using the given save mode. Accepts 'SaveMode' type.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="saveMode" type="SaveMode" optional="true">
 	///     [OPTIONAL=SaveMode.Default]Save mode to set.
 	///     Accepts 'SaveMode' type.
 	/// </param>
-	Xrm.Page.data.entity.save(saveMode);
+	AnchoredExecutionContext.getFormContext().data.entity.save(saveMode);
 }
 
 function GetFormTabNames()
 {
 	/// <summary>
 	///     Gets the names of the tabs on the form.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="tabname" type="String" optional="false">Tab name.</param>
 	/// <param name="required" type="bool" optional="false">'true' to set fields as required.</param>
-	var tabs = Xrm.Page.ui.tabs.get();
+	var tabs = AnchoredExecutionContext.getFormContext().ui.tabs.get();
 	var tabNames = [];
 
 	if (tabs != null)
@@ -1329,9 +1232,9 @@ function GetFormFieldNames()
 {
 	/// <summary>
 	///     Returns all form field names as an array.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
-	var attributes = Xrm.Page.data.entity.attributes.get();
+	var attributes = AnchoredExecutionContext.getFormContext().data.entity.attributes.get();
 	var attributeNames = [];
 
 	for (var i in attributes)
@@ -1347,12 +1250,12 @@ function GetFormFieldNames()
 
 function GetFormId()
 {
-	return Xrm.Page.ui.formSelector.getCurrentItem().getId();
+	return AnchoredExecutionContext.getFormContext().ui.formSelector.getCurrentItem().getId();
 }
 
 function RefreshFormData()
 {
-	Xrm.Page.data.refresh();
+	AnchoredExecutionContext.getFormContext().data.refresh();
 }
 
 //#endregion
@@ -1361,17 +1264,17 @@ function RefreshFormData()
 
 function SetTabLabel(tabName, label)
 {
-	Xrm.Page.ui.tabs.get(tabName).setLabel(label);
+	AnchoredExecutionContext.getFormContext().ui.tabs.get(tabName).setLabel(label);
 }
 
 function GetTabSectionNames(tabname)
 {
 	/// <summary>
 	///     Takes a tab name/number and gets the names of the sections inside.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="tabname" type="String" optional="false">Tab name.</param>
-	var tab = Xrm.Page.ui.tabs.get(tabname);
+	var tab = AnchoredExecutionContext.getFormContext().ui.tabs.get(tabname);
 	var sectionNames = [];
 
 	if (tabname != null && tab != null)
@@ -1387,7 +1290,7 @@ function GetTabSectionNames(tabname)
 
 function GetTab(tabName)
 {
-	return Xrm.Page.ui.tabs.get(tabName);
+	return AnchoredExecutionContext.getFormContext().ui.tabs.get(tabName);
 }
 
 function SetTabVisible(tabName, visible)
@@ -1399,7 +1302,7 @@ function SetTabsVisible(tabs, visible)
 {
 	/// <summary>
 	///     Takes an array of tab names/numbers and calls "SetTabVisible" on each.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="tabs" type="String[]" optional="false">An array of tab names.</param>
 	/// <param name="visible" type="bool" optional="false">'true' to show the tabs.</param>
@@ -1418,11 +1321,11 @@ function SetTabRequired(tabname, required)
 {
 	/// <summary>
 	///     Takes a tab name/number and calls "SetFieldRequired" on each field in the tab.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="tabname" type="String" optional="false">Tab name.</param>
 	/// <param name="required" type="bool" optional="false">'true' to set fields as required.</param>
-	var tab = Xrm.Page.ui.tabs.get(tabname);
+	var tab = AnchoredExecutionContext.getFormContext().ui.tabs.get(tabname);
 	if (tabname != null && tab != null)
 	{
 		tab.sections.get().forEach(function(section)
@@ -1447,7 +1350,7 @@ function SetTabsRequired(tabs, required)
 {
 	/// <summary>
 	///     Takes an array of tab names/numbers and calls "SetTabRequired" on each.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="tabs" type="String[]" optional="false">An array of tab names.</param>
 	/// <param name="visible" type="bool" optional="false">'true' to set tabs as required.</param>
@@ -1461,11 +1364,11 @@ function SetTabLocked(tabname, locked)
 {
 	/// <summary>
 	///     Takes a tab name/number and calls "SetFieldLocked" on each field in the tab.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="tabname" type="String" optional="false">Tab name.</param>
 	/// <param name="locked" type="bool" optional="false">'true' to lock fields.</param>
-	var tab = Xrm.Page.ui.tabs.get(tabname);
+	var tab = AnchoredExecutionContext.getFormContext().ui.tabs.get(tabname);
 	if (tabname != null && tab != null)
 	{
 		tab.sections.get().forEach(function(section)
@@ -1490,7 +1393,7 @@ function SetTabsLocked(tabs, locked)
 {
 	/// <summary>
 	///     Takes an array of tab names/numbers and calls "SetTabLocked" on each.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="tabs" type="String[]" optional="false">An array of tab names.</param>
 	/// <param name="visible" type="bool" optional="false">'true' to lock tabs.</param>
@@ -1508,11 +1411,11 @@ function GetSectionFieldNames(tabname, sectionName)
 {
 	/// <summary>
 	///     Takes a tab name/number and gets the names of the fields inside.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="tabname" type="String" optional="false">Tab name.</param>
 	/// <param name="sectionName" type="String" optional="false">Section name.</param>
-	var tab = Xrm.Page.ui.tabs.get(tabname);
+	var tab = AnchoredExecutionContext.getFormContext().ui.tabs.get(tabname);
 	var attributeNames = [];
 
 	if (tabname != null && tab != null)
@@ -1554,7 +1457,7 @@ function SetSectionsVisible(sections, visible)
 	/// <summary>
 	///     Takes an array of section names and calls "SetSectionVisible" on each.<br />
 	///     The section names must be in the format "[tab]:[section]".<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="sections" type="String[]" optional="false">An array of section names.</param>
 	/// <param name="visible" type="bool" optional="false">'true' to show the sections.</param>
@@ -1569,12 +1472,12 @@ function SetSectionRequired(tabname, sectionName, required)
 {
 	/// <summary>
 	///     Takes a section name and calls "SetFieldRequired" on each field in the section.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="tabname" type="String" optional="false">Tab name.</param>
 	/// <param name="sectionName" type="String" optional="false">Section name.</param>
 	/// <param name="required" type="bool" optional="false">'true' to set fields as required.</param>
-	var tab = Xrm.Page.ui.tabs.get(tabname);
+	var tab = AnchoredExecutionContext.getFormContext().ui.tabs.get(tabname);
 	if (tabname != null && tab != null)
 	{
 		var section = tab.sections.get(sectionName);
@@ -1601,7 +1504,7 @@ function SetSectionsRequired(sections, required)
 	/// <summary>
 	///     Takes a section array and calls "SetSectionRequired" on each section.<br />
 	///     The section names must be in the format "[tab]:[section]".<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="sections" type="String[]" optional="false">An array of section names.</param>
 	/// <param name="visible" type="bool" optional="false">'true' to set sections as required.</param>
@@ -1616,12 +1519,12 @@ function SetSectionLocked(tabname, sectionName, locked)
 {
 	/// <summary>
 	///     Takes a tab name/number and calls "SetFieldLocked" on each field in the section.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="tabname" type="String" optional="false">Tab name.</param>
 	/// <param name="sectionName" type="String" optional="false">Section name.</param>
 	/// <param name="locked" type="bool" optional="false">'true' to lock fields.</param>
-	var tab = Xrm.Page.ui.tabs.get(tabname);
+	var tab = AnchoredExecutionContext.getFormContext().ui.tabs.get(tabname);
 	if (tabname != null && tab != null)
 	{
 		var section = tab.sections.get(sectionName);
@@ -1648,7 +1551,7 @@ function SetSectionsLocked(sections, locked)
 	/// <summary>
 	///     Takes a section array and calls "SetSectionLocked" on each section.<br />
 	///     The section names must be in the format "[tab]:[section]".<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="sections" type="String[]" optional="false">An array of section names.</param>
 	/// <param name="locked" type="bool" optional="false">'true' to set sections as locked.</param>
@@ -1665,7 +1568,7 @@ function SetSectionsLocked(sections, locked)
 
 function GetField(name)
 {
-	return Xrm.Page.getAttribute(name);
+	return AnchoredExecutionContext.getFormContext().getAttribute(name);
 }
 
 function GetFieldFromContext(context)
@@ -1687,7 +1590,7 @@ function SetFieldValue(name, value, fireOnChange)
 {
 	/// <summary>
 	///     Sets the value in the field given, and fires the 'OnChange' event if required.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	GetField(name).setValue(value);
 
@@ -1711,14 +1614,14 @@ function SetLookupValue(name, id, text, entityLogicalName)
 				entityType: entityLogicalName
 			}];
 
-	Xrm.Page.getAttribute(name).setValue(value);
+	AnchoredExecutionContext.getFormContext().getAttribute(name).setValue(value);
 }
 
 function ClearFieldValue(name, fireOnChange)
 {
 	/// <summary>
 	///     Clears the value from the field given, and fires the 'OnChange' event if required.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	GetField(name).setValue(null);
 
@@ -1738,14 +1641,14 @@ function SetFieldSubmitMode(fieldName, submitMode)
 {
 	/// <summary>
 	///     Set the submit mode OnSave of the field. Accepts 'SubmitMode' type.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="submitMode" type="SubmitMode" optional="true">
 	///     [OPTIONAL=SubmitMode.Dirty]Submit mode to set.
 	///     Accepts 'SubmitMode' type.
 	/// </param>
 	submitMode = submitMode || SubmitMode.Dirty;
-	Xrm.Page.getAttribute(fieldName).setSubmitMode(submitMode);
+	AnchoredExecutionContext.getFormContext().getAttribute(fieldName).setSubmitMode(submitMode);
 }
 
 function IsFieldDirty(name)
@@ -1755,24 +1658,24 @@ function IsFieldDirty(name)
 
 function IsFieldVisible(name)
 {
-	return Xrm.Page.getControl(name).getVisible();
+	return AnchoredExecutionContext.getFormContext().getControl(name).getVisible();
 }
 
 function IsFieldLocked(name)
 {
-	return Xrm.Page.getControl(name).getDisabled();
+	return AnchoredExecutionContext.getFormContext().getControl(name).getDisabled();
 }
 
 function IsFieldRequired(name)
 {
-	return Xrm.Page.getAttribute(name).getRequiredLevel() === "required";
+	return AnchoredExecutionContext.getFormContext().getAttribute(name).getRequiredLevel() === "required";
 }
 
 function SetFieldsVisible(fields, visible)
 {
 	/// <summary>
 	///     Takes an array of field names and calls "SetFieldVisible" on each.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="fields" type="String[]" optional="false">An array of field names.</param>
 	/// <param name="visible" type="bool" optional="false">'true' to show the fields.</param>
@@ -1786,7 +1689,7 @@ function SetFieldsRequired(fields, required)
 {
 	/// <summary>
 	///     Takes an array of field names and calls "SetFieldRequired" on each.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="fields" type="String[]" optional="false">An array of field names.</param>
 	/// <param name="visible" type="bool" optional="false">'true' to set as required.</param>
@@ -1800,7 +1703,7 @@ function SetFieldsLocked(fields, locked)
 {
 	/// <summary>
 	///     Takes an array of field names and calls "SetFieldLocked" on each.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="fields" type="String[]" optional="false">An array of field names.</param>
 	/// <param name="locked" type="bool" optional="false">'true' to lock the fields.</param>
@@ -1812,23 +1715,23 @@ function SetFieldsLocked(fields, locked)
 
 function SetFieldVisible(name, visible)
 {
-	ApplyActionToField(name, Xrm.Page.getControl, 'setVisible', visible);
+	ApplyActionToField(name, 'AnchoredExecutionContext.getFormContext().getControl("{arg}")', 'setVisible', visible);
 }
 
 function SetFieldLocked(name, locked)
 {
-	ApplyActionToField(name, Xrm.Page.getControl, 'setDisabled', locked);
+	ApplyActionToField(name, 'AnchoredExecutionContext.getFormContext().getControl("{arg}")', 'setDisabled', locked);
 }
 
 function SetFieldRequired(name, required)
 {
 	if (required)
 	{
-		ApplyActionToField(name, Xrm.Page.getAttribute, 'setRequiredLevel', 'required');
+		ApplyActionToField(name, 'AnchoredExecutionContext.getFormContext().getAttribute("{arg}")', 'setRequiredLevel', 'required');
 	}
 	else
 	{
-		ApplyActionToField(name, Xrm.Page.getAttribute, 'setRequiredLevel', 'none');
+		ApplyActionToField(name, 'AnchoredExecutionContext.getFormContext().getAttribute("{arg}")', 'setRequiredLevel', 'none');
 	}
 }
 
@@ -1841,7 +1744,7 @@ function ApplyActionToField(name, fetchFunction, action, value)
 	var index = 0;
 	var indexedName = name;
 
-	while (control = fetchFunction(indexedName))
+	while (control = eval(fetchFunction.replace('{arg}', indexedName)))
     {
 		control[action](value);
 		indexedName = name + (++index);
@@ -1858,7 +1761,7 @@ function GetFieldsValues(fieldNames, isSkipNull)
 	/// <summary>
 	///     Accepts a CSV of field names or array, and returns the values in those fields as an array.
 	/// Skips null values if required.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	var values = [];
 
@@ -1890,7 +1793,7 @@ function AddOptionSetValues(optionSetName, values, isClearFirst)
 	///     Add the values given to the option-set. The values should be in the format
 	///     '[{value: value, text: text}].
 	/// </summary>
-	var optionSet = Xrm.Page.ui.controls.get(optionSetName);
+	var optionSet = AnchoredExecutionContext.getFormContext().ui.controls.get(optionSetName);
 
 	if (optionSet != null)
 	{
@@ -1908,7 +1811,7 @@ function AddOptionSetValues(optionSetName, values, isClearFirst)
 
 function ClearOptionSetValues(optionSetName)
 {
-	var optionSet = Xrm.Page.ui.controls.get(optionSetName);
+	var optionSet = AnchoredExecutionContext.getFormContext().ui.controls.get(optionSetName);
 
 	if (optionSet != null)
 	{
@@ -1921,7 +1824,7 @@ function RemoveOptionSetValues(optionSetName, values)
 	/// <summary>
 	///     Removes the values given from the option-set.
 	/// </summary>
-	var optionSet = Xrm.Page.ui.controls.get(optionSetName);
+	var optionSet = AnchoredExecutionContext.getFormContext().ui.controls.get(optionSetName);
 
 	if (optionSet != null)
 	{
@@ -1938,19 +1841,19 @@ function RemoveOptionSetValues(optionSetName, values)
 
 function GetSelectedStage()
 {
-	return Xrm.Page.data.process.getSelectedStage();
+	return AnchoredExecutionContext.getFormContext().data.process.getSelectedStage();
 }
 
 function GetActiveStage()
 {
-	return Xrm.Page.data.process.getActiveStage();
+	return AnchoredExecutionContext.getFormContext().data.process.getActiveStage();
 }
 
 function SetHeaderFieldVisible(name, visible, checkCount, suffix)
 {
 	/// <summary>
 	///     Set the visibility of the field in the BPF.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	var control = GetHeaderFieldControl(name + (suffix || ""));
 
@@ -1969,7 +1872,7 @@ function SetHeaderFieldLocked(name, locked, checkCount, suffix)
 {
 	/// <summary>
 	///     Set the lock state of the field in the BPF.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	var control = GetHeaderFieldControl(name + (suffix || ""));
 
@@ -1988,7 +1891,7 @@ function SetHeaderFieldRequired(name, required, checkCount, suffix)
 {
 	/// <summary>
 	///     Set the required state of the field in the BPF.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	var control = GetHeaderFieldControl(name + (suffix || ""));
 
@@ -2019,12 +1922,12 @@ function SetHeaderFieldRequired(name, required, checkCount, suffix)
 
 function GetHeaderFieldControl(name)
 {
-	return Xrm.Page.getControl('header_process_' + name);
+	return AnchoredExecutionContext.getFormContext().getControl('header_process_' + name);
 }
 
 function SetBpfVisible(isVisible)
 {
-	Xrm.Page.ui.process.setVisible(isVisible);
+	AnchoredExecutionContext.getFormContext().ui.process.setVisible(isVisible);
 }
 
 //#endregion
@@ -2033,7 +1936,7 @@ function SetBpfVisible(isVisible)
 
 function GetControl(name)
 {
-	return Xrm.Page.getControl(name);
+	return AnchoredExecutionContext.getFormContext().getControl(name);
 }
 
 function GetControlValue(name)
@@ -2044,7 +1947,7 @@ function GetControlValue(name)
 function SetSubgridLocked(gridName, isLocked)
 {
 	// updated to use 2016 function -- Sawalhy
-	Xrm.Page.getControl(gridName).addOnLoad(function()
+	AnchoredExecutionContext.getFormContext().getControl(gridName).addOnLoad(function()
 	{
 		$('#' + gridName + '_addImageButton').css('display', isLocked ? 'none' : '');
 		$('#' + gridName + '_openAssociatedGridViewImageButton').css('display', isLocked ? 'none' : '');
@@ -2072,7 +1975,7 @@ function SetSubgridLocked(gridName, isLocked)
 
 function RefreshSubGrid(gridName)
 {
-	Xrm.Page.getControl(gridName).refresh();
+	AnchoredExecutionContext.getFormContext().getControl(gridName).refresh();
 }
 
 //#endregion
@@ -2126,7 +2029,7 @@ function SetupAutoComplete(fieldName, result, resultEnforceValues, maxResults, i
 	///     action: {{function reference}}
 	///     }
 	///     }<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="fieldName" type="String" optional="false">Field name to add auto-complete to.</param>
 	/// <param name="result" type="Object" optional="false">The result object to use for auto-complete list.</param>
@@ -2261,7 +2164,7 @@ function SetupEntityNameAutoComplete(entityNameFieldName, maxResults, callback)
 {
 	/// <summary>
 	///     Adds entity names auto-complete to the field given.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 
 	var result = [];
@@ -2306,7 +2209,7 @@ function SetupFieldNameAutoComplete(entityName, fieldNameFieldName, maxResults, 
 	/// <summary>
 	///     Adds entity field names auto-complete to the field given.
 	/// If 'use cache' is true, then it will use previously loaded values.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	var entityMetadata = EntityMetadata[entityName];
 
@@ -2362,7 +2265,7 @@ function ClearAutoComplete(fieldName)
 {
 	/// <summary>
 	///     Removes auto-complete from the given field.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	if (AutoCompleteKeyPressMap[fieldName])
 	{
@@ -2390,7 +2293,7 @@ function Contains(array, keyOrEvaluator, value)
 {
 	/// <summary>
 	///     Checks whether the array contains the value based on a key or property or evaluation function.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="array" type="object[]" optional="false"></param>
 	/// <param name="keyOrEvaluator" type="string" optional="false">
@@ -2406,7 +2309,7 @@ function Remove(array, keyOrEvaluator, value, count)
 {
 	/// <summary>
 	///     Removes all elements that pass the evaluator given.<br />
-	///     Author: Ahmed el-Sawalhy, credit: http://stackoverflow.com/a/5767357/1919456
+	///     Author: Ahmed Elsawalhy, credit: http://stackoverflow.com/a/5767357/1919456
 	/// </summary>
 	/// <param name="array" type="object[]" optional="false"></param>
 	/// <param name="evaluator" type="function" optional="false">
@@ -2438,7 +2341,7 @@ function IsUnique(array, keyOrEvaluator, value)
 	/// <summary>
 	///     Checks whether the passed value for the given key or property or evaluation function is unique over all values in
 	///     the array of objects.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="array" type="object[]" optional="false">The array of objects to search in.</param>
 	/// <param name="keyOrEvaluator" type="string" optional="false">
@@ -2456,7 +2359,7 @@ function Search(array, keyOrEvaluator, value, count, isReturnElements)
 	/// <summary>
 	///     Searches for all the objects that have a matching value for the given key or property or evaluation function.<br />
 	///     Returns the indexes of the objects, or the objects that fit the criteria.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="array" type="object[]" optional="false">The array of objects to search in.</param>
 	/// <param name="keyOrEvaluator" type="string" optional="false">
@@ -2491,7 +2394,7 @@ function Count(array, keyOrEvaluator, value)
 {
 	/// <summary>
 	///     Count all objects that have a matching value for the given key or property or evaluation function.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="array" type="object[]" optional="false">The array of objects to search in.</param>
 	/// <param name="keyOrEvaluator" type="string" optional="false">
@@ -2508,7 +2411,7 @@ function Copy(obj, isDeep)
 {
 	/// <summary>
 	///     Copies the object properties into a new object, and all references within if needed.<br />
-	///     Author: Ahmed el-Sawalhy, credit: http://stackoverflow.com/a/23536726/1919456
+	///     Author: Ahmed Elsawalhy, credit: http://stackoverflow.com/a/23536726/1919456
 	/// </summary>
 	/// <param name="obj" type="object" optional="false">The object to copy.</param>
 	/// <param name="isDeep" type="bool" optional="true">If 'true', recursively copies objects within as well.</param>
@@ -2561,7 +2464,7 @@ function Sum(array)
 {
 	/// <summary>
 	/// Sums the values in the array and returns the result.
-	///     Author: Ahmed el-Sawalhy<br />
+	///     Author: Ahmed Elsawalhy<br />
 	///     credit: http://stackoverflow.com/a/1669222/1919456
 	/// </summary>
 	return array.reduce(function(a, b)
@@ -2574,7 +2477,7 @@ function Min(array)
 {
 	/// <summary>
 	/// Returns the minimum value in the array.
-	///     Author: Ahmed el-Sawalhy<br />
+	///     Author: Ahmed Elsawalhy<br />
 	///     credit: http://stackoverflow.com/a/1669222/1919456
 	/// </summary>
 	return Math.min.apply(null, array);
@@ -2584,7 +2487,7 @@ function Max(array)
 {
 	/// <summary>
 	/// Returns the maximum value in the array.
-	///     Author: Ahmed el-Sawalhy<br />
+	///     Author: Ahmed Elsawalhy<br />
 	///     credit: http://stackoverflow.com/a/1669222/1919456
 	/// </summary>
 	return Math.max.apply(null, array);
@@ -2594,7 +2497,7 @@ function Average(array)
 {
 	/// <summary>
 	/// Returns the average of the array.
-	///     Author: Ahmed el-Sawalhy<br />
+	///     Author: Ahmed Elsawalhy<br />
 	///     credit: http://www.jstips.co/en/array-average-and-median/
 	/// </summary>
 	var temp = array.slice();
@@ -2609,7 +2512,7 @@ function Median(array)
 {
 	/// <summary>
 	/// Returns the median of the array.
-	///     Author: Ahmed el-Sawalhy<br />
+	///     Author: Ahmed Elsawalhy<br />
 	///     credit: http://www.jstips.co/en/array-average-and-median/
 	/// </summary>
 	var temp = array.slice();
@@ -2624,7 +2527,7 @@ function AverageFields(inputFields)
 {
 	/// <summary>
 	/// Averages the values in the fields and returns the result. Skips 'null' values.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	return Average(GetFieldsValues(inputFields, true));
 }
@@ -2633,7 +2536,7 @@ function SumFields(inputFields)
 {
 	/// <summary>
 	/// Sums the values in the fields and returns the result. Skips 'null' values.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	return Sum(GetFieldsValues(inputFields, true));
 }
@@ -2642,7 +2545,7 @@ function MultiplyFields(inputFields)
 {
 	/// <summary>
 	/// Multiplies the values in the fields and returns the result. Skips 'null' values.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	return GetFieldsValues(inputFields, true).reduce(function (a, b)
 	{
@@ -2659,7 +2562,7 @@ function ExecuteOnNotDirty(callback)
 {
 	/// <summary>
 	///     Keeps checking the form until it is saved, and then execute the function given.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 
 	// keep checking
@@ -2684,7 +2587,7 @@ function RefreshOnNotDirty()
 {
 	/// <summary>
 	///     Keeps checking the form until it is saved, and then it reloads the form.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 
 	// keep checking
@@ -2698,7 +2601,7 @@ function RefreshOnNotDirty()
 			}
 			else
 			{
-				Xrm.Utility.openEntityForm(GetEntityName(), GetRecordId());
+				Xrm.Navigation.openForm(GetEntityName(), GetRecordId());
 			}
 		}, 100);
 }
@@ -2706,15 +2609,15 @@ function RefreshOnNotDirty()
 function GoToRecord(entityName, recordId)
 {
 	/// <summary>
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 
-	Xrm.Utility.openEntityForm(entityName, recordId);
+	Xrm.Navigation.openForm(entityName, recordId);
 }
 
 function GetOrgUrl()
 {
-	return Xrm.Page.context.getClientUrl();
+	return Xrm.Utility.getGlobalContext().getClientUrl();
 }
 
 var CrmVersion = {
@@ -2728,19 +2631,19 @@ function GetCrmVersion()
 {
 	/// <summary>
 	///     Returns the current CRM version in years. Use 'CrmVersion' for easy comparison.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	if (GetControl(GetFormFieldNames[0])['addOnKeyPress'])
 	{
 		return CrmVersion._2016;
 	}
 
-	if (Xrm.Page.context['isOutlookClient'])
+	if (Xrm.Utility.getGlobalContext()['isOutlookClient'])
 	{
 		return CrmVersion._2015;
 	}
 
-	if (Xrm.Page.ui['setFormNotification'])
+	if (AnchoredExecutionContext.getFormContext().ui['setFormNotification'])
 	{
 		return CrmVersion._2013;
 	}
@@ -2752,9 +2655,9 @@ function GetRecordId(isClean)
 {
 	/// <summary>
 	///     Returns the current record ID. Cleaning removes the braces around the ID if required.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
-	var id = Xrm.Page.data.entity.getId();
+	var id = AnchoredExecutionContext.getFormContext().data.entity.getId();
 	return isClean ? id.replace('{', '').replace('}', '') : id;
 }
 
@@ -2762,9 +2665,9 @@ function GetUserId(isClean)
 {
 	/// <summary>
 	///     Returns the current user's ID. Cleaning removes the braces around the ID if required.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
-	var id = Xrm.Page.context.getUserId();
+	var id = Xrm.Utility.getGlobalContext().getUserId();
 	return isClean ? id.replace('{', '').replace('}', '') : id;
 }
 
@@ -2777,14 +2680,14 @@ function GetUserLanguageCode()
 {
 	/// <summary>
 	///     Returns the language code of the current user's interface. Use 'Language' for easy comparison.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
-	return Xrm.Page.context.getUserLcid();
+	return Xrm.Utility.getGlobalContext().getUserLcid();
 }
 
 function UserHasRole(roleName)
 {
-	var url = Xrm.Page.context.getClientUrl();
+	var url = Xrm.Utility.getGlobalContext().getClientUrl();
 	var oDataEndpointUrl = url + "/XRMServices/2011/OrganizationData.svc/";
 	oDataEndpointUrl += "RoleSet?$filter=Name eq '" + roleName + "'";
 
@@ -2807,7 +2710,7 @@ function UserHasRole(roleName)
 
 				var id = role.RoleId;
 
-				var currentUserRoles = Xrm.Page.context.getUserRoles();
+				var currentUserRoles = Xrm.Utility.getGlobalContext().getUserRoles();
 
 				for (var i = 0; i < currentUserRoles.length; i++)
 				{
@@ -2828,9 +2731,9 @@ function UserHasRole(roleName)
 function UserHasRoleId(roleId)
 {
 	/// <summary>
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
-	var currentUserRoles = Xrm.Page.context.getUserRoles();
+	var currentUserRoles = Xrm.Utility.getGlobalContext().getUserRoles();
 
 	for (var i = 0; i < currentUserRoles.length; i++)
 	{
@@ -2848,13 +2751,13 @@ function UserHasRoleId(roleId)
 
 function CanUserEditRecord(ownerId, entitySetName, recordId, callback, errorCallback) {
 	/// <summary>
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	$.ajax({
 		type: "GET",
 		contentType: "application/json; charset=utf-8",
 		datatype: "json",
-		url: Xrm.Page.context.getClientUrl() + "/api/data/v8.2/systemusers(" + ownerId + ")/Microsoft.Dynamics.CRM.RetrievePrincipalAccess(Target=@tid)?"
+		url: Xrm.Utility.getGlobalContext().getClientUrl() + "/api/data/v8.2/systemusers(" + ownerId + ")/Microsoft.Dynamics.CRM.RetrievePrincipalAccess(Target=@tid)?"
 			+ "@tid={'@odata.id':'" + entitySetName + "(" + recordId + ")'}",
 		beforeSend: function (xmlHttpRequest) {
 			xmlHttpRequest.setRequestHeader("OData-MaxVersion", "4.0");
@@ -2884,7 +2787,7 @@ function LoadWebResources(resources, callback, scopeWindow)
 	/// <summary>
 	///     Takes an array of resource names and loads them into the current context using "LoadScript".<br />
 	///     The resources param accepts a string as well in case a single resource is needed instead.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="resources" type="String[] | string" optional="false">The resource[s] to load.</param>
 	/// <param name="callback" type="Function" optional="true">A function to call after resource[s] has been loaded.</param>
@@ -2918,20 +2821,20 @@ function LoadWebResources(resources, callback, scopeWindow)
 		}
 	};
 
-	LoadScript(Xrm.Page.context.getClientUrl() + '/WebResources/' + resources[0], localCallback, scopeWindow);
+	LoadScript(Xrm.Utility.getGlobalContext().getClientUrl() + '/WebResources/' + resources[0], localCallback, scopeWindow);
 }
 
 function LoadWebResourceCss(fileName, scopeWindow)
 {
 	// modified it to be generic -- Sawalhy
-	LoadCss(Xrm.Page.context.getClientUrl() + '/WebResources/' + fileName, scopeWindow);
+	LoadCss(Xrm.Utility.getGlobalContext().getClientUrl() + '/WebResources/' + fileName, scopeWindow);
 }
 
 function IsValueUnique(entitySetName, primaryKey, fieldName, value, callback, errorCallback)
 {
 	/// <summary>
 	///     Checks using WebAPI whether the field value is unique among the entity records.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="entitySetName" type="string" optional="false">The entity 'set' name as used by WebAPI.</param>
 	/// <param name="primaryKey" type="string" optional="false">The primary key logical name of the entity.</param>
@@ -2946,7 +2849,7 @@ function IsValuesUnique(entitySetName, primaryKey, keyValArray, callback, errorC
 {
 	/// <summary>
 	///     Checks using WebAPI whether the field values are unique among the entity records. It compares using 'AND'.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="entitySetName" type="string" optional="false">The entity 'set' name as used by WebAPI.</param>
 	/// <param name="primaryKey" type="string" optional="false">The primary key logical name of the entity.</param>
@@ -3034,12 +2937,12 @@ function RetrieveEntityById(entityWebApiName, id, fields, callback, errorCallbac
 	/// <summary>
 	///     Retrieves the entity with the given ID. The result is passed to the callback as an argument.
 	///     The result's fields can be accessed by their logical name directly (result.field).<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="entityWebApiName" type="string">The name of the entity in the WebAPI service (special plural).</param>
 	/// <param name="fields" type="string[]">An array of field names to retrieve. If 'null', all will be retrieved.</param>
 	/// <param name="errorCallback" type="function">Error message will be passed as parameter.</param>
-	var clientUrl = Xrm.Page.context.getClientUrl();
+	var clientUrl = Xrm.Utility.getGlobalContext().getClientUrl();
 	var oDataPath = clientUrl + "/api/data/v8.1";
 
 	$.ajax({
@@ -3080,13 +2983,13 @@ function RetrieveRelatedEntities(entityWebApiName, relationName, relatedFields, 
 	///     Retrieves the related records of the current entity. The result is passed to the callback as an argument.
 	///     The result's can be accessed through the array and then fields by their logical name directly ([result.field]).
 	///     <br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="entityWebApiName" type="string">The name of the entity in the WebAPI service (special plural).</param>
 	/// <param name="relationName" type="string">Schema name of the relationship.</param>
 	/// <param name="relatedFields" type="string[]">An array of field names to retrieve. If 'null', all will be retrieved.</param>
 	/// <param name="errorCallback" type="function">Error message will be passed as parameter.</param>
-	var clientUrl = Xrm.Page.context.getClientUrl();
+	var clientUrl = Xrm.Utility.getGlobalContext().getClientUrl();
 	var oDataPath = clientUrl + "/api/data/v8.1";
 
 	$.ajax({
@@ -3125,7 +3028,7 @@ function RetrieveRelatedEntities(entityWebApiName, relationName, relatedFields, 
 function ODataRequestJSONParsed(oDataRequestString)
 {
 	var retrieveEventListsReq = new XMLHttpRequest();
-	var serverUrl = Xrm.Page.context.getClientUrl();
+	var serverUrl = Xrm.Utility.getGlobalContext().getClientUrl();
 	var oDataPath = serverUrl + "/XRMServices/2011/OrganizationData.svc";
 
 	oDataPath += oDataRequestString;
@@ -3175,11 +3078,11 @@ function OpenReportByParamaters(reportName, reportParameters)
 
 	if (result.results.length > 0)
 	{
-		var serverUrl = Xrm.Page.context.getClientUrl();
+		var serverUrl = Xrm.Utility.getGlobalContext().getClientUrl();
 		var rdlName = result.results[0].Name + ".rdl";
 		var reportGuid = result.results[0].ReportId.replace('{', '').replace('}', '');
-		var entityGuid = Xrm.Page.data.entity.getId();//Here I am getting Entity GUID it from it's form
-		var entityType = Xrm.Page.context.getQueryStringParameters().etc;
+		var entityGuid = AnchoredExecutionContext.getFormContext().data.entity.getId();//Here I am getting Entity GUID it from it's form
+		var entityType = Xrm.Utility.getGlobalContext().getQueryStringParameters().etc;
 		var link = serverUrl + "/crmreports/viewer/viewer.aspx?action=run&context=records&helpID=" + rdlName + "&id={" + reportGuid + "}&records=" + entityGuid + "&recordstype=" + entityType + reportParameters;
 		var randomnumber = Math.floor((Math.random() * 10000) + 1);
 		window.open(link, "reportwindow" + randomnumber, "resizable=1,width=950,height=700");
@@ -3190,14 +3093,14 @@ function OpenReportByParamaters(reportName, reportParameters)
 
 function GetEntityName()
 {
-	return Xrm.Page.data.entity.getEntityName();
+	return AnchoredExecutionContext.getFormContext().data.entity.getEntityName();
 }
 
 function GetEntityWebApiName(logicalName, callback, errorCallback)
 {
 	/// <summary>
 	/// Retrieves the entity set name used in CRM WebAPI service. The callback takes the name returned as argument.<br />
-	/// Author: Ahmed el-Sawalhy
+	/// Author: Ahmed Elsawalhy
 	/// </summary>
 	RetrieveEntityMetadata(logicalName, 'LogicalCollectionName', null, null, null, function(metadata)
 	{
@@ -3242,7 +3145,7 @@ function RetrieveEntityMetadata(logicalName, properties, condition, attributePro
 		/// <summary>
 		///     Loads entity's metadata. Currently limited to properties and attributes only.<br />
 		///     To load all entities, pass null to 'logicalName'.<br />
-		///     Author: Ahmed el-Sawalhy
+		///     Author: Ahmed Elsawalhy
 		/// </summary>
 		/// <param name="logicalName" type="string" optional="true">
 		///     The name of the entity to retrieve. Pass 'null' to retrieve all entities.
@@ -3275,7 +3178,7 @@ function RetrieveEntityMetadata(logicalName, properties, condition, attributePro
 				type: "GET",
 				contentType: "application/json; charset=utf-8",
 				datatype: "json",
-				url: Xrm.Page.context.getClientUrl() + "/api/data/v8.1/EntityDefinitions?" +
+				url: Xrm.Utility.getGlobalContext().getClientUrl() + "/api/data/v8.1/EntityDefinitions?" +
 					(properties ? ("$select=" + properties) : '') +
 					(condition ? ((properties ? '&' : '') + "$filter=" + condition) : '') +
 					(attributeProperties
@@ -3319,7 +3222,7 @@ function RetrieveEntityFields(entityName, callback, errorCallback)
 {
 	/// <summary>
 	///     Returns an array of fields in the form of '[{text, value}]'.
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="logicalName" type="string" optional="true">
 	///     The name of the entity to retrieve fields for.
@@ -3418,7 +3321,7 @@ function RetrieveOptionSetValueLabel(entityName, fieldName, value, languageCode,
 {
 	/// <summary>
 	///     Retrieves the label of the option-set value corresponding to the language passed.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	if (!callback)
 	{
@@ -3433,7 +3336,7 @@ function RetrieveOptionSetValueLabel(entityName, fieldName, value, languageCode,
 					type: "GET",
 					contentType: "application/json; charset=utf-8",
 					datatype: "json",
-					url: Xrm.Page.context.getClientUrl() + "/api/data/v8.1/EntityDefinitions" +
+					url: Xrm.Utility.getGlobalContext().getClientUrl() + "/api/data/v8.1/EntityDefinitions" +
 						"(" + metadata[0].MetadataId + ")" +
 						"/Attributes" +
 						"(" + metadata[0].Attributes[0].MetadataId + ")" +
@@ -3504,7 +3407,7 @@ function RetrieveOptionSetValuesLabels(entityName, fieldName, callback, errorCal
 	/// <summary>
 	///     Retrieves the values and labels of the option-set corresponding to all languages in the system.<br />
 	///     The object returned is an array in the format: [{value: value, labels: [{code: code, label: label]}]<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	if (!callback)
 	{
@@ -3519,7 +3422,7 @@ function RetrieveOptionSetValuesLabels(entityName, fieldName, callback, errorCal
 					type: "GET",
 					contentType: "application/json; charset=utf-8",
 					datatype: "json",
-					url: Xrm.Page.context.getClientUrl() + "/api/data/v8.1/EntityDefinitions" +
+					url: Xrm.Utility.getGlobalContext().getClientUrl() + "/api/data/v8.1/EntityDefinitions" +
 						"(" + metadata[0].MetadataId + ")" +
 						"/Attributes" +
 						"(" + metadata[0].Attributes[0].MetadataId + ")" +
@@ -3594,7 +3497,7 @@ function RetrieveGlobalOptionSetValueLabel(optionSetName, value, languageCode, c
 {
 	/// <summary>
 	///     Retrieves the label of the option-set value corresponding to the language passed.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	if (!callback)
 	{
@@ -3742,7 +3645,7 @@ function LoadScript(url, callback, scopeWindow)
 {
 	/// <summary>
 	///     Takes a URL of a script file and loads it into the current context, and then calls the function passed.<br />
-	///     Author: Ahmed el-Sawalhy<br />
+	///     Author: Ahmed Elsawalhy<br />
 	///     credit: http://stackoverflow.com/a/950146/1919456
 	/// </summary>
 	/// <param name="url" type="String" optional="false">The URL to the script file.</param>
@@ -3773,7 +3676,7 @@ function WaitForObjects(objects, callback)
 	/// <summary>
 	///     Takes an array of object names to wait for until they are available in memory, and then calls a function.<br />
 	///     The objects param accepts a string as well in case a single object is needed instead.<br />
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="resources" type="String[] | string" optional="false">The object[s] to wait for.</param>
 	/// <param name="callback" type="Function" optional="false">A function to call after the object[s] is available.</param>
@@ -3889,7 +3792,7 @@ function GetCaptureMatches(string, regex, index)
 {
 	/// <summary>
 	///     credit: http://stackoverflow.com/a/14210948/1919456 <br />
-	/// Author: Ahmed el-Sawalhy
+	/// Author: Ahmed Elsawalhy
 	/// </summary>
 	index || (index = 1); // default to the first capturing group
 
@@ -3908,7 +3811,7 @@ function Repeat(str, count)
 {
     /// <summary>
 	/// credit: http://www.w3resource.com/javascript-exercises/javascript-string-exercise-21.php <br />
-	/// Author: Ahmed el-Sawalhy
+	/// Author: Ahmed Elsawalhy
     /// </summary>
 	if ((count < 0) || (count === Infinity) || (count == null))
 	{
@@ -4020,7 +3923,7 @@ function HtmlEncode(value)
 {
 	/// <summary>
 	///     credit: http://stackoverflow.com/a/7124052/1919456 <br />
-	/// Author: Ahmed el-Sawalhy
+	/// Author: Ahmed Elsawalhy
 	/// </summary>
 	return value
 		.replace(/&/g, '&amp;')
@@ -4039,7 +3942,7 @@ function GetFunctionName()
 {
     /// <summary>
 	/// credit: http://stackoverflow.com/a/1013370/1919456 <br />
-	/// Author: Ahmed el-Sawalhy
+	/// Author: Ahmed Elsawalhy
     /// </summary>
 	var re = /function (.*?)\(/;
 	var s = GetFunctionName.caller.toString();
@@ -4194,7 +4097,7 @@ Notify.add = function(message, level, uniqueId, buttons, durationSeconds)
 		if ($header.length > 0)
 		{
 			// Load the style sheet
-			var baseUrl = Xrm.Page.context.getClientUrl();
+			var baseUrl = Xrm.Utility.getGlobalContext().getClientUrl();
 			$("<link/>", { rel: "stylesheet", href: baseUrl + "/WebResources/mag_/css/notify.css" }).appendTo('head');
 
 			Notify._initialised = true;

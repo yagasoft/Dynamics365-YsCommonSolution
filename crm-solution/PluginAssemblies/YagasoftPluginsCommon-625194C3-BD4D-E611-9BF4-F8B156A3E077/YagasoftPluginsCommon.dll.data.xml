@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<PluginAssembly FullName="Yagasoft.Plugins.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=96f110ab5b32e2f5" CustomizationLevel="1">
+<PluginAssembly FullName="Yagasoft.Plugins.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=96f110ab5b32e2f5" PluginAssemblyId="625194c3-bd4d-e611-9bf4-f8b156a3e077" CustomizationLevel="1">
   <IsolationMode>2</IsolationMode>
   <SourceType>0</SourceType>
   <IntroducedVersion>1.0</IntroducedVersion>
   <FileName>/PluginAssemblies/YagasoftPluginsCommon-625194C3-BD4D-E611-9BF4-F8B156A3E077/YagasoftPluginsCommon.dll</FileName>
   <PluginTypes>
-    <PluginType AssemblyQualifiedName="Yagasoft.Plugins.Common.RecurrenceExceptionHandler, Yagasoft.Plugins.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=96f110ab5b32e2f5" Name="Yagasoft.Plugins.Common.RecurrenceExceptionHandler">
+    <PluginType AssemblyQualifiedName="Yagasoft.Plugins.Common.RecurrenceExceptionHandler, Yagasoft.Plugins.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=96f110ab5b32e2f5" PluginTypeId="add2d131-048c-eb11-a0d4-00155d016500" Name="Yagasoft.Plugins.Common.RecurrenceExceptionHandler">
       <FriendlyName>RecurrenceExceptionHandler</FriendlyName>
     </PluginType>
-    <PluginType AssemblyQualifiedName="Yagasoft.Plugins.Common.RecurrenceHandler, Yagasoft.Plugins.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=96f110ab5b32e2f5" Name="Yagasoft.Plugins.Common.RecurrenceHandler">
+    <PluginType AssemblyQualifiedName="Yagasoft.Plugins.Common.RecurrenceHandler, Yagasoft.Plugins.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=96f110ab5b32e2f5" PluginTypeId="aed2d131-048c-eb11-a0d4-00155d016500" Name="Yagasoft.Plugins.Common.RecurrenceHandler">
       <FriendlyName>RecurrenceHandler</FriendlyName>
     </PluginType>
-    <PluginType AssemblyQualifiedName="Yagasoft.Plugins.Common.ValidateSingleRecord, Yagasoft.Plugins.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=96f110ab5b32e2f5" Name="Yagasoft.Plugins.Common.ValidateSingleRecord">
+    <PluginType AssemblyQualifiedName="Yagasoft.Plugins.Common.ValidateSingleRecord, Yagasoft.Plugins.Common, Version=1.0.0.0, Culture=neutral, PublicKeyToken=96f110ab5b32e2f5" PluginTypeId="afd2d131-048c-eb11-a0d4-00155d016500" Name="Yagasoft.Plugins.Common.ValidateSingleRecord">
       <FriendlyName>ValidateSingleRecord</FriendlyName>
     </PluginType>
   </PluginTypes>

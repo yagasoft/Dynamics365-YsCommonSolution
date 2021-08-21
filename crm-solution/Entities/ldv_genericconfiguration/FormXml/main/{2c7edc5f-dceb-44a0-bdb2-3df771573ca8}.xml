@@ -44,6 +44,14 @@
                       </cell>
                     </row>
                     <row>
+                      <cell id="{43628dcc-1b16-929e-9063-6831a52bb9dd}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Row URL Template" languagecode="1033" />
+                        </labels>
+                        <control id="ys_rowurltemplate" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ys_rowurltemplate" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
                       <cell id="{ce6de150-58d6-74eb-e1b5-da22cba160b0}" showlabel="true" locklevel="0">
                         <labels>
                           <label description="Configuration Cache Duration" languagecode="1033" />

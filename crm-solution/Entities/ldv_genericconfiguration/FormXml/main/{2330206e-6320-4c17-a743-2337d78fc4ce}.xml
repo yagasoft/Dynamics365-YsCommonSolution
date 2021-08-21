@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms>
+  <systemform>
+    <formid>{2330206e-6320-4c17-a743-2337d78fc4ce}</formid>
+    <IntroducedVersion>3.2.1.1</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form shownavigationbar="true" showImage="false" maxWidth="1900">
+      <tabs>
+        <tab verticallayout="true" id="{3caa6f22-bafd-4dc4-8b6b-5ef10f2b76a7}" IsUserDefined="1" name="{3caa6f22-bafd-4dc4-8b6b-5ef10f2b76a7}" locklevel="0" expanded="true" showlabel="false" labelid="{b6605721-16df-4aad-85fb-a4282afca3be}">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section name="{3caa6f22-bafd-4dc4-8b6b-5ef10f2b76a7}_section_2" showlabel="false" showbar="false" locklevel="0" id="{b5776d5d-da59-00cc-9676-9a82222756a6}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="150" labelid="{874f070f-00bc-4812-b93f-39cdd5328918}" celllabelalignment="Left" celllabelposition="Left">
+                  <labels>
+                    <label description="Section" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{e594d52e-a78d-9677-1c1c-3da927c849c3}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Jobs Platform" languagecode="1033" />
+                        </labels>
+                        <control id="ys_jobsplatformcode" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="ys_jobsplatformcode" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b684ac81-5543-0144-09d4-028539189e93}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Job Check Interval" languagecode="1033" />
+                        </labels>
+                        <control id="ys_jobcheckinterval" classid="{AA987274-CE4E-4271-A803-66164311A958}" datafieldname="ys_jobcheckinterval" disabled="false" uniqueid="{a7676eb3-3be5-9c04-844d-5745b7a68c5d}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b3012417-3aaa-b5de-b67d-3ad2a277952b}" showlabel="true" locklevel="0" labelid="{58a30ffc-6c20-42b4-84e3-cfbfa3f3a1ea}">
+                        <labels>
+                          <label description="Max Jobs Per Run" languagecode="1033" />
+                        </labels>
+                        <control id="ys_maxjobsperrun" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="ys_maxjobsperrun" disabled="false" uniqueid="{d6eec3ad-360e-ac8b-1442-20325aeb82e3}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ab4b7a37-534e-c543-c99e-1d0539eb0275}" showlabel="true" locklevel="0" labelid="{788e2985-0a6f-4e2c-82d4-577608e629d1}">
+                        <labels>
+                          <label description="Job Timeout" languagecode="1033" />
+                        </labels>
+                        <control id="ys_jobtimeout" classid="{AA987274-CE4E-4271-A803-66164311A958}" datafieldname="ys_jobtimeout" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section name="{3caa6f22-bafd-4dc4-8b6b-5ef10f2b76a7}_section_3" showlabel="true" showbar="true" locklevel="0" id="{111ba81e-336a-5c59-29b0-e66cd3d7a13e}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="150" celllabelalignment="Left" celllabelposition="Left">
+                  <labels>
+                    <label description="Parallelism" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{ae9a4e0e-2db2-265d-48cb-061594cc8317}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Target Execution Mode" languagecode="1033" />
+                        </labels>
+                        <control id="ys_targetexecutionmodecode" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="ys_targetexecutionmodecode" disabled="false" uniqueid="{4614d1eb-65b4-c996-dd61-721a5db94262}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{22a7134c-34e9-b4ca-31c2-6be037a9ec1e}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Max Degree of Parallelism" languagecode="1033" />
+                        </labels>
+                        <control id="ys_maxdegreeofparallelism" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="ys_maxdegreeofparallelism" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{19102333-ae4b-4170-a5ce-cc8b109e09ae}" name="{19102333-ae4b-4170-a5ce-cc8b109e09ae}" columns="1" locklevel="0" labelwidth="175" celllabelalignment="Left" celllabelposition="Left" visible="false" labelid="{00665d87-91e0-4bbb-9a16-6da8c075ce21}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{fe91229c-94f3-4a4e-a17a-1ee95a7113f2}" showlabel="true" locklevel="0" labelid="{8ca6b67c-4933-4dbc-bea4-f498cf0ef534}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="ldv_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ldv_name" uniqueid="{dd505c56-789d-e375-0dde-39bbd9348bac}" disabled="true" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{128024ac-defd-4548-9f31-81e4c9ffa087}" labelid="{6e0527b6-a95f-49d5-ad95-553bd6720a98}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{64b1b4bd-e053-ec09-21c1-b9594cbc0338}" showlabel="true" locklevel="0" labelid="{a019ec31-a824-4c34-8003-5d1a9380c2d1}">
+                        <labels>
+                          <label description="Organisation Base URL" languagecode="1033" />
+                        </labels>
+                        <control id="ldv_organisationbaseurl" classid="{71716B6C-711E-476c-8AB8-5D11542BFB47}" datafieldname="ldv_organisationbaseurl" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{ce6de150-58d6-74eb-e1b5-da22cba160b0}" showlabel="true" locklevel="0" labelid="{41b887a0-2596-4cfa-ac68-c5b10d02af01}">
+                        <labels>
+                          <label description="Configuration Cache Duration" languagecode="1033" />
+                        </labels>
+                        <control id="ldv_configurationcacheduration" classid="{AA987274-CE4E-4271-A803-66164311A958}" datafieldname="ldv_configurationcacheduration" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{c08bec11-0190-6d90-18e3-64d6d7a8e1d6}" showlabel="true" locklevel="0" labelid="{a2517dd3-4722-4252-b868-e0b2afd0c541}">
+                        <labels>
+                          <label description="Metadata Cache Duration" languagecode="1033" />
+                        </labels>
+                        <control id="ldv_metadatacacheduration" classid="{AA987274-CE4E-4271-A803-66164311A958}" datafieldname="ldv_metadatacacheduration" disabled="false" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <Navigation>
+        <NavBar></NavBar>
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1033" Text="Common" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1033" Text="Sales" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1033" Text="Service" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1033" Text="Marketing" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1033" Text="Process Sessions" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+      <formLibraries>
+        <Library name="ldv_CommonGenericJs" libraryUniqueId="{20b006de-7a52-3dac-e60e-aa592170961b}" />
+        <Library name="ldv_CommonGenericSchemaJs" libraryUniqueId="{e4b70a37-45c8-cde7-68e6-4b0672ae1930}" />
+        <Library name="ldv_/Generic/js/GenericConfigForm" libraryUniqueId="{58be54ee-62d1-d030-7481-da02be60b321}" />
+      </formLibraries>
+      <events>
+        <event name="onload" application="false" active="false">
+          <Handlers>
+            <Handler handlerUniqueId="{6b82a902-6cdd-a91d-d0c1-c0de791bcd1a}" functionName="Ldv.GenericConfigForm_OnLoad" libraryName="ldv_/Generic/js/GenericConfigForm" enabled="true" passExecutionContext="false" parameters="" />
+          </Handlers>
+        </event>
+      </events>
+      <controlDescriptions />
+      <DisplayConditions FallbackForm="true" Order="4">
+        <Role Id="{627090ff-40a3-4053-8790-584edc5be201}" />
+        <Role Id="{119f245c-3cc8-4b62-b31c-d1a046ced15d}" />
+      </DisplayConditions>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Custom Jobs" languagecode="1033" />
+    </LocalizedNames>
+  </systemform>
+</forms>

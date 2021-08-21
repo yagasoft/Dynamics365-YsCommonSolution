@@ -17,23 +17,10 @@
   <IsTransacted>1</IsTransacted>
   <IntroducedVersion>1.4.5.2</IntroducedVersion>
   <IsCustomizable>1</IsCustomizable>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ProcessTriggerScope>2</ProcessTriggerScope>
   <PrimaryEntity>ldv_genericconfiguration</PrimaryEntity>
-  <ProcessTriggers>
-    <ProcessTrigger processtriggerid="{38b526be-1369-e611-80bd-00155d890101}">
-      <controltype>1</controltype>
-      <scope>2</scope>
-      <controlname>modifiedon</controlname>
-      <event>change</event>
-      <pipelinestage>0</pipelinestage>
-      <iscustomizable>1</iscustomizable>
-      <primaryentitytypecode>ldv_genericconfiguration</primaryentitytypecode>
-    </ProcessTrigger>
-    <ProcessTrigger processtriggerid="{39b526be-1369-e611-80bd-00155d890101}">
-      <scope>2</scope>
-      <event>load</event>
-      <pipelinestage>0</pipelinestage>
-      <iscustomizable>1</iscustomizable>
-      <primaryentitytypecode>ldv_genericconfiguration</primaryentitytypecode>
-    </ProcessTrigger>
-  </ProcessTriggers>
+  <LocalizedNames>
+    <LocalizedName languagecode="1033" description="Auto Name" />
+  </LocalizedNames>
 </Workflow>

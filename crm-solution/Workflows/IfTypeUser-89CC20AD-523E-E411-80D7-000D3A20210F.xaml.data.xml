@@ -17,25 +17,14 @@
   <IsTransacted>1</IsTransacted>
   <IntroducedVersion>1.0.0.0</IntroducedVersion>
   <IsCustomizable>1</IsCustomizable>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <ProcessTriggerFormId>{7f0702ef-bd89-47f5-8d93-c01e397e0cea}</ProcessTriggerFormId>
+  <ProcessTriggerScope>1</ProcessTriggerScope>
   <PrimaryEntity>ldv_roleconfiguration</PrimaryEntity>
-  <ProcessTriggers>
-    <ProcessTrigger processtriggerid="{65384bc7-df69-e611-80bb-00155d890104}">
-      <controltype>1</controltype>
-      <formid>{7f0702ef-bd89-47f5-8d93-c01e397e0cea}</formid>
-      <scope>1</scope>
-      <controlname>ldv_type</controlname>
-      <event>change</event>
-      <pipelinestage>0</pipelinestage>
-      <iscustomizable>1</iscustomizable>
-      <primaryentitytypecode>ldv_roleconfiguration</primaryentitytypecode>
-    </ProcessTrigger>
-    <ProcessTrigger processtriggerid="{66384bc7-df69-e611-80bb-00155d890104}">
-      <formid>{7f0702ef-bd89-47f5-8d93-c01e397e0cea}</formid>
-      <scope>1</scope>
-      <event>load</event>
-      <pipelinestage>0</pipelinestage>
-      <iscustomizable>1</iscustomizable>
-      <primaryentitytypecode>ldv_roleconfiguration</primaryentitytypecode>
-    </ProcessTrigger>
-  </ProcessTriggers>
+  <LocalizedNames>
+    <LocalizedName languagecode="1033" description="If Type = User" />
+  </LocalizedNames>
+  <Descriptions>
+    <Description languagecode="1033" description="Click to add description" />
+  </Descriptions>
 </Workflow>

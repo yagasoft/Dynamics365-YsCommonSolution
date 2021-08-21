@@ -1,4 +1,4 @@
-﻿<!-- Author: Ahmed el-Sawalhy -->
+﻿<!-- Author: Ahmed Elsawalhy -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -321,7 +321,7 @@
 			'</div>';
 
 		// credit: https://mahadeomatre.blogspot.com.eg/2015/02/convert-option-set-to-multi-select.html
-		// rework: Ahmed el-Sawalhy
+		// rework: Ahmed Elsawalhy
 		for (var i = 0; i < options.length; i++)
 		{
 			var rText = options[i].text;

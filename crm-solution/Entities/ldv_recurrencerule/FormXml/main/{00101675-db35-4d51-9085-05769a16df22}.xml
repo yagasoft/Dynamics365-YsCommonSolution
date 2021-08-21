@@ -185,6 +185,13 @@
               </sections>
             </column>
           </columns>
+          <events>
+            <event name="tabstatechange" application="false" active="false">
+              <Handlers>
+                <Handler functionName="WeeklyTab_OnStateChange" libraryName="ldv_RecurrenceRuleJs" handlerUniqueId="{bba86475-59eb-aedb-638e-e5c8e43deb08}" enabled="true" parameters="" passExecutionContext="false" />
+              </Handlers>
+            </event>
+          </events>
         </tab>
         <tab name="MonthlyPatternTab" id="{b62367be-6bc2-ea17-39c9-e618624adbed}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true">
           <labels>
@@ -203,7 +210,7 @@
                         <labels>
                           <label description="Monthly Pattern" languagecode="1033" />
                         </labels>
-                        <control id="ldv_monthlypattern" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="ldv_monthlypattern" disabled="false" />
+                        <control id="ldv_monthlypattern" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="ldv_monthlypattern" disabled="false" uniqueid="{66e01216-c896-84dc-e966-3ab14812ea9d}" />
                       </cell>
                     </row>
                     <row>
@@ -268,6 +275,13 @@
               </sections>
             </column>
           </columns>
+          <events>
+            <event name="tabstatechange" application="false" active="false">
+              <Handlers>
+                <Handler functionName="MonthlyTab_OnStateChange" libraryName="ldv_RecurrenceRuleJs" handlerUniqueId="{0602c563-97ce-1356-766c-56dbb7e4c02d}" enabled="true" parameters="" passExecutionContext="false" />
+              </Handlers>
+            </event>
+          </events>
         </tab>
         <tab name="tab_8" id="{b9cec30c-6a15-3ab8-adee-2b5aced4ab1e}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="true">
           <labels>
@@ -298,7 +312,7 @@
                             <ViewIds>{5DF92359-023D-485B-B6CB-4DE92588DC11}</ViewIds>
                             <EnableJumpBar>false</EnableJumpBar>
                             <ChartGridMode>Grid</ChartGridMode>
-                            <VisualizationId></VisualizationId>
+                            <VisualizationId />
                             <IsUserChart>false</IsUserChart>
                             <EnableChartPicker>false</EnableChartPicker>
                             <RecordsPerPage>4</RecordsPerPage>
@@ -307,9 +321,9 @@
                         </control>
                       </cell>
                     </row>
-                    <row></row>
-                    <row></row>
-                    <row height="auto"></row>
+                    <row />
+                    <row />
+                    <row height="auto" />
                   </rows>
                 </section>
               </sections>
@@ -345,7 +359,7 @@
                             <ViewIds>{B4B5836B-F6A0-486E-9E23-211F97B8F62E}</ViewIds>
                             <EnableJumpBar>false</EnableJumpBar>
                             <ChartGridMode>Grid</ChartGridMode>
-                            <VisualizationId></VisualizationId>
+                            <VisualizationId />
                             <IsUserChart>false</IsUserChart>
                             <EnableChartPicker>false</EnableChartPicker>
                             <RecordsPerPage>4</RecordsPerPage>
@@ -354,9 +368,9 @@
                         </control>
                       </cell>
                     </row>
-                    <row></row>
-                    <row></row>
-                    <row height="auto"></row>
+                    <row />
+                    <row />
+                    <row height="auto" />
                   </rows>
                 </section>
               </sections>
@@ -452,7 +466,7 @@
       <events>
         <event name="onload" application="false" active="false">
           <Handlers>
-            <Handler handlerUniqueId="{3edad58e-ec91-863a-407e-84d3895e10c5}" functionName="Recurrence_OnLoad" libraryName="ldv_RecurrenceRuleJs" enabled="true" passExecutionContext="false" parameters="" />
+            <Handler handlerUniqueId="{3edad58e-ec91-863a-407e-84d3895e10c5}" functionName="Recurrence_OnLoad" libraryName="ldv_RecurrenceRuleJs" enabled="true" passExecutionContext="true" parameters="" />
           </Handlers>
         </event>
         <event name="onchange" application="false" active="false" attribute="ldv_recurrencepattern">
@@ -473,14 +487,16 @@
         <event name="onchange" application="false" active="false" attribute="ldv_monthlypattern">
           <Handlers>
             <Handler functionName="MonthlyPattern_OnChange" libraryName="ldv_RecurrenceRuleJs" handlerUniqueId="{bc0c6a63-d37e-bdd5-b88c-a84e51a3ec75}" enabled="true" parameters="" passExecutionContext="false" />
+            <Handler functionName="MonthlyTab_OnStateChange" libraryName="ldv_RecurrenceRuleJs" handlerUniqueId="{b692a4d3-4ed6-12e8-6277-eb1695d63049}" enabled="true" parameters="" passExecutionContext="false" />
           </Handlers>
         </event>
       </events>
+      <controlDescriptions />
     </form>
     <IsCustomizable>1</IsCustomizable>
     <CanBeDeleted>1</CanBeDeleted>
     <LocalizedNames>
-      <LocalizedName description="Information" languagecode="1033" />
+      <LocalizedName description="Main Form" languagecode="1033" />
     </LocalizedNames>
     <Descriptions>
       <Description description="A form for this entity." languagecode="1033" />

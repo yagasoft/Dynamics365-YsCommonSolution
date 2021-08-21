@@ -204,7 +204,7 @@
                             <ViewIds>{2546F604-2749-4F49-B51B-6F4633960F5F}</ViewIds>
                             <EnableJumpBar>false</EnableJumpBar>
                             <ChartGridMode>Grid</ChartGridMode>
-                            <VisualizationId></VisualizationId>
+                            <VisualizationId />
                             <IsUserChart>false</IsUserChart>
                             <EnableChartPicker>false</EnableChartPicker>
                             <RecordsPerPage>4</RecordsPerPage>
@@ -213,9 +213,9 @@
                         </control>
                       </cell>
                     </row>
-                    <row></row>
-                    <row></row>
-                    <row height="auto"></row>
+                    <row />
+                    <row />
+                    <row height="auto" />
                   </rows>
                 </section>
               </sections>
@@ -251,7 +251,7 @@
                             <ViewIds>{B4B5836B-F6A0-486E-9E23-211F97B8F62E}</ViewIds>
                             <EnableJumpBar>false</EnableJumpBar>
                             <ChartGridMode>Grid</ChartGridMode>
-                            <VisualizationId></VisualizationId>
+                            <VisualizationId />
                             <IsUserChart>false</IsUserChart>
                             <EnableChartPicker>false</EnableChartPicker>
                             <RecordsPerPage>4</RecordsPerPage>
@@ -260,9 +260,9 @@
                         </control>
                       </cell>
                     </row>
-                    <row></row>
-                    <row></row>
-                    <row height="auto"></row>
+                    <row />
+                    <row />
+                    <row height="auto" />
                   </rows>
                 </section>
               </sections>
@@ -350,7 +350,7 @@
       <events>
         <event name="onload" application="false" active="false">
           <Handlers>
-            <Handler functionName="Recurrence_OnLoad" libraryName="ldv_RecurrenceRuleExceptionJs" handlerUniqueId="{6bab97a2-9295-7d99-43ee-ba827d625550}" enabled="true" parameters="" passExecutionContext="false" />
+            <Handler functionName="Recurrence_OnLoad" libraryName="ldv_RecurrenceRuleExceptionJs" handlerUniqueId="{6bab97a2-9295-7d99-43ee-ba827d625550}" enabled="true" parameters="" passExecutionContext="true" />
           </Handlers>
         </event>
         <event name="onchange" application="false" active="false" attribute="ldv_startdate">
@@ -369,7 +369,7 @@
     <IsCustomizable>1</IsCustomizable>
     <CanBeDeleted>1</CanBeDeleted>
     <LocalizedNames>
-      <LocalizedName description="Information" languagecode="1033" />
+      <LocalizedName description="Main Form" languagecode="1033" />
     </LocalizedNames>
     <Descriptions>
       <Description description="A form for this entity." languagecode="1033" />

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource>
+  <WebResourceId>{21da36d5-9402-ec11-9ad5-000d3a4c87c6}</WebResourceId>
+  <Name>ys_/Common/imgs/Dictionary32Png</Name>
+  <DisplayName>Common Dictionary 32 PNG</DisplayName>
+  <WebResourceType>5</WebResourceType>
+  <IntroducedVersion>2.2.2.2</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/ys_CommonimgsDictionary32Png21DA36D5-9402-EC11-9AD5-000D3A4C87C6</FileName>
+</WebResource>

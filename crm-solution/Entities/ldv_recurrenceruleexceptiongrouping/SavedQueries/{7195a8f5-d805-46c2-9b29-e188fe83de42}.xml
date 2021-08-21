@@ -6,10 +6,9 @@
     <isquickfindquery>0</isquickfindquery>
     <isprivate>0</isprivate>
     <isdefault>1</isdefault>
-    <returnedtypecode>10029</returnedtypecode>
     <savedqueryid>{7195a8f5-d805-46c2-9b29-e188fe83de42}</savedqueryid>
     <layoutxml>
-      <grid name="" object="10029" jump="ldv_name" select="1" icon="1" preview="1">
+      <grid name="" jump="ldv_name" select="1" icon="1" preview="1">
         <row name="ldv_recurrenceruleexceptiongrouping" id="ldv_recurrenceruleexceptiongroupingid">
           <cell name="ldv_name" width="300" />
           <cell name="createdon" width="125" />

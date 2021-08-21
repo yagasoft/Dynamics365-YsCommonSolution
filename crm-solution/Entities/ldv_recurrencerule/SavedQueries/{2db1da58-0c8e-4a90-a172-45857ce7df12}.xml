@@ -6,10 +6,9 @@
     <isquickfindquery>0</isquickfindquery>
     <isprivate>0</isprivate>
     <isdefault>1</isdefault>
-    <returnedtypecode>10027</returnedtypecode>
     <savedqueryid>{2db1da58-0c8e-4a90-a172-45857ce7df12}</savedqueryid>
     <layoutxml>
-      <grid name="resultset" object="10027" jump="ldv_name" select="1" icon="1" preview="1">
+      <grid name="resultset" jump="ldv_name" select="1" icon="1" preview="1">
         <row name="result" id="ldv_recurrenceruleid">
           <cell name="ldv_name" width="300" />
           <cell name="createdon" width="125" />
