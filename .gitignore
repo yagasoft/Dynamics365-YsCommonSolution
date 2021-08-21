@@ -441,7 +441,7 @@ Thumbs.db
 # Secrets
 nuget-access-key.txt
 *.snk
-*.dat
+#*.dat
 
 # Tests
 /LinkDev.Tests.EnhancedOrgService
@@ -454,3 +454,8 @@ nuget-access-key.txt
 
 # Logs
 log.csv
+
+# tools
+.ys
+PluginRegExt-Connection.dat
+CrmSchema-Connection.dat
