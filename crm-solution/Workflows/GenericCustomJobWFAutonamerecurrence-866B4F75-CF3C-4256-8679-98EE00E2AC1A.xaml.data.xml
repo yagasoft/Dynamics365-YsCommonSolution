@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Workflow WorkflowId="{866b4f75-cf3c-4256-8679-98ee00e2ac1a}" Name="[Generic] [Custom Job] [WF] Auto name recurrence">
+  <XamlFileName>/Workflows/GenericCustomJobWFAutonamerecurrence-866B4F75-CF3C-4256-8679-98EE00E2AC1A.xaml</XamlFileName>
+  <Type>1</Type>
+  <Subprocess>0</Subprocess>
+  <Category>0</Category>
+  <Mode>1</Mode>
+  <Scope>1</Scope>
+  <OnDemand>0</OnDemand>
+  <TriggerOnCreate>1</TriggerOnCreate>
+  <TriggerOnDelete>0</TriggerOnDelete>
+  <AsyncAutodelete>0</AsyncAutodelete>
+  <SyncWorkflowLogOnFailure>1</SyncWorkflowLogOnFailure>
+  <StateCode>0</StateCode>
+  <StatusCode>1</StatusCode>
+  <CreateStage>40</CreateStage>
+  <RunAs>1</RunAs>
+  <IsTransacted>1</IsTransacted>
+  <IntroducedVersion>2.4.1.2</IntroducedVersion>
+  <IsCustomizable>1</IsCustomizable>
+  <IsCustomProcessingStepAllowedForOtherPublishers>1</IsCustomProcessingStepAllowedForOtherPublishers>
+  <PrimaryEntity>ys_customjobrecurrence</PrimaryEntity>
+  <LocalizedNames>
+    <LocalizedName languagecode="1033" description="[Generic] [Custom Job] [WF] Auto name recurrence" />
+  </LocalizedNames>
+</Workflow>

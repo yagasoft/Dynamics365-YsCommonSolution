@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource>
+  <WebResourceId>{bba999f3-6d11-ec11-9ada-000d3a4c87c6}</WebResourceId>
+  <Name>ys_/RichEditor/v5/RichEditor.html</Name>
+  <DisplayName>Rich Editor v5 HTML</DisplayName>
+  <WebResourceType>1</WebResourceType>
+  <IntroducedVersion>2.3.1.2</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/ys_RichEditorv5RichEditorhtmlBBA999F3-6D11-EC11-9ADA-000D3A4C87C6</FileName>
+</WebResource>

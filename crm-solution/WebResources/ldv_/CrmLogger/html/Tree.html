@@ -1,4 +1,4 @@
-<!-- Author: Ahmed el-Sawalhy -->
+<!-- Author: Ahmed Elsawalhy -->
 <html>
 <head>
 	<script src="../../../../WebResources/ldv_/Generic/js/jQuery.min.js"></script>
@@ -99,7 +99,7 @@
 		function getElementDimensions(jqElement, maxWidth)
 		{
 			/// <summary>
-			///     Author: Ahmed el-Sawalhy
+			///     Author: Ahmed Elsawalhy
 			/// </summary>
 			var htmlOrg = jqElement.html();
 			var htmlCalc = $('<span style="position:absolute;' +
@@ -125,7 +125,7 @@
 		function showHoverFrame(message, x, y, maxWidth, suffix, oldFrame, isRecalcDimensions)
 		{
 			/// <summary>
-			///     Author: Ahmed el-Sawalhy
+			///     Author: Ahmed Elsawalhy
 			/// </summary>
 			try
 			{
@@ -197,8 +197,8 @@
 		}
 		
 		var typeCode = getObjectTypeCode('ldv_logentry');
-		var baseUrl = parent.Xrm.Page.context.getClientUrl();
-		var id = parent.Xrm.Page.data.entity.getId().replace('{', '').replace('}', '');
+        var baseUrl = parent.Xrm.Utility.getGlobalContext().getClientUrl();
+        var id = parent.AnchoredExecutionContext.getFormContext().data.entity.getId().replace('{', '').replace('}', '');
 
 		function loadNode(node, cb)
 		{

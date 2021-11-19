@@ -79,11 +79,11 @@
                       </cell>
                     </row>
                     <row>
-                      <cell id="{111593a1-0866-606d-20c2-c97b6a02da60}" showlabel="true" locklevel="0" visible="false">
+                      <cell id="{66d27b83-4454-9307-d6c5-0abe049859d9}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="Serialised Log Entries" languagecode="1033" />
+                          <label description="Business Unit ID" languagecode="1033" />
                         </labels>
-                        <control id="ldv_serialisedlogentries" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="ldv_serialisedlogentries" disabled="true" uniqueid="{b0c3a8e2-9815-7d78-125e-dc8246ce6819}" />
+                        <control id="ys_businessunitid" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ys_businessunitid" disabled="true" uniqueid="{762dbe2c-039b-acd4-d08e-9e994ba27625}" />
                       </cell>
                       <cell id="{697c73e9-5133-6100-a2c7-52d35b49b431}" showlabel="true" locklevel="0" visible="false">
                         <labels>
@@ -93,10 +93,11 @@
                       </cell>
                     </row>
                     <row>
-                      <cell id="{2798117e-43d1-82e7-5a80-d1d55c5dbe2a}" showlabel="false">
+                      <cell id="{111593a1-0866-606d-20c2-c97b6a02da60}" showlabel="true" locklevel="0" visible="false">
                         <labels>
-                          <label description="" languagecode="1033" />
+                          <label description="Serialised Log Entries" languagecode="1033" />
                         </labels>
+                        <control id="ldv_serialisedlogentries" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="ldv_serialisedlogentries" disabled="true" uniqueid="{b0c3a8e2-9815-7d78-125e-dc8246ce6819}" />
                       </cell>
                       <cell id="{f19cef95-dc84-4b56-9950-d7cdc4cd6ef4}" showlabel="true" locklevel="1" colspan="1" visible="false">
                         <labels>
@@ -220,6 +221,68 @@
                     </row>
                   </rows>
                 </section>
+                <section name="{ea7870d0-bece-4ac1-a002-52719aaccc46}_section_6" showlabel="true" showbar="true" locklevel="0" id="{7224cc84-8ac6-1050-235b-ae07620223c3}" IsUserDefined="0" layout="varwidth" columns="11" labelwidth="150" celllabelalignment="Left" celllabelposition="Left">
+                  <labels>
+                    <label description="Plugin Info" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{9a11d8b9-3756-0842-d152-4e6a75181d81}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Message Name" languagecode="1033" />
+                        </labels>
+                        <control id="ys_messagename" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ys_messagename" disabled="true" uniqueid="{91e58677-6d49-c2c0-0511-a173ac3b0ee3}" />
+                      </cell>
+                      <cell id="{2ec6c873-7c10-3b54-9d0b-9a95db43173b}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Depth" languagecode="1033" />
+                        </labels>
+                        <control id="ys_depth" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="ys_depth" disabled="true" uniqueid="{a566801d-b135-7b4e-962a-93b6738d49ba}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{27ecd045-342d-c534-b095-b485378a51be}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Isolation Mode" languagecode="1033" />
+                        </labels>
+                        <control id="ys_isolationmodevalue" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="ys_isolationmodevalue" disabled="true" uniqueid="{b7b85723-24e3-43ac-c9aa-b779d3a05641}" />
+                      </cell>
+                      <cell id="{a24454d1-2496-44b6-0512-9c3451ca28b2}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Correlation ID" languagecode="1033" />
+                        </labels>
+                        <control id="ys_correlationid" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ys_correlationid" disabled="true" uniqueid="{bae833d7-0ecc-0d3a-1d76-5e0831285ab2}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{17dce16e-0809-3119-bd13-7054c35ba058}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Stage" languagecode="1033" />
+                        </labels>
+                        <control id="ys_stagevalue" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="ys_stagevalue" disabled="true" uniqueid="{4eab65dd-d222-59a4-87a8-6ccd709a4abe}" />
+                      </cell>
+                      <cell id="{0434db3b-27b6-bac6-6e81-e871696ab811}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Operation ID" languagecode="1033" />
+                        </labels>
+                        <control id="ys_operationid" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ys_operationid" disabled="true" uniqueid="{718b4b8d-93ee-0ae0-8eea-d88d89b69ad9}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{2198b713-d588-040c-e8cb-ae8ec8010726}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Mode" languagecode="1033" />
+                        </labels>
+                        <control id="ys_modevalue" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="ys_modevalue" disabled="true" uniqueid="{68e7ab43-e6db-12d8-35d7-d37346abb762}" />
+                      </cell>
+                      <cell id="{aec082ad-6db0-a88b-3e49-a1ba76467d00}" showlabel="false">
+                        <labels>
+                          <label description="" languagecode="1033" />
+                        </labels>
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
               </sections>
             </column>
           </columns>
@@ -241,7 +304,7 @@
                         <labels>
                           <label description="Information" languagecode="1033" />
                         </labels>
-                        <control id="ldv_information" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="ldv_information" disabled="true" />
+                        <control id="ldv_information" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="ldv_information" disabled="true" uniqueid="{050ae015-0eea-3b3c-1dba-e4217de57656}" />
                       </cell>
                     </row>
                   </rows>
@@ -311,7 +374,7 @@
                             <ViewIds>{E327D9FF-3104-E611-80C5-080027E39BDB}</ViewIds>
                             <EnableJumpBar>false</EnableJumpBar>
                             <ChartGridMode>Grid</ChartGridMode>
-                            <VisualizationId></VisualizationId>
+                            <VisualizationId />
                             <IsUserChart>false</IsUserChart>
                             <EnableChartPicker>false</EnableChartPicker>
                             <RecordsPerPage>250</RecordsPerPage>
@@ -319,9 +382,9 @@
                         </control>
                       </cell>
                     </row>
-                    <row></row>
-                    <row></row>
-                    <row height="auto"></row>
+                    <row />
+                    <row />
+                    <row height="auto" />
                   </rows>
                 </section>
               </sections>
@@ -366,7 +429,7 @@
       <events>
         <event name="onload" application="false" active="false">
           <Handlers>
-            <Handler functionName="OnLoad" libraryName="ldv_CrmLoggerLogJs" handlerUniqueId="{6b4740ec-43b5-d8d0-46cb-d01040bab856}" enabled="true" parameters="" passExecutionContext="false" />
+            <Handler functionName="OnLoad" libraryName="ldv_CrmLoggerLogJs" handlerUniqueId="{6b4740ec-43b5-d8d0-46cb-d01040bab856}" enabled="true" parameters="" passExecutionContext="true" />
           </Handlers>
         </event>
       </events>
@@ -375,7 +438,7 @@
     <IsCustomizable>1</IsCustomizable>
     <CanBeDeleted>1</CanBeDeleted>
     <LocalizedNames>
-      <LocalizedName description="Information" languagecode="1033" />
+      <LocalizedName description="Main Form" languagecode="1033" />
     </LocalizedNames>
     <Descriptions>
       <Description description="A form for this entity." languagecode="1033" />

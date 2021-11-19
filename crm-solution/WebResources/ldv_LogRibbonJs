@@ -226,7 +226,7 @@ function LoadScript(url, callback)
 function LoadWebResources(resources, callback)
 {
 	/// <summary>
-	///     Author: Ahmed el-Sawalhy
+	///     Author: Ahmed Elsawalhy
 	/// </summary>
 	/// <param name="resources" type="String | String[]" optional="false"></param>
 	/// <param name="callback" type="Function" optional="true"></param>
@@ -252,5 +252,5 @@ function LoadWebResources(resources, callback)
 			callback();
 		}
 	};
-	LoadScript(Xrm.Page.context.getClientUrl() + '/WebResources/' + resources[0], localCallback);
+	LoadScript(Xrm.Utility.getGlobalContext().getClientUrl() + '/WebResources/' + resources[0], localCallback);
 }

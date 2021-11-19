@@ -26,5 +26,9 @@
     <PluginType AssemblyQualifiedName="Yagasoft.CustomJobs.JobsEngineRecurrenceUpdated, Yagasoft.CustomJobs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e8d87f7d871f19c4" PluginTypeId="acd2d131-048c-eb11-a0d4-00155d016500" Name="Yagasoft.CustomJobs.JobsEngineRecurrenceUpdated">
       <FriendlyName>JobsEngineRecurrenceUpdated</FriendlyName>
     </PluginType>
+    <PluginType AssemblyQualifiedName="Yagasoft.CustomJobs.Process.Steps.YsGetNextJobBatch, Yagasoft.CustomJobs, Version=1.0.0.0, Culture=neutral, PublicKeyToken=e8d87f7d871f19c4" PluginTypeId="8f31b04f-8bc7-43db-b9ba-658513fce341" Name="Yagasoft.CustomJobs.Process.Steps.YsGetNextJobBatch">
+      <FriendlyName>YsGetNextJobBatch</FriendlyName>
+      <WorkflowActivityGroupName>Yagasoft.CustomJobs (1.0.0.0)</WorkflowActivityGroupName>
+    </PluginType>
   </PluginTypes>
 </PluginAssembly>

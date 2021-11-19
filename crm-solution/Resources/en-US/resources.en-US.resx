@@ -280,6 +280,10 @@
     <value>Unique identifier for the business unit that owns the record</value>
     <comment>ldv_roleconfiguration Description for EntityRelationship 'business_unit_ldv_roleconfiguration'</comment>
   </data>
+  <data name="10:Description,business_unit_ys_customjobrecurrence" xml:space="preserve">
+    <value>Unique identifier for the business unit that owns the record</value>
+    <comment>ys_customjobrecurrence Description for EntityRelationship 'business_unit_ys_customjobrecurrence'</comment>
+  </data>
   <data name="10:Description,business_unit_ys_keyvalue" xml:space="preserve">
     <value>Unique identifier for the business unit that owns the record</value>
     <comment>ys_keyvalue Description for EntityRelationship 'business_unit_ys_keyvalue'</comment>
@@ -444,6 +448,14 @@
     <value>Unique identifier of the user who modified the record.</value>
     <comment>ldv_roleconfiguration Description for EntityRelationship 'lk_ldv_roleconfiguration_modifiedby'</comment>
   </data>
+  <data name="10:Description,lk_ys_customjobrecurrence_createdby" xml:space="preserve">
+    <value>Unique identifier of the user who created the record.</value>
+    <comment>ys_customjobrecurrence Description for EntityRelationship 'lk_ys_customjobrecurrence_createdby'</comment>
+  </data>
+  <data name="10:Description,lk_ys_customjobrecurrence_modifiedby" xml:space="preserve">
+    <value>Unique identifier of the user who modified the record.</value>
+    <comment>ys_customjobrecurrence Description for EntityRelationship 'lk_ys_customjobrecurrence_modifiedby'</comment>
+  </data>
   <data name="10:Description,lk_ys_keyvalue_createdby" xml:space="preserve">
     <value>Unique identifier of the user who created the record.</value>
     <comment>ys_keyvalue Description for EntityRelationship 'lk_ys_keyvalue_createdby'</comment>
@@ -496,6 +508,10 @@
     <value>Owner Id</value>
     <comment>ldv_roleconfiguration Description for EntityRelationship 'owner_ldv_roleconfiguration'</comment>
   </data>
+  <data name="10:Description,owner_ys_customjobrecurrence" xml:space="preserve">
+    <value>Owner Id</value>
+    <comment>ys_customjobrecurrence Description for EntityRelationship 'owner_ys_customjobrecurrence'</comment>
+  </data>
   <data name="10:Description,owner_ys_keyvalue" xml:space="preserve">
     <value>Owner Id</value>
     <comment>ys_keyvalue Description for EntityRelationship 'owner_ys_keyvalue'</comment>
@@ -543,6 +559,10 @@
   <data name="10:Description,team_ldv_roleconfiguration" xml:space="preserve">
     <value>Unique identifier for the team that owns the record.</value>
     <comment>ldv_roleconfiguration Description for EntityRelationship 'team_ldv_roleconfiguration'</comment>
+  </data>
+  <data name="10:Description,team_ys_customjobrecurrence" xml:space="preserve">
+    <value>Unique identifier for the team that owns the record.</value>
+    <comment>ys_customjobrecurrence Description for EntityRelationship 'team_ys_customjobrecurrence'</comment>
   </data>
   <data name="10:Description,team_ys_keyvalue" xml:space="preserve">
     <value>Unique identifier for the team that owns the record.</value>
@@ -592,12 +612,28 @@
     <value>Unique identifier for the user that owns the record.</value>
     <comment>ldv_roleconfiguration Description for EntityRelationship 'user_ldv_roleconfiguration'</comment>
   </data>
+  <data name="10:Description,user_ys_customjobrecurrence" xml:space="preserve">
+    <value>Unique identifier for the user that owns the record.</value>
+    <comment>ys_customjobrecurrence Description for EntityRelationship 'user_ys_customjobrecurrence'</comment>
+  </data>
   <data name="10:Description,user_ys_keyvalue" xml:space="preserve">
     <value>Unique identifier for the user that owns the record.</value>
     <comment>ys_keyvalue Description for EntityRelationship 'user_ys_keyvalue'</comment>
   </data>
+  <data name="10:Description,ys_customjob_customjobrecurrence_CustomJobId" xml:space="preserve">
+    <value />
+    <comment>ys_customjobrecurrence Description for EntityRelationship 'ys_customjob_customjobrecurrence_CustomJobId'</comment>
+  </data>
+  <data name="10:Description,ys_recurrencerule_customjobrecurrence_RecurrenceRuleId" xml:space="preserve">
+    <value />
+    <comment>ys_customjobrecurrence Description for EntityRelationship 'ys_recurrencerule_customjobrecurrence_RecurrenceRuleId'</comment>
+  </data>
+  <data name="10:Description,ys_systemuser_genericconfiguration_EscalationUserId" xml:space="preserve">
+    <value>The user to use when escalating the plugin context. Can be used to perform operations that are not available for the executing user.</value>
+    <comment>ldv_genericconfiguration Description for EntityRelationship 'ys_systemuser_genericconfiguration_EscalationUserId'</comment>
+  </data>
   <data name="15062:Description,YSCommonSolution" xml:space="preserve">
-    <value>Please refer to Yagasoft.com (Ahmed Elsawalhy) for support.</value>
+    <value>Refer to Yagasoft.com (Ahmed Elsawalhy) for support.</value>
     <comment> 'YSCommonSolution' : Description for Solution</comment>
   </data>
   <data name="15062:LocalizedName,yagasoftys71786" xml:space="preserve">
@@ -605,7 +641,7 @@
     <comment> 'yagasoft' : LocalizedName for Solution Publisher</comment>
   </data>
   <data name="15062:LocalizedName,YSCommonSolution" xml:space="preserve">
-    <value>YS Common Solution</value>
+    <value>YS Common Solution</value>
     <comment> 'YSCommonSolution' : LocalizedName for Solution</comment>
   </data>
   <data name="1:Description,Common Configuration{2c7edc5f-dceb-44a0-bdb2-3df771573ca8}" xml:space="preserve">
@@ -631,6 +667,18 @@
   <data name="1:Description,Custom Job Log{841549e5-f571-4b53-b384-f9787bc601de}" xml:space="preserve">
     <value>A form for this entity.</value>
     <comment>'Custom Job Log' : Description for systemform in Entity FormXml ID: '{841549e5-f571-4b53-b384-f9787bc601de}'</comment>
+  </data>
+  <data name="1:Description,Custom Job Recurrence{11193e99-652a-ec11-9ae3-000d3a4c87c6}" xml:space="preserve">
+    <value>Active Custom Job Recurrences owned by me</value>
+    <comment>'Custom Job Recurrence' : Description for SavedQuery on Entity QueryId: '{11193e99-652a-ec11-9ae3-000d3a4c87c6}'</comment>
+  </data>
+  <data name="1:Description,Custom Job Recurrence{ab0f8919-bb3a-4d1b-8cf2-5e211f15327e}" xml:space="preserve">
+    <value>A card form for this entity.</value>
+    <comment>'Custom Job Recurrence' : Description for systemform in Entity FormXml ID: '{ab0f8919-bb3a-4d1b-8cf2-5e211f15327e}'</comment>
+  </data>
+  <data name="1:Description,Custom Job Recurrence{ded56aa3-a627-434a-ba5f-59e0e8ac8700}" xml:space="preserve">
+    <value>A form for this entity.</value>
+    <comment>'Custom Job Recurrence' : Description for systemform in Entity FormXml ID: '{ded56aa3-a627-434a-ba5f-59e0e8ac8700}'</comment>
   </data>
   <data name="1:Description,Custom Job{4e624f83-afb3-4519-a30a-4ad805eda2a0}" xml:space="preserve">
     <value>A form for this entity.</value>
@@ -807,6 +855,10 @@
   <data name="1:Description,ldv_customjobengineUTCConversionTimeZoneCode" xml:space="preserve">
     <value>Time zone code that was in use when the record was created.</value>
     <comment>'ldv_customjobengine' : Description for Attribute 'UTCConversionTimeZoneCode' on Entity</comment>
+  </data>
+  <data name="1:Description,ldv_customjobengineys_Lock" xml:space="preserve">
+    <value />
+    <comment>'ldv_customjobengine' : Description for Attribute 'ys_Lock' on Entity</comment>
   </data>
   <data name="1:Description,ldv_customjobentityldv_customjob" xml:space="preserve">
     <value />
@@ -1252,6 +1304,10 @@
     <value />
     <comment>'ldv_customjob' : Description for OptionSet 'ys_ldv_customjob_ys_isonlylogfailures' on Entity</comment>
   </data>
+  <data name="1:Description,ldv_customjobys_LockID" xml:space="preserve">
+    <value />
+    <comment>'ldv_customjob' : Description for Attribute 'ys_LockID' on Entity</comment>
+  </data>
   <data name="1:Description,ldv_customjobys_URL" xml:space="preserve">
     <value>By default, the target record and custom job's record IDs are added to the URL ('?targetId=X&amp;jobId=Y') and a POST operation is performed on the URL.</value>
     <comment>'ldv_customjob' : Description for Attribute 'ys_URL' on Entity</comment>
@@ -1296,14 +1352,6 @@
     <value>Unique identifier for entity instances</value>
     <comment>'ldv_genericconfiguration' : Description for Attribute 'ldv_genericconfigurationId' on Entity</comment>
   </data>
-  <data name="1:Description,ldv_genericconfigurationldv_genericconfiguration_ldv_iscategorisebytype" xml:space="preserve">
-    <value />
-    <comment>'ldv_genericconfiguration' : Description for OptionSet 'ldv_genericconfiguration_ldv_iscategorisebytype' on Entity</comment>
-  </data>
-  <data name="1:Description,ldv_genericconfigurationldv_genericconfiguration_ldv_isreuselogfile" xml:space="preserve">
-    <value>This will clear the log file and start over when the size limit is reached.</value>
-    <comment>'ldv_genericconfiguration' : Description for OptionSet 'ldv_genericconfiguration_ldv_isreuselogfile' on Entity</comment>
-  </data>
   <data name="1:Description,ldv_genericconfigurationldv_genericconfiguration_statecode" xml:space="preserve">
     <value>Status of the Common Configuration</value>
     <comment>'ldv_genericconfiguration' : Description for OptionSet 'ldv_genericconfiguration_statecode' on Entity</comment>
@@ -1312,45 +1360,9 @@
     <value>Reason for the status of the Common Configuration</value>
     <comment>'ldv_genericconfiguration' : Description for OptionSet 'ldv_genericconfiguration_statuscode' on Entity</comment>
   </data>
-  <data name="1:Description,ldv_genericconfigurationldv_IsCategoriseByType" xml:space="preserve">
-    <value>Create a folder per assembly.</value>
-    <comment>'ldv_genericconfiguration' : Description for Attribute 'ldv_IsCategoriseByType' on Entity</comment>
-  </data>
-  <data name="1:Description,ldv_genericconfigurationldv_IsReuseLogFile" xml:space="preserve">
-    <value>This will clear the log file and start over when the size limit is reached.</value>
-    <comment>'ldv_genericconfiguration' : Description for Attribute 'ldv_IsReuseLogFile' on Entity</comment>
-  </data>
-  <data name="1:Description,ldv_genericconfigurationldv_LogFileDateFormat" xml:space="preserve">
-    <value />
-    <comment>'ldv_genericconfiguration' : Description for Attribute 'ldv_LogFileDateFormat' on Entity</comment>
-  </data>
-  <data name="1:Description,ldv_genericconfigurationldv_LogFileSplitDate" xml:space="preserve">
-    <value />
-    <comment>'ldv_genericconfiguration' : Description for Attribute 'ldv_LogFileSplitDate' on Entity</comment>
-  </data>
-  <data name="1:Description,ldv_genericconfigurationldv_LogFileSplitFrequency" xml:space="preserve">
-    <value />
-    <comment>'ldv_genericconfiguration' : Description for Attribute 'ldv_LogFileSplitFrequency' on Entity</comment>
-  </data>
-  <data name="1:Description,ldv_genericconfigurationldv_LogFileSplitMode" xml:space="preserve">
-    <value />
-    <comment>'ldv_genericconfiguration' : Description for Attribute 'ldv_LogFileSplitMode' on Entity</comment>
-  </data>
   <data name="1:Description,ldv_genericconfigurationldv_LogLevel" xml:space="preserve">
     <value />
     <comment>'ldv_genericconfiguration' : Description for Attribute 'ldv_LogLevel' on Entity</comment>
-  </data>
-  <data name="1:Description,ldv_genericconfigurationldv_LogMode" xml:space="preserve">
-    <value />
-    <comment>'ldv_genericconfiguration' : Description for Attribute 'ldv_LogMode' on Entity</comment>
-  </data>
-  <data name="1:Description,ldv_genericconfigurationldv_LogPath" xml:space="preserve">
-    <value>The folder to contain all log files.</value>
-    <comment>'ldv_genericconfiguration' : Description for Attribute 'ldv_LogPath' on Entity</comment>
-  </data>
-  <data name="1:Description,ldv_genericconfigurationldv_MaxFileSize" xml:space="preserve">
-    <value>In KB.</value>
-    <comment>'ldv_genericconfiguration' : Description for Attribute 'ldv_MaxFileSize' on Entity</comment>
   </data>
   <data name="1:Description,ldv_genericconfigurationldv_MetadataCacheDuration" xml:space="preserve">
     <value />
@@ -1412,6 +1424,14 @@
     <value>Time zone code that was in use when the record was created.</value>
     <comment>'ldv_genericconfiguration' : Description for Attribute 'UTCConversionTimeZoneCode' on Entity</comment>
   </data>
+  <data name="1:Description,ldv_genericconfigurationys_EscalationUserId" xml:space="preserve">
+    <value>The user to use when escalating the plugin context. Can be used to perform operations that are not available for the executing user.</value>
+    <comment>'ldv_genericconfiguration' : Description for Attribute 'ys_EscalationUserId' on Entity</comment>
+  </data>
+  <data name="1:Description,ldv_genericconfigurationys_IsCRMLogEnabled" xml:space="preserve">
+    <value />
+    <comment>'ldv_genericconfiguration' : Description for Attribute 'ys_IsCRMLogEnabled' on Entity</comment>
+  </data>
   <data name="1:Description,ldv_genericconfigurationys_JobCheckInterval" xml:space="preserve">
     <value>Only applied to non-CRM modes.</value>
     <comment>'ldv_genericconfiguration' : Description for Attribute 'ys_JobCheckInterval' on Entity</comment>
@@ -1423,6 +1443,10 @@
   <data name="1:Description,ldv_genericconfigurationys_JobTimeout" xml:space="preserve">
     <value />
     <comment>'ldv_genericconfiguration' : Description for Attribute 'ys_JobTimeout' on Entity</comment>
+  </data>
+  <data name="1:Description,ldv_genericconfigurationys_ldv_genericconfiguration_ys_iscrmlogenabled" xml:space="preserve">
+    <value />
+    <comment>'ldv_genericconfiguration' : Description for OptionSet 'ys_ldv_genericconfiguration_ys_iscrmlogenabled' on Entity</comment>
   </data>
   <data name="1:Description,ldv_genericconfigurationys_ldv_genericconfiguration_ys_jobsplatformcode" xml:space="preserve">
     <value />
@@ -1791,6 +1815,38 @@
   <data name="1:Description,ldv_logUTCConversionTimeZoneCode" xml:space="preserve">
     <value>Time zone code that was in use when the record was created.</value>
     <comment>'ldv_log' : Description for Attribute 'UTCConversionTimeZoneCode' on Entity</comment>
+  </data>
+  <data name="1:Description,ldv_logys_BusinessUnitID" xml:space="preserve">
+    <value />
+    <comment>'ldv_log' : Description for Attribute 'ys_BusinessUnitID' on Entity</comment>
+  </data>
+  <data name="1:Description,ldv_logys_CorrelationID" xml:space="preserve">
+    <value />
+    <comment>'ldv_log' : Description for Attribute 'ys_CorrelationID' on Entity</comment>
+  </data>
+  <data name="1:Description,ldv_logys_Depth" xml:space="preserve">
+    <value />
+    <comment>'ldv_log' : Description for Attribute 'ys_Depth' on Entity</comment>
+  </data>
+  <data name="1:Description,ldv_logys_IsolationModeValue" xml:space="preserve">
+    <value />
+    <comment>'ldv_log' : Description for Attribute 'ys_IsolationModeValue' on Entity</comment>
+  </data>
+  <data name="1:Description,ldv_logys_MessageName" xml:space="preserve">
+    <value />
+    <comment>'ldv_log' : Description for Attribute 'ys_MessageName' on Entity</comment>
+  </data>
+  <data name="1:Description,ldv_logys_ModeValue" xml:space="preserve">
+    <value />
+    <comment>'ldv_log' : Description for Attribute 'ys_ModeValue' on Entity</comment>
+  </data>
+  <data name="1:Description,ldv_logys_OperationID" xml:space="preserve">
+    <value />
+    <comment>'ldv_log' : Description for Attribute 'ys_OperationID' on Entity</comment>
+  </data>
+  <data name="1:Description,ldv_logys_StageValue" xml:space="preserve">
+    <value />
+    <comment>'ldv_log' : Description for Attribute 'ys_StageValue' on Entity</comment>
   </data>
   <data name="1:Description,ldv_recurrenceruleCreatedBy" xml:space="preserve">
     <value>Unique identifier of the user who created the record.</value>
@@ -2292,6 +2348,98 @@
     <value>A form for this entity.</value>
     <comment>'Role Configuration' : Description for systemform in Entity FormXml ID: '{7f0702ef-bd89-47f5-8d93-c01e397e0cea}'</comment>
   </data>
+  <data name="1:Description,ys_customjobrecurrenceCreatedBy" xml:space="preserve">
+    <value>Unique identifier of the user who created the record.</value>
+    <comment>'ys_customjobrecurrence' : Description for Attribute 'CreatedBy' on Entity</comment>
+  </data>
+  <data name="1:Description,ys_customjobrecurrenceCreatedOn" xml:space="preserve">
+    <value>Date and time when the record was created.</value>
+    <comment>'ys_customjobrecurrence' : Description for Attribute 'CreatedOn' on Entity</comment>
+  </data>
+  <data name="1:Description,ys_customjobrecurrenceCreatedOnBehalfBy" xml:space="preserve">
+    <value>Unique identifier of the delegate user who created the record.</value>
+    <comment>'ys_customjobrecurrence' : Description for Attribute 'CreatedOnBehalfBy' on Entity</comment>
+  </data>
+  <data name="1:Description,ys_customjobrecurrenceentityys_customjobrecurrence" xml:space="preserve">
+    <value />
+    <comment> 'ys_customjobrecurrence' : Description for Entity</comment>
+  </data>
+  <data name="1:Description,ys_customjobrecurrenceImportSequenceNumber" xml:space="preserve">
+    <value>Sequence number of the import that created this record.</value>
+    <comment>'ys_customjobrecurrence' : Description for Attribute 'ImportSequenceNumber' on Entity</comment>
+  </data>
+  <data name="1:Description,ys_customjobrecurrenceModifiedBy" xml:space="preserve">
+    <value>Unique identifier of the user who modified the record.</value>
+    <comment>'ys_customjobrecurrence' : Description for Attribute 'ModifiedBy' on Entity</comment>
+  </data>
+  <data name="1:Description,ys_customjobrecurrenceModifiedOn" xml:space="preserve">
+    <value>Date and time when the record was modified.</value>
+    <comment>'ys_customjobrecurrence' : Description for Attribute 'ModifiedOn' on Entity</comment>
+  </data>
+  <data name="1:Description,ys_customjobrecurrenceModifiedOnBehalfBy" xml:space="preserve">
+    <value>Unique identifier of the delegate user who modified the record.</value>
+    <comment>'ys_customjobrecurrence' : Description for Attribute 'ModifiedOnBehalfBy' on Entity</comment>
+  </data>
+  <data name="1:Description,ys_customjobrecurrenceOverriddenCreatedOn" xml:space="preserve">
+    <value>Date and time that the record was migrated.</value>
+    <comment>'ys_customjobrecurrence' : Description for Attribute 'OverriddenCreatedOn' on Entity</comment>
+  </data>
+  <data name="1:Description,ys_customjobrecurrenceOwnerId" xml:space="preserve">
+    <value>Owner Id</value>
+    <comment>'ys_customjobrecurrence' : Description for Attribute 'OwnerId' on Entity</comment>
+  </data>
+  <data name="1:Description,ys_customjobrecurrenceOwningBusinessUnit" xml:space="preserve">
+    <value>Unique identifier for the business unit that owns the record</value>
+    <comment>'ys_customjobrecurrence' : Description for Attribute 'OwningBusinessUnit' on Entity</comment>
+  </data>
+  <data name="1:Description,ys_customjobrecurrenceOwningTeam" xml:space="preserve">
+    <value>Unique identifier for the team that owns the record.</value>
+    <comment>'ys_customjobrecurrence' : Description for Attribute 'OwningTeam' on Entity</comment>
+  </data>
+  <data name="1:Description,ys_customjobrecurrenceOwningUser" xml:space="preserve">
+    <value>Unique identifier for the user that owns the record.</value>
+    <comment>'ys_customjobrecurrence' : Description for Attribute 'OwningUser' on Entity</comment>
+  </data>
+  <data name="1:Description,ys_customjobrecurrencestatecode" xml:space="preserve">
+    <value>Status of the Custom Job Recurrence</value>
+    <comment>'ys_customjobrecurrence' : Description for Attribute 'statecode' on Entity</comment>
+  </data>
+  <data name="1:Description,ys_customjobrecurrencestatuscode" xml:space="preserve">
+    <value>Reason for the status of the Custom Job Recurrence</value>
+    <comment>'ys_customjobrecurrence' : Description for Attribute 'statuscode' on Entity</comment>
+  </data>
+  <data name="1:Description,ys_customjobrecurrenceTimeZoneRuleVersionNumber" xml:space="preserve">
+    <value>For internal use only.</value>
+    <comment>'ys_customjobrecurrence' : Description for Attribute 'TimeZoneRuleVersionNumber' on Entity</comment>
+  </data>
+  <data name="1:Description,ys_customjobrecurrenceUTCConversionTimeZoneCode" xml:space="preserve">
+    <value>Time zone code that was in use when the record was created.</value>
+    <comment>'ys_customjobrecurrence' : Description for Attribute 'UTCConversionTimeZoneCode' on Entity</comment>
+  </data>
+  <data name="1:Description,ys_customjobrecurrenceys_CustomJobId" xml:space="preserve">
+    <value />
+    <comment>'ys_customjobrecurrence' : Description for Attribute 'ys_CustomJobId' on Entity</comment>
+  </data>
+  <data name="1:Description,ys_customjobrecurrenceys_customjobrecurrenceId" xml:space="preserve">
+    <value>Unique identifier for entity instances</value>
+    <comment>'ys_customjobrecurrence' : Description for Attribute 'ys_customjobrecurrenceId' on Entity</comment>
+  </data>
+  <data name="1:Description,ys_customjobrecurrenceys_customjobrecurrence_statecode" xml:space="preserve">
+    <value>Status of the Custom Job Recurrence</value>
+    <comment>'ys_customjobrecurrence' : Description for OptionSet 'ys_customjobrecurrence_statecode' on Entity</comment>
+  </data>
+  <data name="1:Description,ys_customjobrecurrenceys_customjobrecurrence_statuscode" xml:space="preserve">
+    <value>Reason for the status of the Custom Job Recurrence</value>
+    <comment>'ys_customjobrecurrence' : Description for OptionSet 'ys_customjobrecurrence_statuscode' on Entity</comment>
+  </data>
+  <data name="1:Description,ys_customjobrecurrenceys_name" xml:space="preserve">
+    <value>The name of the custom entity.</value>
+    <comment>'ys_customjobrecurrence' : Description for Attribute 'ys_name' on Entity</comment>
+  </data>
+  <data name="1:Description,ys_customjobrecurrenceys_RecurrenceRuleId" xml:space="preserve">
+    <value />
+    <comment>'ys_customjobrecurrence' : Description for Attribute 'ys_RecurrenceRuleId' on Entity</comment>
+  </data>
   <data name="1:Description,ys_keyvalueCreatedBy" xml:space="preserve">
     <value>Unique identifier of the user who created the record.</value>
     <comment>'ys_keyvalue' : Description for Attribute 'CreatedBy' on Entity</comment>
@@ -2543,6 +2691,10 @@
   <data name="1:displayname,ldv_customjobengineUTCConversionTimeZoneCode" xml:space="preserve">
     <value>UTC Conversion Time Zone Code</value>
     <comment>'ldv_customjobengine' : displayname for Attribute 'UTCConversionTimeZoneCode' on Entity</comment>
+  </data>
+  <data name="1:displayname,ldv_customjobengineys_Lock" xml:space="preserve">
+    <value>Lock</value>
+    <comment>'ldv_customjobengine' : displayname for Attribute 'ys_Lock' on Entity</comment>
   </data>
   <data name="1:displayname,ldv_customjobfailedtargetCreatedBy" xml:space="preserve">
     <value>Created By</value>
@@ -2976,6 +3128,10 @@
     <value>Only Log Failures</value>
     <comment>'ldv_customjob' : displayname for OptionSet 'ys_ldv_customjob_ys_isonlylogfailures' on Entity</comment>
   </data>
+  <data name="1:displayname,ldv_customjobys_LockID" xml:space="preserve">
+    <value>Lock ID</value>
+    <comment>'ldv_customjob' : displayname for Attribute 'ys_LockID' on Entity</comment>
+  </data>
   <data name="1:displayname,ldv_customjobys_URL" xml:space="preserve">
     <value>URL</value>
     <comment>'ldv_customjob' : displayname for Attribute 'ys_URL' on Entity</comment>
@@ -3016,14 +3172,6 @@
     <value>Generic Configuration</value>
     <comment>'ldv_genericconfiguration' : displayname for Attribute 'ldv_genericconfigurationId' on Entity</comment>
   </data>
-  <data name="1:displayname,ldv_genericconfigurationldv_genericconfiguration_ldv_iscategorisebytype" xml:space="preserve">
-    <value>Categorise by Type</value>
-    <comment>'ldv_genericconfiguration' : displayname for OptionSet 'ldv_genericconfiguration_ldv_iscategorisebytype' on Entity</comment>
-  </data>
-  <data name="1:displayname,ldv_genericconfigurationldv_genericconfiguration_ldv_isreuselogfile" xml:space="preserve">
-    <value>Reuse Log File</value>
-    <comment>'ldv_genericconfiguration' : displayname for OptionSet 'ldv_genericconfiguration_ldv_isreuselogfile' on Entity</comment>
-  </data>
   <data name="1:displayname,ldv_genericconfigurationldv_genericconfiguration_statecode" xml:space="preserve">
     <value>Status</value>
     <comment>'ldv_genericconfiguration' : displayname for OptionSet 'ldv_genericconfiguration_statecode' on Entity</comment>
@@ -3032,45 +3180,9 @@
     <value>Status Reason</value>
     <comment>'ldv_genericconfiguration' : displayname for OptionSet 'ldv_genericconfiguration_statuscode' on Entity</comment>
   </data>
-  <data name="1:displayname,ldv_genericconfigurationldv_IsCategoriseByType" xml:space="preserve">
-    <value>Categorise by Type</value>
-    <comment>'ldv_genericconfiguration' : displayname for Attribute 'ldv_IsCategoriseByType' on Entity</comment>
-  </data>
-  <data name="1:displayname,ldv_genericconfigurationldv_IsReuseLogFile" xml:space="preserve">
-    <value>Reuse Log File</value>
-    <comment>'ldv_genericconfiguration' : displayname for Attribute 'ldv_IsReuseLogFile' on Entity</comment>
-  </data>
-  <data name="1:displayname,ldv_genericconfigurationldv_LogFileDateFormat" xml:space="preserve">
-    <value>Log File Date Format</value>
-    <comment>'ldv_genericconfiguration' : displayname for Attribute 'ldv_LogFileDateFormat' on Entity</comment>
-  </data>
-  <data name="1:displayname,ldv_genericconfigurationldv_LogFileSplitDate" xml:space="preserve">
-    <value>Log File Split Date</value>
-    <comment>'ldv_genericconfiguration' : displayname for Attribute 'ldv_LogFileSplitDate' on Entity</comment>
-  </data>
-  <data name="1:displayname,ldv_genericconfigurationldv_LogFileSplitFrequency" xml:space="preserve">
-    <value>Log File Split Frequency</value>
-    <comment>'ldv_genericconfiguration' : displayname for Attribute 'ldv_LogFileSplitFrequency' on Entity</comment>
-  </data>
-  <data name="1:displayname,ldv_genericconfigurationldv_LogFileSplitMode" xml:space="preserve">
-    <value>Log File Split Mode</value>
-    <comment>'ldv_genericconfiguration' : displayname for Attribute 'ldv_LogFileSplitMode' on Entity</comment>
-  </data>
   <data name="1:displayname,ldv_genericconfigurationldv_LogLevel" xml:space="preserve">
     <value>Log Level</value>
     <comment>'ldv_genericconfiguration' : displayname for Attribute 'ldv_LogLevel' on Entity</comment>
-  </data>
-  <data name="1:displayname,ldv_genericconfigurationldv_LogMode" xml:space="preserve">
-    <value>Log Mode</value>
-    <comment>'ldv_genericconfiguration' : displayname for Attribute 'ldv_LogMode' on Entity</comment>
-  </data>
-  <data name="1:displayname,ldv_genericconfigurationldv_LogPath" xml:space="preserve">
-    <value>Log Path</value>
-    <comment>'ldv_genericconfiguration' : displayname for Attribute 'ldv_LogPath' on Entity</comment>
-  </data>
-  <data name="1:displayname,ldv_genericconfigurationldv_MaxFileSize" xml:space="preserve">
-    <value>Max File Size (KB)</value>
-    <comment>'ldv_genericconfiguration' : displayname for Attribute 'ldv_MaxFileSize' on Entity</comment>
   </data>
   <data name="1:displayname,ldv_genericconfigurationldv_MetadataCacheDuration" xml:space="preserve">
     <value>Metadata Cache Duration</value>
@@ -3132,6 +3244,14 @@
     <value>UTC Conversion Time Zone Code</value>
     <comment>'ldv_genericconfiguration' : displayname for Attribute 'UTCConversionTimeZoneCode' on Entity</comment>
   </data>
+  <data name="1:displayname,ldv_genericconfigurationys_EscalationUserId" xml:space="preserve">
+    <value>Escalation User</value>
+    <comment>'ldv_genericconfiguration' : displayname for Attribute 'ys_EscalationUserId' on Entity</comment>
+  </data>
+  <data name="1:displayname,ldv_genericconfigurationys_IsCRMLogEnabled" xml:space="preserve">
+    <value>CRM Log Enabled</value>
+    <comment>'ldv_genericconfiguration' : displayname for Attribute 'ys_IsCRMLogEnabled' on Entity</comment>
+  </data>
   <data name="1:displayname,ldv_genericconfigurationys_JobCheckInterval" xml:space="preserve">
     <value>Job Check Interval</value>
     <comment>'ldv_genericconfiguration' : displayname for Attribute 'ys_JobCheckInterval' on Entity</comment>
@@ -3143,6 +3263,10 @@
   <data name="1:displayname,ldv_genericconfigurationys_JobTimeout" xml:space="preserve">
     <value>Job Timeout</value>
     <comment>'ldv_genericconfiguration' : displayname for Attribute 'ys_JobTimeout' on Entity</comment>
+  </data>
+  <data name="1:displayname,ldv_genericconfigurationys_ldv_genericconfiguration_ys_iscrmlogenabled" xml:space="preserve">
+    <value>CRM Log Enabled</value>
+    <comment>'ldv_genericconfiguration' : displayname for OptionSet 'ys_ldv_genericconfiguration_ys_iscrmlogenabled' on Entity</comment>
   </data>
   <data name="1:displayname,ldv_genericconfigurationys_ldv_genericconfiguration_ys_jobsplatformcode" xml:space="preserve">
     <value>Jobs Platform</value>
@@ -3503,6 +3627,38 @@
   <data name="1:displayname,ldv_logUTCConversionTimeZoneCode" xml:space="preserve">
     <value>UTC Conversion Time Zone Code</value>
     <comment>'ldv_log' : displayname for Attribute 'UTCConversionTimeZoneCode' on Entity</comment>
+  </data>
+  <data name="1:displayname,ldv_logys_BusinessUnitID" xml:space="preserve">
+    <value>Business Unit ID</value>
+    <comment>'ldv_log' : displayname for Attribute 'ys_BusinessUnitID' on Entity</comment>
+  </data>
+  <data name="1:displayname,ldv_logys_CorrelationID" xml:space="preserve">
+    <value>Correlation ID</value>
+    <comment>'ldv_log' : displayname for Attribute 'ys_CorrelationID' on Entity</comment>
+  </data>
+  <data name="1:displayname,ldv_logys_Depth" xml:space="preserve">
+    <value>Depth</value>
+    <comment>'ldv_log' : displayname for Attribute 'ys_Depth' on Entity</comment>
+  </data>
+  <data name="1:displayname,ldv_logys_IsolationModeValue" xml:space="preserve">
+    <value>Isolation Mode</value>
+    <comment>'ldv_log' : displayname for Attribute 'ys_IsolationModeValue' on Entity</comment>
+  </data>
+  <data name="1:displayname,ldv_logys_MessageName" xml:space="preserve">
+    <value>Message Name</value>
+    <comment>'ldv_log' : displayname for Attribute 'ys_MessageName' on Entity</comment>
+  </data>
+  <data name="1:displayname,ldv_logys_ModeValue" xml:space="preserve">
+    <value>Mode</value>
+    <comment>'ldv_log' : displayname for Attribute 'ys_ModeValue' on Entity</comment>
+  </data>
+  <data name="1:displayname,ldv_logys_OperationID" xml:space="preserve">
+    <value>Operation ID</value>
+    <comment>'ldv_log' : displayname for Attribute 'ys_OperationID' on Entity</comment>
+  </data>
+  <data name="1:displayname,ldv_logys_StageValue" xml:space="preserve">
+    <value>Stage</value>
+    <comment>'ldv_log' : displayname for Attribute 'ys_StageValue' on Entity</comment>
   </data>
   <data name="1:displayname,ldv_recurrenceruleCreatedBy" xml:space="preserve">
     <value>Created By</value>
@@ -3964,6 +4120,94 @@
     <value>UTC Conversion Time Zone Code</value>
     <comment>'ldv_roleconfiguration' : displayname for Attribute 'UTCConversionTimeZoneCode' on Entity</comment>
   </data>
+  <data name="1:displayname,ys_customjobrecurrenceCreatedBy" xml:space="preserve">
+    <value>Created By</value>
+    <comment>'ys_customjobrecurrence' : displayname for Attribute 'CreatedBy' on Entity</comment>
+  </data>
+  <data name="1:displayname,ys_customjobrecurrenceCreatedOn" xml:space="preserve">
+    <value>Created On</value>
+    <comment>'ys_customjobrecurrence' : displayname for Attribute 'CreatedOn' on Entity</comment>
+  </data>
+  <data name="1:displayname,ys_customjobrecurrenceCreatedOnBehalfBy" xml:space="preserve">
+    <value>Created By (Delegate)</value>
+    <comment>'ys_customjobrecurrence' : displayname for Attribute 'CreatedOnBehalfBy' on Entity</comment>
+  </data>
+  <data name="1:displayname,ys_customjobrecurrenceImportSequenceNumber" xml:space="preserve">
+    <value>Import Sequence Number</value>
+    <comment>'ys_customjobrecurrence' : displayname for Attribute 'ImportSequenceNumber' on Entity</comment>
+  </data>
+  <data name="1:displayname,ys_customjobrecurrenceModifiedBy" xml:space="preserve">
+    <value>Modified By</value>
+    <comment>'ys_customjobrecurrence' : displayname for Attribute 'ModifiedBy' on Entity</comment>
+  </data>
+  <data name="1:displayname,ys_customjobrecurrenceModifiedOn" xml:space="preserve">
+    <value>Modified On</value>
+    <comment>'ys_customjobrecurrence' : displayname for Attribute 'ModifiedOn' on Entity</comment>
+  </data>
+  <data name="1:displayname,ys_customjobrecurrenceModifiedOnBehalfBy" xml:space="preserve">
+    <value>Modified By (Delegate)</value>
+    <comment>'ys_customjobrecurrence' : displayname for Attribute 'ModifiedOnBehalfBy' on Entity</comment>
+  </data>
+  <data name="1:displayname,ys_customjobrecurrenceOverriddenCreatedOn" xml:space="preserve">
+    <value>Record Created On</value>
+    <comment>'ys_customjobrecurrence' : displayname for Attribute 'OverriddenCreatedOn' on Entity</comment>
+  </data>
+  <data name="1:displayname,ys_customjobrecurrenceOwnerId" xml:space="preserve">
+    <value>Owner</value>
+    <comment>'ys_customjobrecurrence' : displayname for Attribute 'OwnerId' on Entity</comment>
+  </data>
+  <data name="1:displayname,ys_customjobrecurrenceOwningBusinessUnit" xml:space="preserve">
+    <value>Owning Business Unit</value>
+    <comment>'ys_customjobrecurrence' : displayname for Attribute 'OwningBusinessUnit' on Entity</comment>
+  </data>
+  <data name="1:displayname,ys_customjobrecurrenceOwningTeam" xml:space="preserve">
+    <value>Owning Team</value>
+    <comment>'ys_customjobrecurrence' : displayname for Attribute 'OwningTeam' on Entity</comment>
+  </data>
+  <data name="1:displayname,ys_customjobrecurrenceOwningUser" xml:space="preserve">
+    <value>Owning User</value>
+    <comment>'ys_customjobrecurrence' : displayname for Attribute 'OwningUser' on Entity</comment>
+  </data>
+  <data name="1:displayname,ys_customjobrecurrencestatecode" xml:space="preserve">
+    <value>Status</value>
+    <comment>'ys_customjobrecurrence' : displayname for Attribute 'statecode' on Entity</comment>
+  </data>
+  <data name="1:displayname,ys_customjobrecurrencestatuscode" xml:space="preserve">
+    <value>Status Reason</value>
+    <comment>'ys_customjobrecurrence' : displayname for Attribute 'statuscode' on Entity</comment>
+  </data>
+  <data name="1:displayname,ys_customjobrecurrenceTimeZoneRuleVersionNumber" xml:space="preserve">
+    <value>Time Zone Rule Version Number</value>
+    <comment>'ys_customjobrecurrence' : displayname for Attribute 'TimeZoneRuleVersionNumber' on Entity</comment>
+  </data>
+  <data name="1:displayname,ys_customjobrecurrenceUTCConversionTimeZoneCode" xml:space="preserve">
+    <value>UTC Conversion Time Zone Code</value>
+    <comment>'ys_customjobrecurrence' : displayname for Attribute 'UTCConversionTimeZoneCode' on Entity</comment>
+  </data>
+  <data name="1:displayname,ys_customjobrecurrenceys_CustomJobId" xml:space="preserve">
+    <value>Custom Job</value>
+    <comment>'ys_customjobrecurrence' : displayname for Attribute 'ys_CustomJobId' on Entity</comment>
+  </data>
+  <data name="1:displayname,ys_customjobrecurrenceys_customjobrecurrenceId" xml:space="preserve">
+    <value>Custom Job Recurrence</value>
+    <comment>'ys_customjobrecurrence' : displayname for Attribute 'ys_customjobrecurrenceId' on Entity</comment>
+  </data>
+  <data name="1:displayname,ys_customjobrecurrenceys_customjobrecurrence_statecode" xml:space="preserve">
+    <value>Status</value>
+    <comment>'ys_customjobrecurrence' : displayname for OptionSet 'ys_customjobrecurrence_statecode' on Entity</comment>
+  </data>
+  <data name="1:displayname,ys_customjobrecurrenceys_customjobrecurrence_statuscode" xml:space="preserve">
+    <value>Status Reason</value>
+    <comment>'ys_customjobrecurrence' : displayname for OptionSet 'ys_customjobrecurrence_statuscode' on Entity</comment>
+  </data>
+  <data name="1:displayname,ys_customjobrecurrenceys_name" xml:space="preserve">
+    <value>Name</value>
+    <comment>'ys_customjobrecurrence' : displayname for Attribute 'ys_name' on Entity</comment>
+  </data>
+  <data name="1:displayname,ys_customjobrecurrenceys_RecurrenceRuleId" xml:space="preserve">
+    <value>Recurrence Rule</value>
+    <comment>'ys_customjobrecurrence' : displayname for Attribute 'ys_RecurrenceRuleId' on Entity</comment>
+  </data>
   <data name="1:displayname,ys_keyvalueCreatedBy" xml:space="preserve">
     <value>Created By</value>
     <comment>'ys_keyvalue' : displayname for Attribute 'CreatedBy' on Entity</comment>
@@ -4064,9 +4308,9 @@
     <value>Owner</value>
     <comment>'Common Configuration' : label for cell in Entity FormXml ID: '{128024ac-defd-4548-9f31-81e4c9ffa087}'</comment>
   </data>
-  <data name="1:label,Common Configuration{1864cc01-8110-a86c-3c3e-8698ced9a15c}" xml:space="preserve">
-    <value>Log Mode</value>
-    <comment>'Common Configuration' : label for cell in Entity FormXml ID: '{1864cc01-8110-a86c-3c3e-8698ced9a15c}'</comment>
+  <data name="1:label,Common Configuration{1380b12c-ea71-963b-0629-372c7da3284b}" xml:space="preserve">
+    <value>URLs</value>
+    <comment>'Common Configuration' : label for section in Entity FormXml ID: '{1380b12c-ea71-963b-0629-372c7da3284b}'</comment>
   </data>
   <data name="1:label,Common Configuration{19102333-ae4b-4170-a5ce-cc8b109e09ae}" xml:space="preserve">
     <value>General</value>
@@ -4084,10 +4328,6 @@
     <value>Tab</value>
     <comment>'Common Configuration' : label for tab in Entity FormXml ID: '{2b07b916-5470-2796-86d8-e018b23d4630}'</comment>
   </data>
-  <data name="1:label,Common Configuration{39400265-97ec-7383-e2bd-bc5dda44153d}" xml:space="preserve">
-    <value>Log Path</value>
-    <comment>'Common Configuration' : label for cell in Entity FormXml ID: '{39400265-97ec-7383-e2bd-bc5dda44153d}'</comment>
-  </data>
   <data name="1:label,Common Configuration{3ab9591c-8d3c-6646-22a4-ab229a34d035}" xml:space="preserve">
     <value>Assembly Exclusion</value>
     <comment>'Common Configuration' : label for cell in Entity FormXml ID: '{3ab9591c-8d3c-6646-22a4-ab229a34d035}'</comment>
@@ -4095,6 +4335,10 @@
   <data name="1:label,Common Configuration{3caa6f22-bafd-4dc4-8b6b-5ef10f2b76a7}" xml:space="preserve">
     <value>General</value>
     <comment>'Common Configuration' : label for tab in Entity FormXml ID: '{3caa6f22-bafd-4dc4-8b6b-5ef10f2b76a7}'</comment>
+  </data>
+  <data name="1:label,Common Configuration{3d1b7911-9b0a-1d1a-ab53-9e598330bc32}" xml:space="preserve">
+    <value>Status</value>
+    <comment>'Common Configuration' : label for cell in Entity FormXml ID: '{3d1b7911-9b0a-1d1a-ab53-9e598330bc32}'</comment>
   </data>
   <data name="1:label,Common Configuration{43628dcc-1b16-929e-9063-6831a52bb9dd}" xml:space="preserve">
     <value>Row URL Template</value>
@@ -4104,14 +4348,6 @@
     <value>Section</value>
     <comment>'Common Configuration' : label for section in Entity FormXml ID: '{44d86603-52c8-4cd8-4798-a10944c8a65e}'</comment>
   </data>
-  <data name="1:label,Common Configuration{51e9c701-1b88-888b-1a34-36869ee527c1}" xml:space="preserve">
-    <value>Max File Size (KB)</value>
-    <comment>'Common Configuration' : label for cell in Entity FormXml ID: '{51e9c701-1b88-888b-1a34-36869ee527c1}'</comment>
-  </data>
-  <data name="1:label,Common Configuration{58e0e6b1-9657-1ec6-ec32-837e89952763}" xml:space="preserve">
-    <value>Log File Split Frequency</value>
-    <comment>'Common Configuration' : label for cell in Entity FormXml ID: '{58e0e6b1-9657-1ec6-ec32-837e89952763}'</comment>
-  </data>
   <data name="1:label,Common Configuration{63cedcbd-3d13-8c4e-5036-08248ca30435}" xml:space="preserve">
     <value>Tab</value>
     <comment>'Common Configuration' : label for tab in Entity FormXml ID: '{63cedcbd-3d13-8c4e-5036-08248ca30435}'</comment>
@@ -4120,29 +4356,25 @@
     <value>Organisation Base URL</value>
     <comment>'Common Configuration' : label for cell in Entity FormXml ID: '{64b1b4bd-e053-ec09-21c1-b9594cbc0338}'</comment>
   </data>
-  <data name="1:label,Common Configuration{734a6878-d903-29eb-82e5-0c36ac03e111}" xml:space="preserve">
-    <value>Categorise by Type</value>
-    <comment>'Common Configuration' : label for cell in Entity FormXml ID: '{734a6878-d903-29eb-82e5-0c36ac03e111}'</comment>
-  </data>
   <data name="1:label,Common Configuration{7694b869-63db-0c08-b543-0989bbbd2964}" xml:space="preserve">
     <value>Assembly Filter</value>
     <comment>'Common Configuration' : label for cell in Entity FormXml ID: '{7694b869-63db-0c08-b543-0989bbbd2964}'</comment>
-  </data>
-  <data name="1:label,Common Configuration{77127982-aab7-8ead-0848-06089cb0baa4}" xml:space="preserve">
-    <value>Log File Split Date</value>
-    <comment>'Common Configuration' : label for cell in Entity FormXml ID: '{77127982-aab7-8ead-0848-06089cb0baa4}'</comment>
   </data>
   <data name="1:label,Common Configuration{7b805a0a-48b6-8540-3b6c-388409e8aaca}" xml:space="preserve">
     <value>Log Level</value>
     <comment>'Common Configuration' : label for cell in Entity FormXml ID: '{7b805a0a-48b6-8540-3b6c-388409e8aaca}'</comment>
   </data>
-  <data name="1:label,Common Configuration{80329796-18d7-55b8-2320-ba1742b23373}" xml:space="preserve">
-    <value>Log File Split Mode</value>
-    <comment>'Common Configuration' : label for cell in Entity FormXml ID: '{80329796-18d7-55b8-2320-ba1742b23373}'</comment>
+  <data name="1:label,Common Configuration{8596ec85-084b-bdec-cdb2-6a72ca2ed186}" xml:space="preserve">
+    <value>Escalation User</value>
+    <comment>'Common Configuration' : label for cell in Entity FormXml ID: '{8596ec85-084b-bdec-cdb2-6a72ca2ed186}'</comment>
   </data>
-  <data name="1:label,Common Configuration{98d7070d-cbc0-0886-dd17-d5135c118a5e}" xml:space="preserve">
-    <value>Log File Date Format</value>
-    <comment>'Common Configuration' : label for cell in Entity FormXml ID: '{98d7070d-cbc0-0886-dd17-d5135c118a5e}'</comment>
+  <data name="1:label,Common Configuration{867e024d-9997-cb10-8443-3c3dae54b983}" xml:space="preserve">
+    <value>Cache</value>
+    <comment>'Common Configuration' : label for section in Entity FormXml ID: '{867e024d-9997-cb10-8443-3c3dae54b983}'</comment>
+  </data>
+  <data name="1:label,Common Configuration{8799173a-67f1-4d92-a747-59aac440331f}" xml:space="preserve">
+    <value />
+    <comment>'Common Configuration' : label for cell in Entity FormXml ID: '{8799173a-67f1-4d92-a747-59aac440331f}'</comment>
   </data>
   <data name="1:label,Common Configuration{9cb15278-b46c-b033-c00c-80d42051e24b}" xml:space="preserve">
     <value>Section</value>
@@ -4168,6 +4400,10 @@
     <value>Job Check Interval</value>
     <comment>'Common Configuration' : label for cell in Entity FormXml ID: '{b684ac81-5543-0144-09d4-028539189e93}'</comment>
   </data>
+  <data name="1:label,Common Configuration{bd8d089d-8661-92b8-e65a-754537aaad96}" xml:space="preserve">
+    <value>CRM Log Enabled</value>
+    <comment>'Common Configuration' : label for cell in Entity FormXml ID: '{bd8d089d-8661-92b8-e65a-754537aaad96}'</comment>
+  </data>
   <data name="1:label,Common Configuration{c08bec11-0190-6d90-18e3-64d6d7a8e1d6}" xml:space="preserve">
     <value>Metadata Cache Duration</value>
     <comment>'Common Configuration' : label for cell in Entity FormXml ID: '{c08bec11-0190-6d90-18e3-64d6d7a8e1d6}'</comment>
@@ -4175,6 +4411,10 @@
   <data name="1:label,Common Configuration{c5386019-279b-7be7-d8ec-4db1ca932834}" xml:space="preserve">
     <value>Default Calendar</value>
     <comment>'Common Configuration' : label for cell in Entity FormXml ID: '{c5386019-279b-7be7-d8ec-4db1ca932834}'</comment>
+  </data>
+  <data name="1:label,Common Configuration{c9c2b762-edd2-7c57-9cb9-c6ea985ad97b}" xml:space="preserve">
+    <value>Owner</value>
+    <comment>'Common Configuration' : label for cell in Entity FormXml ID: '{c9c2b762-edd2-7c57-9cb9-c6ea985ad97b}'</comment>
   </data>
   <data name="1:label,Common Configuration{ce6de150-58d6-74eb-e1b5-da22cba160b0}" xml:space="preserve">
     <value>Configuration Cache Duration</value>
@@ -4479,6 +4719,98 @@
   <data name="1:label,Custom Job Log{eab78b05-dc16-956e-722c-8a30ca14471e}" xml:space="preserve">
     <value>Execution Full Message</value>
     <comment>'Custom Job Log' : label for cell in Entity FormXml ID: '{eab78b05-dc16-956e-722c-8a30ca14471e}'</comment>
+  </data>
+  <data name="1:label,Custom Job Recurrence{0bfaf436-eea6-4fcf-81ca-0b8720a7aea6}" xml:space="preserve">
+    <value>Name</value>
+    <comment>'Custom Job Recurrence' : label for cell in Entity FormXml ID: '{0bfaf436-eea6-4fcf-81ca-0b8720a7aea6}'</comment>
+  </data>
+  <data name="1:label,Custom Job Recurrence{17abc0e2-8933-4f60-98b2-0f2ffdb573f1}" xml:space="preserve">
+    <value>Status Reason</value>
+    <comment>'Custom Job Recurrence' : label for cell in Entity FormXml ID: '{17abc0e2-8933-4f60-98b2-0f2ffdb573f1}'</comment>
+  </data>
+  <data name="1:label,Custom Job Recurrence{1cb67695-656d-4fa6-836f-b3d63172afe5}" xml:space="preserve">
+    <value />
+    <comment>'Custom Job Recurrence' : label for cell in Entity FormXml ID: '{1cb67695-656d-4fa6-836f-b3d63172afe5}'</comment>
+  </data>
+  <data name="1:label,Custom Job Recurrence{26e9c383-9326-4857-91ef-fed474140e7d}" xml:space="preserve">
+    <value>GENERAL</value>
+    <comment>'Custom Job Recurrence' : label for section in Entity FormXml ID: '{26e9c383-9326-4857-91ef-fed474140e7d}'</comment>
+  </data>
+  <data name="1:label,Custom Job Recurrence{28a16afd-830a-41fe-b91d-cb3d9196a65b}" xml:space="preserve">
+    <value />
+    <comment>'Custom Job Recurrence' : label for cell in Entity FormXml ID: '{28a16afd-830a-41fe-b91d-cb3d9196a65b}'</comment>
+  </data>
+  <data name="1:label,Custom Job Recurrence{42206fbe-276a-49ad-99e1-05dc104ddd08}" xml:space="preserve">
+    <value />
+    <comment>'Custom Job Recurrence' : label for tab in Entity FormXml ID: '{42206fbe-276a-49ad-99e1-05dc104ddd08}'</comment>
+  </data>
+  <data name="1:label,Custom Job Recurrence{5804bfd3-7aa2-44dc-a51d-5612fd748fbb}" xml:space="preserve">
+    <value />
+    <comment>'Custom Job Recurrence' : label for cell in Entity FormXml ID: '{5804bfd3-7aa2-44dc-a51d-5612fd748fbb}'</comment>
+  </data>
+  <data name="1:label,Custom Job Recurrence{59d4c8b5-d668-4d08-9392-732cc47cec61}" xml:space="preserve">
+    <value>General</value>
+    <comment>'Custom Job Recurrence' : label for tab in Entity FormXml ID: '{59d4c8b5-d668-4d08-9392-732cc47cec61}'</comment>
+  </data>
+  <data name="1:label,Custom Job Recurrence{643408a8-5383-4d30-8f66-f8f4835029fa}" xml:space="preserve">
+    <value>Details</value>
+    <comment>'Custom Job Recurrence' : label for section in Entity FormXml ID: '{643408a8-5383-4d30-8f66-f8f4835029fa}'</comment>
+  </data>
+  <data name="1:label,Custom Job Recurrence{6ad987f0-6d99-4f40-a065-a63c19a76ab1}" xml:space="preserve">
+    <value>Footer</value>
+    <comment>'Custom Job Recurrence' : label for section in Entity FormXml ID: '{6ad987f0-6d99-4f40-a065-a63c19a76ab1}'</comment>
+  </data>
+  <data name="1:label,Custom Job Recurrence{909728df-5ac1-49ba-8344-05bbc476e6f8}" xml:space="preserve">
+    <value>General</value>
+    <comment>'Custom Job Recurrence' : label for section in Entity FormXml ID: '{909728df-5ac1-49ba-8344-05bbc476e6f8}'</comment>
+  </data>
+  <data name="1:label,Custom Job Recurrence{99a95806-2c9d-e880-c0d7-3a00ea589565}" xml:space="preserve">
+    <value>Recurrence Rule</value>
+    <comment>'Custom Job Recurrence' : label for cell in Entity FormXml ID: '{99a95806-2c9d-e880-c0d7-3a00ea589565}'</comment>
+  </data>
+  <data name="1:label,Custom Job Recurrence{a434dffb-d316-4572-b833-b4ea0189eff6}" xml:space="preserve">
+    <value />
+    <comment>'Custom Job Recurrence' : label for cell in Entity FormXml ID: '{a434dffb-d316-4572-b833-b4ea0189eff6}'</comment>
+  </data>
+  <data name="1:label,Custom Job Recurrence{a81ff7f8-13db-4367-a579-d4db523d7d70}" xml:space="preserve">
+    <value>Owner</value>
+    <comment>'Custom Job Recurrence' : label for cell in Entity FormXml ID: '{a81ff7f8-13db-4367-a579-d4db523d7d70}'</comment>
+  </data>
+  <data name="1:label,Custom Job Recurrence{b32d229d-e99d-4127-a798-fd829aa1d889}" xml:space="preserve">
+    <value>Owner</value>
+    <comment>'Custom Job Recurrence' : label for cell in Entity FormXml ID: '{b32d229d-e99d-4127-a798-fd829aa1d889}'</comment>
+  </data>
+  <data name="1:label,Custom Job Recurrence{b5397ab4-923e-1aae-75ac-8c637401a557}" xml:space="preserve">
+    <value>Custom Job</value>
+    <comment>'Custom Job Recurrence' : label for cell in Entity FormXml ID: '{b5397ab4-923e-1aae-75ac-8c637401a557}'</comment>
+  </data>
+  <data name="1:label,Custom Job Recurrence{c0cba22e-9151-4bbd-829a-a4d7967edcd8}" xml:space="preserve">
+    <value>Name</value>
+    <comment>'Custom Job Recurrence' : label for cell in Entity FormXml ID: '{c0cba22e-9151-4bbd-829a-a4d7967edcd8}'</comment>
+  </data>
+  <data name="1:label,Custom Job Recurrence{d7ecfa6f-0a4a-4a87-b0f7-2554b90a33e7}" xml:space="preserve">
+    <value>Owner</value>
+    <comment>'Custom Job Recurrence' : label for cell in Entity FormXml ID: '{d7ecfa6f-0a4a-4a87-b0f7-2554b90a33e7}'</comment>
+  </data>
+  <data name="1:label,Custom Job Recurrence{dc796d9c-bf38-4172-ada7-d0a961af4995}" xml:space="preserve">
+    <value />
+    <comment>'Custom Job Recurrence' : label for tab in Entity FormXml ID: '{dc796d9c-bf38-4172-ada7-d0a961af4995}'</comment>
+  </data>
+  <data name="1:label,Custom Job Recurrence{df9b1de9-8aab-4279-9bb3-04666d06314a}" xml:space="preserve">
+    <value>ColorStrip</value>
+    <comment>'Custom Job Recurrence' : label for section in Entity FormXml ID: '{df9b1de9-8aab-4279-9bb3-04666d06314a}'</comment>
+  </data>
+  <data name="1:label,Custom Job Recurrence{e8afd12d-5d2a-4577-9832-9b2245370500}" xml:space="preserve">
+    <value>Created On</value>
+    <comment>'Custom Job Recurrence' : label for cell in Entity FormXml ID: '{e8afd12d-5d2a-4577-9832-9b2245370500}'</comment>
+  </data>
+  <data name="1:label,Custom Job Recurrence{f6d6f4ae-2322-4bb3-a257-0a38641a80fc}" xml:space="preserve">
+    <value>Header</value>
+    <comment>'Custom Job Recurrence' : label for section in Entity FormXml ID: '{f6d6f4ae-2322-4bb3-a257-0a38641a80fc}'</comment>
+  </data>
+  <data name="1:label,Custom Job Recurrence{fbbc4257-f485-4297-b872-e695cf03c829}" xml:space="preserve">
+    <value>Name</value>
+    <comment>'Custom Job Recurrence' : label for cell in Entity FormXml ID: '{fbbc4257-f485-4297-b872-e695cf03c829}'</comment>
   </data>
   <data name="1:label,Custom Job{03249700-a72e-0054-0884-58615d84a74e}" xml:space="preserve">
     <value>Recurrent Job</value>
@@ -5088,22 +5420,6 @@
     <value>Yes</value>
     <comment>'ldv_customjob' : label for option '1' on Entity</comment>
   </data>
-  <data name="1:label,ldv_genericconfigurationldv_genericconfiguration_ldv_iscategorisebytype0" xml:space="preserve">
-    <value>No</value>
-    <comment>'ldv_genericconfiguration' : label for option '0' on Entity</comment>
-  </data>
-  <data name="1:label,ldv_genericconfigurationldv_genericconfiguration_ldv_iscategorisebytype1" xml:space="preserve">
-    <value>Yes</value>
-    <comment>'ldv_genericconfiguration' : label for option '1' on Entity</comment>
-  </data>
-  <data name="1:label,ldv_genericconfigurationldv_genericconfiguration_ldv_isreuselogfile0" xml:space="preserve">
-    <value>No</value>
-    <comment>'ldv_genericconfiguration' : label for option '0' on Entity</comment>
-  </data>
-  <data name="1:label,ldv_genericconfigurationldv_genericconfiguration_ldv_isreuselogfile1" xml:space="preserve">
-    <value>Yes</value>
-    <comment>'ldv_genericconfiguration' : label for option '1' on Entity</comment>
-  </data>
   <data name="1:label,ldv_genericconfigurationldv_genericconfiguration_statecode0" xml:space="preserve">
     <value>Active</value>
     <comment>'ldv_genericconfiguration' : label for state '0' on Entity</comment>
@@ -5119,6 +5435,14 @@
   <data name="1:label,ldv_genericconfigurationldv_genericconfiguration_statuscode2" xml:space="preserve">
     <value>Inactive</value>
     <comment>'ldv_genericconfiguration' : label for status '2' on Entity</comment>
+  </data>
+  <data name="1:label,ldv_genericconfigurationys_ldv_genericconfiguration_ys_iscrmlogenabled0" xml:space="preserve">
+    <value>No</value>
+    <comment>'ldv_genericconfiguration' : label for option '0' on Entity</comment>
+  </data>
+  <data name="1:label,ldv_genericconfigurationys_ldv_genericconfiguration_ys_iscrmlogenabled1" xml:space="preserve">
+    <value>Yes</value>
+    <comment>'ldv_genericconfiguration' : label for option '1' on Entity</comment>
   </data>
   <data name="1:label,ldv_genericconfigurationys_ldv_genericconfiguration_ys_jobsplatformcode717860000" xml:space="preserve">
     <value>CRM</value>
@@ -5512,6 +5836,10 @@
     <value />
     <comment>'Log' : label for cell in Entity FormXml ID: '{03095451-79d3-9b57-0928-8792bec7bb11}'</comment>
   </data>
+  <data name="1:label,Log{0434db3b-27b6-bac6-6e81-e871696ab811}" xml:space="preserve">
+    <value>Operation ID</value>
+    <comment>'Log' : label for cell in Entity FormXml ID: '{0434db3b-27b6-bac6-6e81-e871696ab811}'</comment>
+  </data>
   <data name="1:label,Log{0b22472a-1ea6-2e1b-14b2-355351b74969}" xml:space="preserve">
     <value>Log Entries Table</value>
     <comment>'Log' : label for tab in Entity FormXml ID: '{0b22472a-1ea6-2e1b-14b2-355351b74969}'</comment>
@@ -5528,6 +5856,14 @@
     <value>Exception Log Entry</value>
     <comment>'Log' : label for cell in Entity FormXml ID: '{14669735-b051-3ab7-abb7-6e8816886559}'</comment>
   </data>
+  <data name="1:label,Log{17dce16e-0809-3119-bd13-7054c35ba058}" xml:space="preserve">
+    <value>Stage</value>
+    <comment>'Log' : label for cell in Entity FormXml ID: '{17dce16e-0809-3119-bd13-7054c35ba058}'</comment>
+  </data>
+  <data name="1:label,Log{2198b713-d588-040c-e8cb-ae8ec8010726}" xml:space="preserve">
+    <value>Mode</value>
+    <comment>'Log' : label for cell in Entity FormXml ID: '{2198b713-d588-040c-e8cb-ae8ec8010726}'</comment>
+  </data>
   <data name="1:label,Log{21ce4317-c55d-e300-164c-a0ee06c9aa98}" xml:space="preserve">
     <value>Log Entries</value>
     <comment>'Log' : label for section in Entity FormXml ID: '{21ce4317-c55d-e300-164c-a0ee06c9aa98}'</comment>
@@ -5536,9 +5872,13 @@
     <value>Code</value>
     <comment>'Log' : label for section in Entity FormXml ID: '{234ec22b-2cd7-9d94-5ab9-41694be09873}'</comment>
   </data>
-  <data name="1:label,Log{2798117e-43d1-82e7-5a80-d1d55c5dbe2a}" xml:space="preserve">
-    <value />
-    <comment>'Log' : label for cell in Entity FormXml ID: '{2798117e-43d1-82e7-5a80-d1d55c5dbe2a}'</comment>
+  <data name="1:label,Log{27ecd045-342d-c534-b095-b485378a51be}" xml:space="preserve">
+    <value>Isolation Mode</value>
+    <comment>'Log' : label for cell in Entity FormXml ID: '{27ecd045-342d-c534-b095-b485378a51be}'</comment>
+  </data>
+  <data name="1:label,Log{2ec6c873-7c10-3b54-9d0b-9a95db43173b}" xml:space="preserve">
+    <value>Depth</value>
+    <comment>'Log' : label for cell in Entity FormXml ID: '{2ec6c873-7c10-3b54-9d0b-9a95db43173b}'</comment>
   </data>
   <data name="1:label,Log{336ed098-9205-a90c-6271-8541460eb8dc}" xml:space="preserve">
     <value>Log Entries Tree</value>
@@ -5588,9 +5928,17 @@
     <value />
     <comment>'Log' : label for cell in Entity FormXml ID: '{64261944-1439-d4ca-e24e-4420264d7c06}'</comment>
   </data>
+  <data name="1:label,Log{66d27b83-4454-9307-d6c5-0abe049859d9}" xml:space="preserve">
+    <value>Business Unit ID</value>
+    <comment>'Log' : label for cell in Entity FormXml ID: '{66d27b83-4454-9307-d6c5-0abe049859d9}'</comment>
+  </data>
   <data name="1:label,Log{697c73e9-5133-6100-a2c7-52d35b49b431}" xml:space="preserve">
     <value>Regarding ID</value>
     <comment>'Log' : label for cell in Entity FormXml ID: '{697c73e9-5133-6100-a2c7-52d35b49b431}'</comment>
+  </data>
+  <data name="1:label,Log{7224cc84-8ac6-1050-235b-ae07620223c3}" xml:space="preserve">
+    <value>Plugin Info</value>
+    <comment>'Log' : label for section in Entity FormXml ID: '{7224cc84-8ac6-1050-235b-ae07620223c3}'</comment>
   </data>
   <data name="1:label,Log{797102ab-9210-2872-4bad-9ad9c32b5603}" xml:space="preserve">
     <value>Details</value>
@@ -5612,6 +5960,14 @@
     <value>Exception Thrown</value>
     <comment>'Log' : label for cell in Entity FormXml ID: '{967d4c12-3d52-d1b4-00a4-698d21ab6e3c}'</comment>
   </data>
+  <data name="1:label,Log{9a11d8b9-3756-0842-d152-4e6a75181d81}" xml:space="preserve">
+    <value>Message Name</value>
+    <comment>'Log' : label for cell in Entity FormXml ID: '{9a11d8b9-3756-0842-d152-4e6a75181d81}'</comment>
+  </data>
+  <data name="1:label,Log{a24454d1-2496-44b6-0512-9c3451ca28b2}" xml:space="preserve">
+    <value>Correlation ID</value>
+    <comment>'Log' : label for cell in Entity FormXml ID: '{a24454d1-2496-44b6-0512-9c3451ca28b2}'</comment>
+  </data>
   <data name="1:label,Log{a9a9bba2-a459-9398-72b1-658309d6c950}" xml:space="preserve">
     <value>Section</value>
     <comment>'Log' : label for section in Entity FormXml ID: '{a9a9bba2-a459-9398-72b1-658309d6c950}'</comment>
@@ -5627,6 +5983,10 @@
   <data name="1:label,Log{ad8b9043-b50b-cd44-6692-7abc6e94ea48}" xml:space="preserve">
     <value>Execution State</value>
     <comment>'Log' : label for section in Entity FormXml ID: '{ad8b9043-b50b-cd44-6692-7abc6e94ea48}'</comment>
+  </data>
+  <data name="1:label,Log{aec082ad-6db0-a88b-3e49-a1ba76467d00}" xml:space="preserve">
+    <value />
+    <comment>'Log' : label for cell in Entity FormXml ID: '{aec082ad-6db0-a88b-3e49-a1ba76467d00}'</comment>
   </data>
   <data name="1:label,Log{b5bb2143-b0cc-3b07-4684-6a493a399740}" xml:space="preserve">
     <value>Start Date</value>
@@ -6056,6 +6416,22 @@
     <value>General</value>
     <comment>'Role Configuration' : label for tab in Entity FormXml ID: '{ee257f6c-80e6-43e9-9fe2-39740dc0e43f}'</comment>
   </data>
+  <data name="1:label,ys_customjobrecurrenceys_customjobrecurrence_statecode0" xml:space="preserve">
+    <value>Active</value>
+    <comment>'ys_customjobrecurrence' : label for state '0' on Entity</comment>
+  </data>
+  <data name="1:label,ys_customjobrecurrenceys_customjobrecurrence_statecode1" xml:space="preserve">
+    <value>Inactive</value>
+    <comment>'ys_customjobrecurrence' : label for state '1' on Entity</comment>
+  </data>
+  <data name="1:label,ys_customjobrecurrenceys_customjobrecurrence_statuscode1" xml:space="preserve">
+    <value>Active</value>
+    <comment>'ys_customjobrecurrence' : label for status '1' on Entity</comment>
+  </data>
+  <data name="1:label,ys_customjobrecurrenceys_customjobrecurrence_statuscode2" xml:space="preserve">
+    <value>Inactive</value>
+    <comment>'ys_customjobrecurrence' : label for status '2' on Entity</comment>
+  </data>
   <data name="1:label,ys_keyvalueys_keyvalue_statecode0" xml:space="preserve">
     <value>Active</value>
     <comment>'ys_keyvalue' : label for state '0' on Entity</comment>
@@ -6115,6 +6491,10 @@
   <data name="1:LocalizedCollectionName,ldv_roleconfigurationentityldv_roleconfiguration" xml:space="preserve">
     <value>Role Configurations</value>
     <comment> 'ldv_roleconfiguration' : LocalizedCollectionName for Entity</comment>
+  </data>
+  <data name="1:LocalizedCollectionName,ys_customjobrecurrenceentityys_customjobrecurrence" xml:space="preserve">
+    <value>Custom Job Recurrences</value>
+    <comment> 'ys_customjobrecurrence' : LocalizedCollectionName for Entity</comment>
   </data>
   <data name="1:LocalizedCollectionName,ys_keyvalueentityys_keyvalue" xml:space="preserve">
     <value>Key-Values</value>
@@ -6271,6 +6651,46 @@
   <data name="1:LocalizedName,Custom Job Log{a3743d59-7794-e611-80c2-00155d5f3d02}" xml:space="preserve">
     <value>My Custom Job Logs</value>
     <comment>'Custom Job Log' : LocalizedName for SavedQuery on Entity QueryId: '{a3743d59-7794-e611-80c2-00155d5f3d02}'</comment>
+  </data>
+  <data name="1:LocalizedName,Custom Job Recurrence{11193e99-652a-ec11-9ae3-000d3a4c87c6}" xml:space="preserve">
+    <value>My Custom Job Recurrences</value>
+    <comment>'Custom Job Recurrence' : LocalizedName for SavedQuery on Entity QueryId: '{11193e99-652a-ec11-9ae3-000d3a4c87c6}'</comment>
+  </data>
+  <data name="1:LocalizedName,Custom Job Recurrence{35f58b2a-0e2c-45cc-814b-ceb84bdb5ed9}" xml:space="preserve">
+    <value>Active Custom Job Recurrences</value>
+    <comment>'Custom Job Recurrence' : LocalizedName for SavedQuery on Entity QueryId: '{35f58b2a-0e2c-45cc-814b-ceb84bdb5ed9}'</comment>
+  </data>
+  <data name="1:LocalizedName,Custom Job Recurrence{74af28d9-e641-4410-b513-f95ce1c34579}" xml:space="preserve">
+    <value>Inactive Custom Job Recurrences</value>
+    <comment>'Custom Job Recurrence' : LocalizedName for SavedQuery on Entity QueryId: '{74af28d9-e641-4410-b513-f95ce1c34579}'</comment>
+  </data>
+  <data name="1:LocalizedName,Custom Job Recurrence{7be77df7-21bd-43c6-9996-d0f5e0f121de}" xml:space="preserve">
+    <value>Information</value>
+    <comment>'Custom Job Recurrence' : LocalizedName for systemform in Entity FormXml ID: '{7be77df7-21bd-43c6-9996-d0f5e0f121de}'</comment>
+  </data>
+  <data name="1:LocalizedName,Custom Job Recurrence{ab0f8919-bb3a-4d1b-8cf2-5e211f15327e}" xml:space="preserve">
+    <value>Information</value>
+    <comment>'Custom Job Recurrence' : LocalizedName for systemform in Entity FormXml ID: '{ab0f8919-bb3a-4d1b-8cf2-5e211f15327e}'</comment>
+  </data>
+  <data name="1:LocalizedName,Custom Job Recurrence{ba7b1c66-eef0-4d3f-b530-322ad7c35e10}" xml:space="preserve">
+    <value>Custom Job Recurrence Advanced Find View</value>
+    <comment>'Custom Job Recurrence' : LocalizedName for SavedQuery on Entity QueryId: '{ba7b1c66-eef0-4d3f-b530-322ad7c35e10}'</comment>
+  </data>
+  <data name="1:LocalizedName,Custom Job Recurrence{cd843054-9e39-4629-b6a1-931426319882}" xml:space="preserve">
+    <value>Custom Job Recurrence Associated View</value>
+    <comment>'Custom Job Recurrence' : LocalizedName for SavedQuery on Entity QueryId: '{cd843054-9e39-4629-b6a1-931426319882}'</comment>
+  </data>
+  <data name="1:LocalizedName,Custom Job Recurrence{cf1ea93c-d85d-4a8c-9875-a4f350ed427c}" xml:space="preserve">
+    <value>Quick Find Active Custom Job Recurrences</value>
+    <comment>'Custom Job Recurrence' : LocalizedName for SavedQuery on Entity QueryId: '{cf1ea93c-d85d-4a8c-9875-a4f350ed427c}'</comment>
+  </data>
+  <data name="1:LocalizedName,Custom Job Recurrence{d6b359e6-d766-4c90-94ff-dda9e43735e3}" xml:space="preserve">
+    <value>Custom Job Recurrence Lookup View</value>
+    <comment>'Custom Job Recurrence' : LocalizedName for SavedQuery on Entity QueryId: '{d6b359e6-d766-4c90-94ff-dda9e43735e3}'</comment>
+  </data>
+  <data name="1:LocalizedName,Custom Job Recurrence{ded56aa3-a627-434a-ba5f-59e0e8ac8700}" xml:space="preserve">
+    <value>Main Form</value>
+    <comment>'Custom Job Recurrence' : LocalizedName for systemform in Entity FormXml ID: '{ded56aa3-a627-434a-ba5f-59e0e8ac8700}'</comment>
   </data>
   <data name="1:LocalizedName,Custom Job{25351bb5-2596-e611-80c2-00155d5f3d02}" xml:space="preserve">
     <value>Active Recurrent Custom Jobs</value>
@@ -6453,7 +6873,7 @@
     <comment>'Log' : LocalizedName for SavedQuery on Entity QueryId: '{02311b5e-91da-43bf-822a-72a5983297ba}'</comment>
   </data>
   <data name="1:LocalizedName,Log{034221e2-0e42-418f-ab18-ef3a1673749b}" xml:space="preserve">
-    <value>Information</value>
+    <value>Main Form</value>
     <comment>'Log' : LocalizedName for systemform in Entity FormXml ID: '{034221e2-0e42-418f-ab18-ef3a1673749b}'</comment>
   </data>
   <data name="1:LocalizedName,Log{065254a8-ab0d-e511-93f4-080027688fb3}" xml:space="preserve">
@@ -6612,6 +7032,10 @@
     <value>Inactive Role Configurations</value>
     <comment>'Role Configuration' : LocalizedName for SavedQuery on Entity QueryId: '{fdac86d0-b9e8-4238-9785-7f700325d530}'</comment>
   </data>
+  <data name="1:LocalizedName,ys_customjobrecurrenceentityys_customjobrecurrence" xml:space="preserve">
+    <value>Custom Job Recurrence</value>
+    <comment> 'ys_customjobrecurrence' : LocalizedName for Entity</comment>
+  </data>
   <data name="1:LocalizedName,ys_keyvalueentityys_keyvalue" xml:space="preserve">
     <value>Key-Value</value>
     <comment> 'ys_keyvalue' : LocalizedName for Entity</comment>
@@ -6767,6 +7191,26 @@
   <data name="1:Title,Custom Job LogService{841549e5-f571-4b53-b384-f9787bc601de}" xml:space="preserve">
     <value>Service</value>
     <comment>'Custom Job Log' : Title for NavBarArea in Entity FormXml ID: 'Service'</comment>
+  </data>
+  <data name="1:Title,Custom Job RecurrenceInfo{ded56aa3-a627-434a-ba5f-59e0e8ac8700}" xml:space="preserve">
+    <value>Common</value>
+    <comment>'Custom Job Recurrence' : Title for NavBarArea in Entity FormXml ID: 'Info'</comment>
+  </data>
+  <data name="1:Title,Custom Job RecurrenceMarketing{ded56aa3-a627-434a-ba5f-59e0e8ac8700}" xml:space="preserve">
+    <value>Marketing</value>
+    <comment>'Custom Job Recurrence' : Title for NavBarArea in Entity FormXml ID: 'Marketing'</comment>
+  </data>
+  <data name="1:Title,Custom Job RecurrenceProcessCenter{ded56aa3-a627-434a-ba5f-59e0e8ac8700}" xml:space="preserve">
+    <value>Process Sessions</value>
+    <comment>'Custom Job Recurrence' : Title for NavBarArea in Entity FormXml ID: 'ProcessCenter'</comment>
+  </data>
+  <data name="1:Title,Custom Job RecurrenceSales{ded56aa3-a627-434a-ba5f-59e0e8ac8700}" xml:space="preserve">
+    <value>Sales</value>
+    <comment>'Custom Job Recurrence' : Title for NavBarArea in Entity FormXml ID: 'Sales'</comment>
+  </data>
+  <data name="1:Title,Custom Job RecurrenceService{ded56aa3-a627-434a-ba5f-59e0e8ac8700}" xml:space="preserve">
+    <value>Service</value>
+    <comment>'Custom Job Recurrence' : Title for NavBarArea in Entity FormXml ID: 'Service'</comment>
   </data>
   <data name="1:Title,Custom JobInfo{4e624f83-afb3-4519-a30a-4ad805eda2a0}" xml:space="preserve">
     <value>Common</value>
@@ -7008,10 +7452,6 @@
     <value>Service</value>
     <comment>'Role Configuration' : Title for NavBarArea in Entity FormXml ID: 'Service'</comment>
   </data>
-  <data name="29:Description,{3292d14c-c00f-e711-80c7-00155d5f3d01}" xml:space="preserve">
-    <value>Click to add description</value>
-    <comment>'File Split Mode - Size' : Description for Workflow</comment>
-  </data>
   <data name="29:Description,{546fa81c-533e-e411-80d7-000d3a20210f}" xml:space="preserve">
     <value>Click to add description</value>
     <comment>'If Type = Team' : Description for Workflow</comment>
@@ -7020,25 +7460,9 @@
     <value>Click to add description</value>
     <comment>'If Type=Queue' : Description for Workflow</comment>
   </data>
-  <data name="29:Description,{7abcfa59-a60f-e711-80c7-00155d5f3d01}" xml:space="preserve">
-    <value>Click to add description</value>
-    <comment>'Size Limit Requirement' : Description for Workflow</comment>
-  </data>
   <data name="29:Description,{89cc20ad-523e-e411-80d7-000d3a20210f}" xml:space="preserve">
     <value>Click to add description</value>
     <comment>'If Type = User' : Description for Workflow</comment>
-  </data>
-  <data name="29:Description,{8a27f0a0-9f0f-e711-80c7-00155d5f3d01}" xml:space="preserve">
-    <value>Click to add description</value>
-    <comment>'Path Requirement' : Description for Workflow</comment>
-  </data>
-  <data name="29:Description,{9bf9c9f5-bf0f-e711-80c7-00155d5f3d01}" xml:space="preserve">
-    <value>Click to add description</value>
-    <comment>'Log Mode' : Description for Workflow</comment>
-  </data>
-  <data name="29:Description,{bbfe4ab7-c00f-e711-80c7-00155d5f3d01}" xml:space="preserve">
-    <value>Click to add description</value>
-    <comment>'File Split Mode - Date' : Description for Workflow</comment>
   </data>
   <data name="29:label,{112054a3-454c-43b0-a6ed-180422d37393}" xml:space="preserve">
     <value>Hourly WF already triggered.</value>
@@ -7051,10 +7475,6 @@
   <data name="29:LocalizedName,{323659d9-2d75-e611-80bf-00155d890101}" xml:space="preserve">
     <value>Exception Message - Visibility</value>
     <comment>'Exception Message - Visibility' : LocalizedName for Workflow</comment>
-  </data>
-  <data name="29:LocalizedName,{3292d14c-c00f-e711-80c7-00155d5f3d01}" xml:space="preserve">
-    <value>File Split Mode - Size</value>
-    <comment>'File Split Mode - Size' : LocalizedName for Workflow</comment>
   </data>
   <data name="29:LocalizedName,{3af1c5af-1911-4bc4-b3c7-15989a184298}" xml:space="preserve">
     <value>[Generic] [Custom Job] [WF] 10-minute</value>
@@ -7084,21 +7504,13 @@
     <value>If Type=Queue</value>
     <comment>'If Type=Queue' : LocalizedName for Workflow</comment>
   </data>
-  <data name="29:LocalizedName,{7abcfa59-a60f-e711-80c7-00155d5f3d01}" xml:space="preserve">
-    <value>Size Limit Requirement</value>
-    <comment>'Size Limit Requirement' : LocalizedName for Workflow</comment>
+  <data name="29:LocalizedName,{866b4f75-cf3c-4256-8679-98ee00e2ac1a}" xml:space="preserve">
+    <value>[Generic] [Custom Job] [WF] Auto name recurrence</value>
+    <comment>'[Generic] [Custom Job] [WF] Auto name recurrence' : LocalizedName for Workflow</comment>
   </data>
   <data name="29:LocalizedName,{89cc20ad-523e-e411-80d7-000d3a20210f}" xml:space="preserve">
     <value>If Type = User</value>
     <comment>'If Type = User' : LocalizedName for Workflow</comment>
-  </data>
-  <data name="29:LocalizedName,{8a27f0a0-9f0f-e711-80c7-00155d5f3d01}" xml:space="preserve">
-    <value>Path Requirement</value>
-    <comment>'Path Requirement' : LocalizedName for Workflow</comment>
-  </data>
-  <data name="29:LocalizedName,{9bf9c9f5-bf0f-e711-80c7-00155d5f3d01}" xml:space="preserve">
-    <value>Log Mode</value>
-    <comment>'Log Mode' : LocalizedName for Workflow</comment>
   </data>
   <data name="29:LocalizedName,{9f5873a0-b739-4f9d-ac10-9845a13edeb3}" xml:space="preserve">
     <value>[Generic] [Custom Job] [WF] Main</value>
@@ -7112,13 +7524,13 @@
     <value>[Generic] [Custom Job] [WF] Hourly</value>
     <comment>'[Generic] [Custom Job] [WF] Hourly' : LocalizedName for Workflow</comment>
   </data>
+  <data name="29:LocalizedName,{a7998c76-46c9-4cc2-be24-a43f9b30e1be}" xml:space="preserve">
+    <value>[Generic] [Custom Job] [Action] Get Next Job Batch</value>
+    <comment>'[Generic] [Custom Job] [Action] Get Next Job Batch' : LocalizedName for Workflow</comment>
+  </data>
   <data name="29:LocalizedName,{b037ca84-125c-4095-a8f8-14d3e0ecaa6d}" xml:space="preserve">
     <value>[Generic] [Custom Job] [Action] Get Next Recurrence Date</value>
     <comment>'[Generic] [Custom Job] [Action] Get Next Recurrence Date' : LocalizedName for Workflow</comment>
-  </data>
-  <data name="29:LocalizedName,{bbfe4ab7-c00f-e711-80c7-00155d5f3d01}" xml:space="preserve">
-    <value>File Split Mode - Date</value>
-    <comment>'File Split Mode - Date' : LocalizedName for Workflow</comment>
   </data>
   <data name="29:LocalizedName,{cd727571-f2df-4969-b9a9-ca0b5c066008}" xml:space="preserve">
     <value>[Generic] [Custom Job] [WF] 1-minute</value>
@@ -7432,6 +7844,50 @@
     <value />
     <comment>'ys_keyvaluesubcategories' : Description for OptionSet Value '717860000'</comment>
   </data>
+  <data name="9:Description,ys_pluginisolationmode" xml:space="preserve">
+    <value />
+    <comment>'ys_pluginisolationmode' : Description for OptionSet</comment>
+  </data>
+  <data name="9:Description,ys_pluginisolationmode1" xml:space="preserve">
+    <value />
+    <comment>'ys_pluginisolationmode' : Description for OptionSet Value '1'</comment>
+  </data>
+  <data name="9:Description,ys_pluginisolationmode2" xml:space="preserve">
+    <value />
+    <comment>'ys_pluginisolationmode' : Description for OptionSet Value '2'</comment>
+  </data>
+  <data name="9:Description,ys_pluginisolationmode3" xml:space="preserve">
+    <value />
+    <comment>'ys_pluginisolationmode' : Description for OptionSet Value '3'</comment>
+  </data>
+  <data name="9:Description,ys_pluginmode" xml:space="preserve">
+    <value />
+    <comment>'ys_pluginmode' : Description for OptionSet</comment>
+  </data>
+  <data name="9:Description,ys_pluginmode0" xml:space="preserve">
+    <value />
+    <comment>'ys_pluginmode' : Description for OptionSet Value '0'</comment>
+  </data>
+  <data name="9:Description,ys_pluginmode1" xml:space="preserve">
+    <value />
+    <comment>'ys_pluginmode' : Description for OptionSet Value '1'</comment>
+  </data>
+  <data name="9:Description,ys_pluginstage" xml:space="preserve">
+    <value />
+    <comment>'ys_pluginstage' : Description for OptionSet</comment>
+  </data>
+  <data name="9:Description,ys_pluginstage10" xml:space="preserve">
+    <value />
+    <comment>'ys_pluginstage' : Description for OptionSet Value '10'</comment>
+  </data>
+  <data name="9:Description,ys_pluginstage20" xml:space="preserve">
+    <value />
+    <comment>'ys_pluginstage' : Description for OptionSet Value '20'</comment>
+  </data>
+  <data name="9:Description,ys_pluginstage40" xml:space="preserve">
+    <value />
+    <comment>'ys_pluginstage' : Description for OptionSet Value '40'</comment>
+  </data>
   <data name="9:displayname,ldv_datefrequency" xml:space="preserve">
     <value>Date Frequency</value>
     <comment>'ldv_datefrequency' : displayname for OptionSet</comment>
@@ -7471,6 +7927,18 @@
   <data name="9:displayname,ys_keyvaluesubcategories" xml:space="preserve">
     <value>Key-Value Subcategories</value>
     <comment>'ys_keyvaluesubcategories' : displayname for OptionSet</comment>
+  </data>
+  <data name="9:displayname,ys_pluginisolationmode" xml:space="preserve">
+    <value>Plugin Isolation Mode</value>
+    <comment>'ys_pluginisolationmode' : displayname for OptionSet</comment>
+  </data>
+  <data name="9:displayname,ys_pluginmode" xml:space="preserve">
+    <value>Plugin Mode</value>
+    <comment>'ys_pluginmode' : displayname for OptionSet</comment>
+  </data>
+  <data name="9:displayname,ys_pluginstage" xml:space="preserve">
+    <value>Plugin Stage</value>
+    <comment>'ys_pluginstage' : displayname for OptionSet</comment>
   </data>
   <data name="9:label,ldv_datefrequency10" xml:space="preserve">
     <value>Hourly</value>
@@ -7655,5 +8123,37 @@
   <data name="9:label,ys_keyvaluesubcategories717860000" xml:space="preserve">
     <value>Uncategorised</value>
     <comment>'ys_keyvaluesubcategories' : label for OptionSet Value '717860000'</comment>
+  </data>
+  <data name="9:label,ys_pluginisolationmode1" xml:space="preserve">
+    <value>None</value>
+    <comment>'ys_pluginisolationmode' : label for OptionSet Value '1'</comment>
+  </data>
+  <data name="9:label,ys_pluginisolationmode2" xml:space="preserve">
+    <value>Sandbox</value>
+    <comment>'ys_pluginisolationmode' : label for OptionSet Value '2'</comment>
+  </data>
+  <data name="9:label,ys_pluginisolationmode3" xml:space="preserve">
+    <value>External</value>
+    <comment>'ys_pluginisolationmode' : label for OptionSet Value '3'</comment>
+  </data>
+  <data name="9:label,ys_pluginmode0" xml:space="preserve">
+    <value>Synchronous</value>
+    <comment>'ys_pluginmode' : label for OptionSet Value '0'</comment>
+  </data>
+  <data name="9:label,ys_pluginmode1" xml:space="preserve">
+    <value>Asynchronous</value>
+    <comment>'ys_pluginmode' : label for OptionSet Value '1'</comment>
+  </data>
+  <data name="9:label,ys_pluginstage10" xml:space="preserve">
+    <value>Prevalidation</value>
+    <comment>'ys_pluginstage' : label for OptionSet Value '10'</comment>
+  </data>
+  <data name="9:label,ys_pluginstage20" xml:space="preserve">
+    <value>Preoperation</value>
+    <comment>'ys_pluginstage' : label for OptionSet Value '20'</comment>
+  </data>
+  <data name="9:label,ys_pluginstage40" xml:space="preserve">
+    <value>Postoperation</value>
+    <comment>'ys_pluginstage' : label for OptionSet Value '40'</comment>
   </data>
 </root>

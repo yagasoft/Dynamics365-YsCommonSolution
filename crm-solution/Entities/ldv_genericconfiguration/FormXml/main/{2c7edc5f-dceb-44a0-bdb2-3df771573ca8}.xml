@@ -14,7 +14,7 @@
           <columns>
             <column width="100%">
               <sections>
-                <section showlabel="false" showbar="false" IsUserDefined="0" id="{19102333-ae4b-4170-a5ce-cc8b109e09ae}" name="{19102333-ae4b-4170-a5ce-cc8b109e09ae}" columns="1" locklevel="0" labelwidth="175" celllabelalignment="Left" celllabelposition="Left">
+                <section showlabel="true" showbar="true" IsUserDefined="0" id="{19102333-ae4b-4170-a5ce-cc8b109e09ae}" name="{19102333-ae4b-4170-a5ce-cc8b109e09ae}" columns="1" locklevel="0" labelwidth="175" celllabelalignment="Left" celllabelposition="Left">
                   <labels>
                     <label description="General" languagecode="1033" />
                   </labels>
@@ -28,29 +28,28 @@
                       </cell>
                     </row>
                     <row>
-                      <cell id="{128024ac-defd-4548-9f31-81e4c9ffa087}">
+                      <cell id="{8596ec85-084b-bdec-cdb2-6a72ca2ed186}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="Owner" languagecode="1033" />
+                          <label description="Escalation User" languagecode="1033" />
                         </labels>
-                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                        <control id="ys_escalationuserid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ys_escalationuserid" disabled="false" />
                       </cell>
                     </row>
                     <row>
-                      <cell id="{64b1b4bd-e053-ec09-21c1-b9594cbc0338}" showlabel="true" locklevel="0">
+                      <cell id="{c5386019-279b-7be7-d8ec-4db1ca932834}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="Organisation Base URL" languagecode="1033" />
+                          <label description="Default Calendar" languagecode="1033" />
                         </labels>
-                        <control id="ldv_organisationbaseurl" classid="{71716B6C-711E-476c-8AB8-5D11542BFB47}" datafieldname="ldv_organisationbaseurl" disabled="false" />
+                        <control id="ldv_defaultcalendar" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ldv_defaultcalendar" disabled="false" />
                       </cell>
                     </row>
-                    <row>
-                      <cell id="{43628dcc-1b16-929e-9063-6831a52bb9dd}" showlabel="true" locklevel="0">
-                        <labels>
-                          <label description="Row URL Template" languagecode="1033" />
-                        </labels>
-                        <control id="ys_rowurltemplate" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ys_rowurltemplate" disabled="false" />
-                      </cell>
-                    </row>
+                  </rows>
+                </section>
+                <section name="{3caa6f22-bafd-4dc4-8b6b-5ef10f2b76a7}_section_2" showlabel="true" showbar="true" locklevel="0" id="{867e024d-9997-cb10-8443-3c3dae54b983}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="175" celllabelalignment="Left" celllabelposition="Left">
+                  <labels>
+                    <label description="Cache" languagecode="1033" />
+                  </labels>
+                  <rows>
                     <row>
                       <cell id="{ce6de150-58d6-74eb-e1b5-da22cba160b0}" showlabel="true" locklevel="0">
                         <labels>
@@ -67,12 +66,27 @@
                         <control id="ldv_metadatacacheduration" classid="{AA987274-CE4E-4271-A803-66164311A958}" datafieldname="ldv_metadatacacheduration" disabled="false" />
                       </cell>
                     </row>
+                  </rows>
+                </section>
+                <section name="{3caa6f22-bafd-4dc4-8b6b-5ef10f2b76a7}_section_3" showlabel="true" showbar="true" locklevel="0" id="{1380b12c-ea71-963b-0629-372c7da3284b}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="175" celllabelalignment="Left" celllabelposition="Left">
+                  <labels>
+                    <label description="URLs" languagecode="1033" />
+                  </labels>
+                  <rows>
                     <row>
-                      <cell id="{c5386019-279b-7be7-d8ec-4db1ca932834}" showlabel="true" locklevel="0">
+                      <cell id="{64b1b4bd-e053-ec09-21c1-b9594cbc0338}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="Default Calendar" languagecode="1033" />
+                          <label description="Organisation Base URL" languagecode="1033" />
                         </labels>
-                        <control id="ldv_defaultcalendar" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ldv_defaultcalendar" disabled="false" />
+                        <control id="ldv_organisationbaseurl" classid="{71716B6C-711E-476c-8AB8-5D11542BFB47}" datafieldname="ldv_organisationbaseurl" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{43628dcc-1b16-929e-9063-6831a52bb9dd}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Row URL Template" languagecode="1033" />
+                        </labels>
+                        <control id="ys_rowurltemplate" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ys_rowurltemplate" disabled="false" />
                       </cell>
                     </row>
                   </rows>
@@ -82,6 +96,29 @@
           </columns>
         </tab>
       </tabs>
+      <header id="{a4e1c657-d412-4fc7-a24f-cfc444ecdecd}" columns="111">
+        <rows>
+          <row>
+            <cell id="{8799173a-67f1-4d92-a747-59aac440331f}">
+              <labels>
+                <label description="" languagecode="1033" />
+              </labels>
+            </cell>
+            <cell id="{3d1b7911-9b0a-1d1a-ab53-9e598330bc32}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Status" languagecode="1033" />
+              </labels>
+              <control id="header_statecode" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="statecode" disabled="false" />
+            </cell>
+            <cell id="{c9c2b762-edd2-7c57-9cb9-c6ea985ad97b}" showlabel="true" locklevel="0">
+              <labels>
+                <label description="Owner" languagecode="1033" />
+              </labels>
+              <control id="header_ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" uniqueid="{63249dec-13a1-1e5e-21bd-b5ae0815a94e}" />
+            </cell>
+          </row>
+        </rows>
+      </header>
       <Navigation>
         <NavBar></NavBar>
         <NavBarAreas>

@@ -2,7 +2,7 @@
 
 [![Join the chat at https://gitter.im/yagasoft/DynamicsCrm-BaseSolution](https://badges.gitter.im/yagasoft/DynamicsCrm-BaseSolution.svg)](https://gitter.im/yagasoft/DynamicsCrm-BaseSolution?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-### Version: 2.3.1.1
+### Version: 3.2.1.1
 ---
 
 Forms a powerful base functionality for working with CRM. Includes advanced logging and custom jobs.

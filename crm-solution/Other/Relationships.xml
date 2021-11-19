@@ -11,6 +11,7 @@
   <EntityRelationship Name="business_unit_ldv_recurrenceruleexception" />
   <EntityRelationship Name="business_unit_ldv_recurrenceruleexceptiongrouping" />
   <EntityRelationship Name="business_unit_ldv_roleconfiguration" />
+  <EntityRelationship Name="business_unit_ys_customjobrecurrence" />
   <EntityRelationship Name="business_unit_ys_keyvalue" />
   <EntityRelationship Name="ldv_ldv_customjob_ldv_customjob" />
   <EntityRelationship Name="ldv_ldv_customjob_ldv_customjobfailedtarget_CustomJob" />
@@ -56,6 +57,8 @@
   <EntityRelationship Name="lk_ldv_recurrenceruleexceptiongrouping_modifiedby" />
   <EntityRelationship Name="lk_ldv_roleconfiguration_createdby" />
   <EntityRelationship Name="lk_ldv_roleconfiguration_modifiedby" />
+  <EntityRelationship Name="lk_ys_customjobrecurrence_createdby" />
+  <EntityRelationship Name="lk_ys_customjobrecurrence_modifiedby" />
   <EntityRelationship Name="lk_ys_keyvalue_createdby" />
   <EntityRelationship Name="lk_ys_keyvalue_modifiedby" />
   <EntityRelationship Name="owner_ldv_customjob" />
@@ -69,6 +72,7 @@
   <EntityRelationship Name="owner_ldv_recurrenceruleexception" />
   <EntityRelationship Name="owner_ldv_recurrenceruleexceptiongrouping" />
   <EntityRelationship Name="owner_ldv_roleconfiguration" />
+  <EntityRelationship Name="owner_ys_customjobrecurrence" />
   <EntityRelationship Name="owner_ys_keyvalue" />
   <EntityRelationship Name="team_ldv_customjob" />
   <EntityRelationship Name="team_ldv_customjobengine" />
@@ -81,6 +85,7 @@
   <EntityRelationship Name="team_ldv_recurrenceruleexception" />
   <EntityRelationship Name="team_ldv_recurrenceruleexceptiongrouping" />
   <EntityRelationship Name="team_ldv_roleconfiguration" />
+  <EntityRelationship Name="team_ys_customjobrecurrence" />
   <EntityRelationship Name="team_ys_keyvalue" />
   <EntityRelationship Name="user_ldv_customjob" />
   <EntityRelationship Name="user_ldv_customjobengine" />
@@ -93,5 +98,9 @@
   <EntityRelationship Name="user_ldv_recurrenceruleexception" />
   <EntityRelationship Name="user_ldv_recurrenceruleexceptiongrouping" />
   <EntityRelationship Name="user_ldv_roleconfiguration" />
+  <EntityRelationship Name="user_ys_customjobrecurrence" />
   <EntityRelationship Name="user_ys_keyvalue" />
+  <EntityRelationship Name="ys_customjob_customjobrecurrence_CustomJobId" />
+  <EntityRelationship Name="ys_recurrencerule_customjobrecurrence_RecurrenceRuleId" />
+  <EntityRelationship Name="ys_systemuser_genericconfiguration_EscalationUserId" />
 </EntityRelationships>

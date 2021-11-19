@@ -28,67 +28,11 @@
                       </cell>
                     </row>
                     <row>
-                      <cell id="{1864cc01-8110-a86c-3c3e-8698ced9a15c}" showlabel="true" locklevel="0">
+                      <cell id="{bd8d089d-8661-92b8-e65a-754537aaad96}" showlabel="true" locklevel="0">
                         <labels>
-                          <label description="Log Mode" languagecode="1033" />
+                          <label description="CRM Log Enabled" languagecode="1033" />
                         </labels>
-                        <control id="ldv_logmode" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="ldv_logmode" disabled="false" />
-                      </cell>
-                    </row>
-                    <row>
-                      <cell id="{39400265-97ec-7383-e2bd-bc5dda44153d}" showlabel="true" locklevel="0">
-                        <labels>
-                          <label description="Log Path" languagecode="1033" />
-                        </labels>
-                        <control id="ldv_logpath" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ldv_logpath" disabled="false" uniqueid="{e236d633-7b75-1de1-168b-e52d08028747}" />
-                      </cell>
-                    </row>
-                    <row>
-                      <cell id="{98d7070d-cbc0-0886-dd17-d5135c118a5e}" showlabel="true" locklevel="0">
-                        <labels>
-                          <label description="Log File Date Format" languagecode="1033" />
-                        </labels>
-                        <control id="ldv_logfiledateformat" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ldv_logfiledateformat" disabled="false" uniqueid="{5493e979-d451-16ed-36e8-2833c176523d}" />
-                      </cell>
-                    </row>
-                    <row>
-                      <cell id="{734a6878-d903-29eb-82e5-0c36ac03e111}" showlabel="true" locklevel="0">
-                        <labels>
-                          <label description="Categorise by Type" languagecode="1033" />
-                        </labels>
-                        <control id="ldv_iscategorisebytype" classid="{B0C6723A-8503-4fd7-BB28-C8A06AC933C2}" datafieldname="ldv_iscategorisebytype" disabled="false" uniqueid="{3b5a24c4-6b44-e39e-71a7-67838576d766}" />
-                      </cell>
-                    </row>
-                    <row>
-                      <cell id="{80329796-18d7-55b8-2320-ba1742b23373}" showlabel="true" locklevel="0">
-                        <labels>
-                          <label description="Log File Split Mode" languagecode="1033" />
-                        </labels>
-                        <control id="ldv_logfilesplitmode" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="ldv_logfilesplitmode" disabled="false" uniqueid="{cb76caeb-db74-7e0d-ecd4-b11d4c3d107e}" />
-                      </cell>
-                    </row>
-                    <row>
-                      <cell id="{51e9c701-1b88-888b-1a34-36869ee527c1}" showlabel="true" locklevel="0">
-                        <labels>
-                          <label description="Max File Size (KB)" languagecode="1033" />
-                        </labels>
-                        <control id="ldv_maxfilesize" classid="{C6D124CA-7EDA-4a60-AEA9-7FB8D318B68F}" datafieldname="ldv_maxfilesize" disabled="false" uniqueid="{b2c0670e-e713-8ad2-a3a5-d1a11bcc3c9e}" />
-                      </cell>
-                    </row>
-                    <row>
-                      <cell id="{58e0e6b1-9657-1ec6-ec32-837e89952763}" showlabel="true" locklevel="0">
-                        <labels>
-                          <label description="Log File Split Frequency" languagecode="1033" />
-                        </labels>
-                        <control id="ldv_logfilesplitfrequency" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="ldv_logfilesplitfrequency" disabled="false" uniqueid="{d5186b5d-5e7d-4264-5402-8178243d30b3}" />
-                      </cell>
-                    </row>
-                    <row>
-                      <cell id="{77127982-aab7-8ead-0848-06089cb0baa4}" showlabel="true" locklevel="0">
-                        <labels>
-                          <label description="Log File Split Date" languagecode="1033" />
-                        </labels>
-                        <control id="ldv_logfilesplitdate" classid="{5B773807-9FB2-42db-97C3-7A91EFF8ADFF}" datafieldname="ldv_logfilesplitdate" disabled="false" uniqueid="{82a30d67-7c72-16ca-cbeb-1d30a9088e7a}" />
+                        <control id="ys_iscrmlogenabled" classid="{B0C6723A-8503-4fd7-BB28-C8A06AC933C2}" datafieldname="ys_iscrmlogenabled" disabled="false" uniqueid="{ae72b56e-9d6d-1393-4cc3-43a2e21bc998}" />
                       </cell>
                     </row>
                   </rows>

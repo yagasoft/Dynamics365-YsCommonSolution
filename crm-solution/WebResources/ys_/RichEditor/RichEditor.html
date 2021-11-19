@@ -1,0 +1,182 @@
+﻿<!-- Author: Ahmed Elsawalhy -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rich Editor</title>
+<meta charset="utf-8">
+<script>
+    var Xrm = window.Xrm || parent.Xrm;
+    var $ = window.$ || parent.$;
+    var AnchoredExecutionContext = window.AnchoredExecutionContext || parent.AnchoredExecutionContext;
+
+    var RichEditorMap = parent.RichEditorMap;
+
+    var ParentIFrame;
+
+    var Params;
+    var ControlName;
+    var Height;
+    var IsFullHtml;
+
+    var BaseUrl;
+
+    function InitRichEditor()
+    {
+        if (typeof ($) === "undefined")
+        {
+            console.error("Can't find $ in advanced find frame.");
+            return;
+        }
+
+        // get the params from the URL
+        Params = $(location).attr('hash').split('#');
+
+        ControlName = Params[1];
+        Height = parseInt(Params[2]);
+        IsFullHtml = Params[3] === 'true';
+
+        BaseUrl = Xrm.Page.context.getClientUrl();
+
+        ParentIFrame = $("#richEditorFrame_" + ControlName, parent.document);
+
+        $(window, document).bind('keydown', function(event)
+        {
+            if (event.ctrlKey || event.metaKey)
+            {
+                switch (String.fromCharCode(event.which).toLowerCase())
+                {
+                    case 's':
+                        setTimeout(
+                            function()
+                            {
+                                Xrm.Page.data.save();
+                            }, 500);
+
+                        event.preventDefault();
+                        break;
+                }
+            }
+        });
+
+        var isSkipFireOnChange = false;
+
+        const editorJsUrl = BaseUrl + '/WebResources/ys_/RichEditor/ckeditor.js';
+
+        // load CKEditor script
+        const headTag = document.getElementsByTagName("head")[0];
+        const jqTag = document.createElement('script');
+        jqTag.type = 'text/javascript';
+        jqTag.src = editorJsUrl;
+
+        const id = 'ckWysiwyg';
+
+        jqTag.onload = function ()
+        {
+            const config = {};
+
+            if (Height)
+            {
+                config.autoGrow_maxHeight = Height;
+            }
+
+            if (IsFullHtml)
+            {
+                config.fullPage = true;
+            }
+
+            CKEDITOR.replace(id, config);
+
+            var editor = CKEDITOR.dom.element.get(id).getEditor();
+
+            if (editor)
+            {
+                // initial editor data copied from field
+                var setEditorData = function ()
+                {
+                    // prevent looping
+                    if (isSkipFireOnChange)
+                    {
+                        isSkipFireOnChange = false;
+                        return;
+                    }
+
+                    const existingData = AnchoredExecutionContext.getFormContext().getAttribute(ControlName).getValue();
+                    CKEDITOR.instances[id].setData(existingData || '');
+
+                    var editorFindLoop =
+                        function()
+                        {
+                            var editorElement = $('.cke_wysiwyg_frame', document);
+
+                            if (editorElement.length)
+                            {
+                                $(editorElement[0].contentWindow).bind('keydown', function(event)
+                                {
+                                    if (event.ctrlKey || event.metaKey)
+                                    {
+                                        switch (String.fromCharCode(event.which).toLowerCase())
+                                        {
+                                            case 's':
+                                                setTimeout(
+                                                    function()
+                                                    {
+                                                        AnchoredExecutionContext.getFormContext().data.save();
+                                                    }, 100);
+
+                                                event.preventDefault();
+                                                break;
+                                        }
+                                    }
+                                });
+                            }
+                            else
+                            {
+                                setTimeout(editorFindLoop, 500);
+                            }
+                        }
+
+                    editorFindLoop();
+                };
+
+                const handler = RichEditorMap[ControlName] = setEditorData;
+
+                // add an OnChange event to copy field data to editor
+                AnchoredExecutionContext.getFormContext().getAttribute(ControlName).addOnChange(handler);
+
+                setEditorData();
+
+                // add an OnChange event to copy editor data to field
+                editor.on('change',
+                    function ()
+                    {
+                        setTimeout(() =>
+                        {
+                            ParentIFrame.height($("body", document).height() + 11);
+                        }, 150);
+
+                        AnchoredExecutionContext.getFormContext().getAttribute(ControlName).setValue(editor.getData());
+                        // prevent looping
+                        isSkipFireOnChange = true;
+                        AnchoredExecutionContext.getFormContext().getAttribute(ControlName).fireOnChange();
+                    });
+
+                editor.on('instanceReady',
+                    () =>
+                    {
+                        setTimeout(() => ParentIFrame.height($("body", document).height() + 11), 50);
+                    });
+            }
+        };
+
+        headTag.appendChild(jqTag);
+    }
+
+    window.onload = InitRichEditor;
+</script>
+</head>
+<body>
+<div>
+    <textarea name="ckWysiwyg" id="ckWysiwyg"></textarea>
+</div>
+</body>
+</html>

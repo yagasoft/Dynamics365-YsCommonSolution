@@ -10,15 +10,8 @@
     <layoutxml>
       <grid name="resultset" jump="ldv_name" select="1" preview="1" icon="1">
         <row name="result" id="ldv_genericconfigurationid">
+          <cell name="ys_iscrmlogenabled" width="125" imageproviderfunctionname="" imageproviderwebresource="$webresource:" />
           <cell name="ldv_loglevel" width="300" />
-          <cell name="ldv_logmode" width="100" />
-          <cell name="ldv_logpath" width="200" />
-          <cell name="ldv_logfiledateformat" width="150" />
-          <cell name="ldv_iscategorisebytype" width="125" />
-          <cell name="ldv_logfilesplitmode" width="125" />
-          <cell name="ldv_maxfilesize" width="125" />
-          <cell name="ldv_logfilesplitfrequency" width="150" />
-          <cell name="ldv_logfilesplitdate" width="125" />
         </row>
       </grid>
     </layoutxml>
@@ -28,14 +21,7 @@
         <entity name="ldv_genericconfiguration">
           <order attribute="ldv_loglevel" descending="false" />
           <attribute name="ldv_loglevel" />
-          <attribute name="ldv_maxfilesize" />
-          <attribute name="ldv_logpath" />
-          <attribute name="ldv_logmode" />
-          <attribute name="ldv_logfilesplitmode" />
-          <attribute name="ldv_logfilesplitfrequency" />
-          <attribute name="ldv_logfilesplitdate" />
-          <attribute name="ldv_logfiledateformat" />
-          <attribute name="ldv_iscategorisebytype" />
+          <attribute name="ys_iscrmlogenabled" />
           <attribute name="ldv_genericconfigurationid" />
         </entity>
       </fetch>

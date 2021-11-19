@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource>
+  <WebResourceId>{b36ab47c-6c11-ec11-9ada-000d3a4c87c6}</WebResourceId>
+  <Name>ys_/RichEditor/plugins/smiley/images/devil_smile.png</Name>
+  <DisplayName>devil_smile.png</DisplayName>
+  <WebResourceType>5</WebResourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/ys_RichEditorpluginssmileyimagesdevil_smilepngB36AB47C-6C11-EC11-9ADA-000D3A4C87C6</FileName>
+</WebResource>

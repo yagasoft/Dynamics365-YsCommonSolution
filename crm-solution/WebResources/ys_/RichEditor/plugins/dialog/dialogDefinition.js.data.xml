@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<WebResource>
+  <WebResourceId>{83ab5a51-6c11-ec11-9ada-000d3a4c87c6}</WebResourceId>
+  <Name>ys_/RichEditor/plugins/dialog/dialogDefinition.js</Name>
+  <DisplayName>dialogDefinition.js</DisplayName>
+  <WebResourceType>3</WebResourceType>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+  <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+  <IsCustomizable>1</IsCustomizable>
+  <CanBeDeleted>1</CanBeDeleted>
+  <IsHidden>0</IsHidden>
+  <FileName>/WebResources/ys_RichEditorpluginsdialogdialogDefinitionjs83AB5A51-6C11-EC11-9ADA-000D3A4C87C6</FileName>
+</WebResource>

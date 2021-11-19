@@ -237,7 +237,7 @@
                         <labels>
                           <label description="Target ID" languagecode="1033" />
                         </labels>
-                        <control id="ldv_targetid" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ldv_targetid" disabled="false" />
+                        <control id="ldv_targetid" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ldv_targetid" disabled="false" uniqueid="{b037e403-d169-e754-9a18-38e67400b876}" />
                       </cell>
                     </row>
                   </rows>
@@ -296,6 +296,13 @@
               </sections>
             </column>
           </columns>
+          <events>
+            <event name="tabstatechange" application="false" active="false">
+              <Handlers>
+                <Handler functionName="TargetName_OnChange" libraryName="ldv_CustomJobJs" handlerUniqueId="{ce832b13-3565-822b-2ad6-57b10d8776aa}" enabled="true" parameters="true" passExecutionContext="false" />
+              </Handlers>
+            </event>
+          </events>
         </tab>
         <tab name="tab_7" id="{24133714-1566-885b-823a-12c28b8bd073}" IsUserDefined="0" locklevel="0" showlabel="true" expanded="false">
           <labels>

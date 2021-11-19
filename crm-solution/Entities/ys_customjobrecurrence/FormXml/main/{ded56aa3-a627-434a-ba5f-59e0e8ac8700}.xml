@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<forms>
+  <systemform>
+    <formid>{ded56aa3-a627-434a-ba5f-59e0e8ac8700}</formid>
+    <IntroducedVersion>2.4.1.2</IntroducedVersion>
+    <FormPresentation>1</FormPresentation>
+    <FormActivationState>1</FormActivationState>
+    <form shownavigationbar="true" showImage="false" maxWidth="1920">
+      <tabs>
+        <tab verticallayout="true" id="{59d4c8b5-d668-4d08-9392-732cc47cec61}" IsUserDefined="1">
+          <labels>
+            <label description="General" languagecode="1033" />
+          </labels>
+          <columns>
+            <column width="100%">
+              <sections>
+                <section showlabel="false" showbar="false" IsUserDefined="0" id="{909728df-5ac1-49ba-8344-05bbc476e6f8}">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <rows>
+                    <row>
+                      <cell id="{c0cba22e-9151-4bbd-829a-a4d7967edcd8}">
+                        <labels>
+                          <label description="Name" languagecode="1033" />
+                        </labels>
+                        <control id="ys_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ys_name" uniqueid="{aaaa583c-7543-92c3-e09b-52674875195e}" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b5397ab4-923e-1aae-75ac-8c637401a557}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Custom Job" languagecode="1033" />
+                        </labels>
+                        <control id="ys_customjobid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ys_customjobid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{99a95806-2c9d-e880-c0d7-3a00ea589565}" showlabel="true" locklevel="0">
+                        <labels>
+                          <label description="Recurrence Rule" languagecode="1033" />
+                        </labels>
+                        <control id="ys_recurrenceruleid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ys_recurrenceruleid" disabled="false" />
+                      </cell>
+                    </row>
+                    <row>
+                      <cell id="{b32d229d-e99d-4127-a798-fd829aa1d889}">
+                        <labels>
+                          <label description="Owner" languagecode="1033" />
+                        </labels>
+                        <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" />
+                      </cell>
+                    </row>
+                  </rows>
+                </section>
+              </sections>
+            </column>
+          </columns>
+        </tab>
+      </tabs>
+      <Navigation>
+        <NavBar></NavBar>
+        <NavBarAreas>
+          <NavBarArea Id="Info">
+            <Titles>
+              <Title LCID="1033" Text="Common" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Sales">
+            <Titles>
+              <Title LCID="1033" Text="Sales" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Service">
+            <Titles>
+              <Title LCID="1033" Text="Service" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="Marketing">
+            <Titles>
+              <Title LCID="1033" Text="Marketing" />
+            </Titles>
+          </NavBarArea>
+          <NavBarArea Id="ProcessCenter">
+            <Titles>
+              <Title LCID="1033" Text="Process Sessions" />
+            </Titles>
+          </NavBarArea>
+        </NavBarAreas>
+      </Navigation>
+    </form>
+    <IsCustomizable>1</IsCustomizable>
+    <CanBeDeleted>1</CanBeDeleted>
+    <LocalizedNames>
+      <LocalizedName description="Main Form" languagecode="1033" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="A form for this entity." languagecode="1033" />
+    </Descriptions>
+  </systemform>
+</forms>
