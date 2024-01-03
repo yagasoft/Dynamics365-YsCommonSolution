@@ -1,6 +1,4 @@
-﻿//         Project / File: Yagasoft.Plugins.Common / CustomJobHandler.cs
-
-#region Imports
+﻿#region Imports
 
 using System;
 using System.Collections.Generic;
@@ -30,7 +28,8 @@ namespace Yagasoft.Plugins.Common
 
 		protected override void ExecuteLogic()
 		{
-			var inclusions = new[]
+			var inclusions =
+				new[]
 			                 {
 				                 RecurrenceRuleException.EntityLogicalName,
 				                 RecurrenceRuleExceptionGrouping.EntityLogicalName
@@ -38,81 +37,7 @@ namespace Yagasoft.Plugins.Common
 
 			var rules = new List<RecurrenceRule>();
 
-			if (context.MessageName == "Associate" || context.MessageName == "Disassociate")
-			{
-				log.Log($"Message: '{context.MessageName}'.");
-
-				// Get the "Relationship" Key from context
-				if (context.InputParameters.Contains("Relationship"))
-				{
-					var relationName = context.InputParameters["Relationship"].ToString();
-					log.Log($"Relation name: '{relationName}'.");
-				}
-				else
-				{
-					log.Log("Not a relationship.", LogLevel.Warning);
-					return;
-				}
-
-				EntityReference[] related;
-
-				// Get the "Relationship" Key from context
-				if (context.InputParameters.Contains("RelatedEntities"))
-				{
-					related = ((EntityReferenceCollection) context.InputParameters["RelatedEntities"])?.ToArray();
-					log.Log($"Related records: '{related?.Length}'.");
-
-					if (related == null)
-					{
-						log.Log("No related entities.", LogLevel.Warning);
-						return;
-					}
-					else
-					{
-						foreach (var relatedRecord in related)
-						{
-							log.Log($"Related: '{relatedRecord.LogicalName}':'{relatedRecord.Id}'.");
-						}
-					}
-				}
-				else
-				{
-					log.Log("No related entities.", LogLevel.Warning);
-					return;
-				}
-
-				var targetRef = (EntityReference) context.InputParameters["Target"];
-				log.Log($"Target: '{targetRef?.LogicalName}':'{targetRef?.Id}'.");
-
-				if (targetRef == null)
-				{
-					log.Log("No target.", LogLevel.Warning);
-					return;
-				}
-
-				if (targetRef.LogicalName == RecurrenceRule.EntityLogicalName)
-				{
-					rules.Add(new RecurrenceRule { Id = targetRef.Id });
-				}
-				else if (related.Any(record => record.LogicalName == RecurrenceRule.EntityLogicalName)
-				         && inclusions.Contains(targetRef.LogicalName))
-				{
-					rules.AddRange(related
-						.Where(relatedRecord => relatedRecord.LogicalName == RecurrenceRule.EntityLogicalName)
-						.Select(relatedRecord => new RecurrenceRule {Id = relatedRecord.Id}));
-				}
-				else if (related.All(record => inclusions.Contains(record.LogicalName))
-				         && inclusions.Contains(targetRef.LogicalName))
-				{
-					LoadRules(targetRef, rules);
-
-					foreach (var relatedRecord in related)
-					{
-						LoadRules(relatedRecord, rules);
-					}
-				}
-			}
-			else if (context.MessageName == "Update")
+			if (context.MessageName == "Update")
 			{
 				var target = (Entity) context.InputParameters["Target"];
 				log.Log($"Target: '{target?.LogicalName}':'{target?.Id}'.");
@@ -147,7 +72,8 @@ namespace Yagasoft.Plugins.Common
 
 				if (exclusionRecord.LogicalName == RecurrenceRuleExceptionGrouping.EntityLogicalName)
 				{
-					var record = new RecurrenceRuleExceptionGrouping
+					var record =
+						new RecurrenceRuleExceptionGrouping
 					             {
 						             Id = exclusionRecord.Id
 					             };
@@ -175,7 +101,8 @@ namespace Yagasoft.Plugins.Common
 				}
 				else if (exclusionRecord.LogicalName == RecurrenceRuleException.EntityLogicalName)
 				{
-					var record = new RecurrenceRuleException
+					var record =
+						new RecurrenceRuleException
 					             {
 						             Id = exclusionRecord.Id
 					             };

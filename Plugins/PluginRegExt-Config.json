@@ -2,9 +2,9 @@
   "SelectedSettingsIndex": 0,
   "SettingsList": [
     {
-      "ProfileName": "Azure",
       "Id": "ace19cbf-34ec-4340-be6b-9dc97ae59180",
-      "DisplayName": "Azure"
+      "DisplayName": "Azure",
+      "ProfileName": "Azure"
     }
   ]
 }
