@@ -10,12 +10,16 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Yagasoft.Steps.Common</RootNamespace>
     <AssemblyName>Yagasoft.Steps.Common</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -61,6 +65,9 @@
     <Reference Include="System.DirectoryServices.AccountManagement" />
     <Reference Include="System.Runtime.Caching" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ValueTuple, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.3.0\lib\netstandard1.0\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Workflow.Activities" />
     <Reference Include="System.Workflow.ComponentModel" />
     <Reference Include="System.Workflow.Runtime" />
@@ -86,16 +93,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CrmSchema.tt</DependentUpon>
     </Compile>
+    <Compile Include="CrmSchemaBase.cs">
+      <DependentUpon>CrmSchema.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CrmSchemaContracts.cs">
+      <DependentUpon>CrmSchema.tt</DependentUpon>
+    </Compile>
     <Compile Include="GetRecordBpfActivePath.cs" />
-    <Compile Include="GenerateRandomLinkDev.cs" />
+    <Compile Include="GenerateRandomYagasoft.cs" />
     <Compile Include="Helpers\Helper.cs" />
-    <Compile Include="Helpers\NotificationHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecurrenceNextDate.cs" />
-    <None Include="CrmSchema.dat" />
+    <None Include="CrmSchema-Config.json" />
     <None Include="key.snk" />
     <None Include="packages.config" />
-    <None Include="PluginRegExt.dat" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CrmSchema.tt">

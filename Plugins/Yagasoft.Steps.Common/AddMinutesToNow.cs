@@ -37,16 +37,13 @@ namespace Yagasoft.Steps.Common
 	{
 		protected override void ExecuteLogic()
 		{
-			// get the triggering record
-			var target = (Entity) context.InputParameters["Target"];
-
-			var minutes = codeActivity.MinutesArg.Get<int>(executionContext);
+			var minutes = codeActivity.MinutesArg.Get<int>(ExecutionContext);
 
 			var newDate = DateTime.UtcNow.AddMinutes(minutes);
 			log.Log($"New date: '{newDate}'.");
-			log.SetTitle(target, null, $"New date: '{newDate}' for \"{{name}}\".");
+			log.SetTitle($"New date: '{newDate}' for \"{{name}}\".");
 
-			codeActivity.NewDateArg.Set(executionContext, newDate);
+			codeActivity.NewDateArg.Set(ExecutionContext, newDate);
 		}
 	}
 }

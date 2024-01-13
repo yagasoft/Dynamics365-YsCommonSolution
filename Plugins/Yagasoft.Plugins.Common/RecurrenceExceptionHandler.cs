@@ -37,9 +37,9 @@ namespace Yagasoft.Plugins.Common
 
 			var rules = new List<RecurrenceRule>();
 
-			if (context.MessageName == "Update")
+			if (Context.MessageName == "Update")
 			{
-				var target = (Entity) context.InputParameters["Target"];
+				var target = (Entity) Context.InputParameters["Target"];
 				log.Log($"Target: '{target?.LogicalName}':'{target?.Id}'.");
 
 				if (target == null || !inclusions.Contains(target.LogicalName ?? ""))
@@ -51,7 +51,7 @@ namespace Yagasoft.Plugins.Common
 			}
 			else
 			{
-				throw new InvalidPluginExecutionException($"Plugin registered on wrong message '{context.MessageName}'.");
+				throw new InvalidPluginExecutionException($"Plugin registered on wrong message '{Context.MessageName}'.");
 			}
 
 			log.Log($"Rules count: {rules.Count}.");
@@ -60,7 +60,7 @@ namespace Yagasoft.Plugins.Common
 			{
 				log.Log($"Triggering update of rule: '{rule.LogicalName}':'{rule.Id}'.");
 				rule.ExceptionUpdatedTrigger = DateTime.Now.ToString();
-				service.Update(rule);
+				Service.Update(rule);
 			}
 		}
 
@@ -77,20 +77,20 @@ namespace Yagasoft.Plugins.Common
 					             {
 						             Id = exclusionRecord.Id
 					             };
-					record.LoadRelation(RecurrenceRuleExceptionGrouping.RelationNames.Rules, service);
+					record.LoadRelation(RecurrenceRuleExceptionGrouping.RelationNames.Rules, Service);
 
 					if (record.Rules != null)
 					{
 						rules.AddRange(record.Rules);
 					}
 
-					record.LoadRelation(RecurrenceRuleExceptionGrouping.RelationNames.Exceptions, service);
+					record.LoadRelation(RecurrenceRuleExceptionGrouping.RelationNames.Exceptions, Service);
 
 					if (record.Exceptions != null)
 					{
 						foreach (var exception in record.Exceptions)
 						{
-							exception.LoadRelation(RecurrenceRuleException.RelationNames.Rules, service);
+							exception.LoadRelation(RecurrenceRuleException.RelationNames.Rules, Service);
 
 							if (exception.Rules != null)
 							{
@@ -107,20 +107,20 @@ namespace Yagasoft.Plugins.Common
 						             Id = exclusionRecord.Id
 					             };
 
-					record.LoadRelation(RecurrenceRuleException.RelationNames.Rules, service);
+					record.LoadRelation(RecurrenceRuleException.RelationNames.Rules, Service);
 
 					if (record.Rules != null)
 					{
 						rules.AddRange(record.Rules);
 					}
 
-					record.LoadRelation(RecurrenceRuleException.RelationNames.ExceptionGroups, service);
+					record.LoadRelation(RecurrenceRuleException.RelationNames.ExceptionGroups, Service);
 
 					if (record.ExceptionGroups != null)
 					{
 						foreach (var group in record.ExceptionGroups)
 						{
-							group.LoadRelation(RecurrenceRuleExceptionGrouping.RelationNames.Rules, service);
+							group.LoadRelation(RecurrenceRuleExceptionGrouping.RelationNames.Rules, Service);
 
 							if (group.Rules != null)
 							{

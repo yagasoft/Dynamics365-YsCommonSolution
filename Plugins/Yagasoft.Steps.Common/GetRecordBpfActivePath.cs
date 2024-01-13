@@ -109,9 +109,9 @@ namespace Yagasoft.Steps.Common
 	{
 		protected override void ExecuteLogic()
 		{
-			var targetLogicalName = codeActivity.TargetLogicalNameArg.Get(executionContext);
-			var targetIdString = codeActivity.TargetIdArg.Get(executionContext);
-			var processIdString = codeActivity.ProcessIdArg.Get(executionContext);
+			var targetLogicalName = codeActivity.TargetLogicalNameArg.Get(ExecutionContext);
+			var targetIdString = codeActivity.TargetIdArg.Get(ExecutionContext);
+			var processIdString = codeActivity.ProcessIdArg.Get(ExecutionContext);
 
 			var isSuccess = Guid.TryParse(targetIdString, out var targetId);
 
@@ -127,8 +127,8 @@ namespace Yagasoft.Steps.Common
 				throw new FormatException("Couldn't convert process ID string into a GUID.");
 			}
 
-			var instanceId = GetBpfInstance(service, new EntityReference(targetLogicalName, targetId), processId,
-				context.OrganizationId.ToString())?.Id;
+			var instanceId = GetBpfInstances(Service, new EntityReference(targetLogicalName, targetId), false, Context.OrganizationId)?
+				.Where(i => i.ProcessId == processId).FirstOrDefault()?.Id;
 
 			if (instanceId == null)
 			{
@@ -136,11 +136,11 @@ namespace Yagasoft.Steps.Common
 					+ $"for record: {targetLogicalName}:{targetId}.");
 			}
 
-			var activePath = GetActivePath(service, instanceId.Value);
+			var activePath = GetActivePath(Service, instanceId.Value);
 			var activePathString = string.Join(",", activePath).ToUpper();
-			tracingService.Trace("Active path: {0}", activePathString);
+			TracingService.Trace("Active path: {0}", activePathString);
 
-			codeActivity.StageIdCsvArg.Set(executionContext, activePathString);
+			codeActivity.StageIdCsvArg.Set(ExecutionContext, activePathString);
 		}
 	}
 }

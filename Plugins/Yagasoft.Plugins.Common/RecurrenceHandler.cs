@@ -33,9 +33,9 @@ namespace Yagasoft.Plugins.Common
 									 RecurrenceRuleExceptionGrouping.EntityLogicalName
 								 };
 
-			if (context.MessageName == "Update")
+			if (Context.MessageName == "Update")
 			{
-				var recurrence = context.PostEntityImages.FirstOrDefault().Value?.ToEntity<RecurrenceRule>();
+				var recurrence = Context.PostEntityImages.FirstOrDefault().Value?.ToEntity<RecurrenceRule>();
 				log.Log($"Target: '{recurrence?.LogicalName}':'{recurrence?.Id}'.");
 
 				if (recurrence == null)
@@ -43,9 +43,9 @@ namespace Yagasoft.Plugins.Common
 					throw new InvalidPluginExecutionException("Can't find a full post-image registered for this step.");
 				}
 
-				var records = GetRelatedRecords(service, recurrence.ToEntityReference(),
-					new[] { RelationType.OneToManyRelationships, RelationType.ManyToManyRelationships },
-					context.OrganizationId.ToString())
+				var records = GetRelatedRecords(Service, recurrence.ToEntityReference(),
+[ RelationType.OneToManyRelationships, RelationType.ManyToManyRelationships ],
+					orgId:Context.OrganizationId)
 					.Where(record => !exclusions.Contains(record.LogicalName)).Distinct(new EntityComparer());
 
 				foreach (var record in records)
@@ -53,7 +53,7 @@ namespace Yagasoft.Plugins.Common
 					var recordTemp = record;
 					log.Log($"Record: '{recordTemp.LogicalName}':'{recordTemp.Id}'.");
 
-					service.Update(
+					Service.Update(
 						new Entity(recordTemp.LogicalName)
 					{
 						Id = recordTemp.Id,
@@ -63,7 +63,7 @@ namespace Yagasoft.Plugins.Common
 			}
 			else
 			{
-				throw new InvalidPluginExecutionException($"Plugin registered on wrong message '{context.MessageName}'.");
+				throw new InvalidPluginExecutionException($"Plugin registered on wrong message '{Context.MessageName}'.");
 			}
 		}
 	}

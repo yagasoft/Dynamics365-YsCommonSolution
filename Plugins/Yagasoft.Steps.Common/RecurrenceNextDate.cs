@@ -37,17 +37,17 @@ namespace Yagasoft.Steps.Common
 	{
 		protected override void ExecuteLogic()
 		{
-			var recurrenceRuleId = codeActivity.RecurrenceRuleArg.Get<EntityReference>(executionContext).Id;
-			var recurrence = service.Retrieve(RecurrenceRule.EntityLogicalName, recurrenceRuleId, new ColumnSet(true))
+			var recurrenceRuleId = codeActivity.RecurrenceRuleArg.Get<EntityReference>(ExecutionContext).Id;
+			var recurrence = Service.Retrieve(RecurrenceRule.EntityLogicalName, recurrenceRuleId, new ColumnSet(true))
 				.ToEntity<RecurrenceRule>();
 
-			var timeZoneShift = GetUserTimeZoneBiasMinutes(service, recurrence.Owner.Id);
+			var timeZoneShift = GetUserTimeZoneBiasMinutes(Service, recurrence.Owner.Id);
 			log.Log($"Recurrence owner time zone shift: {timeZoneShift}.");
 
 			var nextRecurrence = GetNextRecurrence(recurrence, timeZoneShift);
 			log.Log($"Next recurrence: '{nextRecurrence}'.");
 
-			executionContext.SetValue(codeActivity.NextTargetDateArg, nextRecurrence ?? new DateTime(1900));
+			ExecutionContext.SetValue(codeActivity.NextTargetDateArg, nextRecurrence ?? new DateTime(1900));
 		}
 
 		private DateTime? GetNextRecurrence(RecurrenceRule recurrence, int timeZoneShift)
@@ -65,29 +65,29 @@ namespace Yagasoft.Steps.Common
 
 				switch (recurrence.RecurrencePattern)
 				{
-					case RecurrenceRule.RecurrencePatternEnum.EveryMinute:
+					case GlobalEnums.Recurrence.EveryMinute:
 						targetDate = ProcessEveryMinutePattern(recurrence, exceptions, timeZoneShift);
 						break;
 
-					case RecurrenceRule.RecurrencePatternEnum.Hourly:
+					case GlobalEnums.Recurrence.Hourly:
 						targetDate = ProcessHourlyPattern(recurrence, exceptions, timeZoneShift);
 						break;
 
-					case RecurrenceRule.RecurrencePatternEnum.Daily:
+					case GlobalEnums.Recurrence.Daily:
 						targetDate = ProcessDailyPattern(recurrence, exceptions, timeZoneShift);
 						break;
 
-					case RecurrenceRule.RecurrencePatternEnum.Weekly:
+					case GlobalEnums.Recurrence.Weekly:
 						targetDate = ProcessWeeklyPattern(recurrence, exceptions, timeZoneShift);
 						break;
 
-					case RecurrenceRule.RecurrencePatternEnum.Monthly:
+					case GlobalEnums.Recurrence.Monthly:
 						targetDate = ProcessMonthlyPattern(recurrence, exceptions, timeZoneShift);
 						break;
 
 					default:
 						throw new ArgumentOutOfRangeException("RecurrencePattern",
-							      $"{recurrence.RecurrencePattern} : {(int) recurrence.RecurrencePattern}",
+							      $"{recurrence.RecurrencePattern} : {(int?) recurrence.RecurrencePattern}",
 							      "Pattern value not recognised.");
 				}
 
@@ -215,7 +215,7 @@ namespace Yagasoft.Steps.Common
 
 				while (true)
 				{
-					if (occurrenceCount != null && occurrenceCount <= 0)
+					if (occurrenceCount is <= 0)
 					{
 						log.Log("Occurrences exceeded.", LogLevel.Warning);
 						targetDate = null;
@@ -482,11 +482,11 @@ namespace Yagasoft.Steps.Common
 				var months = recurrence.Months.Split(',');
 				var daysOfTheMonth = recurrence.DaysOfTheMonth.Split(',');
 				var occurrences = recurrence.DayOccurrences?.Split(',')
-					.Select(e => (RecurrenceRule.MonthlyDayOccurrenceEnum)
+					.Select(e => (GlobalEnums.MonthlyDayOccurrence)
 								RecurrenceRule.Enums.GetValue(RecurrenceRule.Fields.MonthlyDayOccurrence,
 									e.ToTitleCase())).ToArray();
 				var daysOfWeek = recurrence.WeekDays?.Split(',')
-					.Select(e => (RecurrenceRule.WeekDayEnum)
+					.Select(e => (GlobalEnums.WeekDay)
 								RecurrenceRule.Enums.GetValue(RecurrenceRule.Fields.WeekDay, e.ToTitleCase()))
 					.ToArray();
 
@@ -525,7 +525,7 @@ namespace Yagasoft.Steps.Common
 							case RecurrenceRule.MonthlyPatternEnum.DayOccurrence:
 								if (daysOfWeek == null && occurrences != null)
 								{
-									if (occurrences.Contains(RecurrenceRule.MonthlyDayOccurrenceEnum.Last))
+									if (occurrences.Contains(GlobalEnums.MonthlyDayOccurrence.Last))
 									{
 										isFound = nextMonthlyBase.Day
 											== DateTime.DaysInMonth(nextMonthlyBase.Year, nextMonthlyBase.Month);
@@ -536,7 +536,7 @@ namespace Yagasoft.Steps.Common
 								{
 									for (var k = 0; k < occurrences?.Length && !isFound; k++)
 									{
-										var isLastOccurrence = occurrences[j] == RecurrenceRule.MonthlyDayOccurrenceEnum.Last;
+										var isLastOccurrence = occurrences[j] == GlobalEnums.MonthlyDayOccurrence.Last;
 										var dateTimeDayOfWeek = GetDayOfWeek(daysOfWeek[j]);
 										var occurrenceDate = DateTimeHelpers.GetDayOccurrenceOfMonth(nextMonthlyBase, dateTimeDayOfWeek,
 											(int) occurrences[j], isLastOccurrence);
@@ -552,7 +552,7 @@ namespace Yagasoft.Steps.Common
 
 							default:
 								throw new ArgumentOutOfRangeException("MonthlyPattern",
-									      $"{recurrence.MonthlyPattern} : {(int) recurrence.MonthlyPattern}",
+									      $"{recurrence.MonthlyPattern} : {(int?) recurrence.MonthlyPattern}",
 									      "Pattern value not recognised.");
 						}
 					}
@@ -619,13 +619,13 @@ namespace Yagasoft.Steps.Common
 				else
 				{
 					var occurrences = exception.DayOccurrences?.Split(',')
-						.Select(e => (RecurrenceRuleException.MonthlyDayOccurrenceEnum)
+						.Select(e => (GlobalEnums.MonthlyDayOccurrence)
 									RecurrenceRuleException.Enums.GetValue(RecurrenceRuleException.Fields.MonthlyDayOccurrence,
 										e.ToTitleCase())).ToArray();
 
 					if (exception.WeekDays == null)
 					{
-						if (occurrences.Contains(RecurrenceRuleException.MonthlyDayOccurrenceEnum.Last))
+						if (occurrences.Contains(GlobalEnums.MonthlyDayOccurrence.Last))
 						{
 							isWeekDayExcluded =
 								userLocalDate.Day == DateTime.DaysInMonth(userLocalDate.Year, userLocalDate.Month);
@@ -635,7 +635,7 @@ namespace Yagasoft.Steps.Common
 					{
 						log.LogLine();
 						var daysOfWeek = exception.WeekDays?.Split(',')
-							.Select(e => (RecurrenceRule.WeekDayEnum)
+							.Select(e => (GlobalEnums.WeekDay)
 										RecurrenceRule.Enums.GetValue(RecurrenceRule.Fields.WeekDay, e.ToTitleCase()))
 							.ToArray();
 
@@ -652,7 +652,7 @@ namespace Yagasoft.Steps.Common
 									var occurrence = occurrences[i];
 
 									var dateTimeDayOfWeek = GetDayOfWeek(dayOfWeek);
-									var isLastOccurrence = occurrence == RecurrenceRuleException.MonthlyDayOccurrenceEnum.Last;
+									var isLastOccurrence = occurrence == GlobalEnums.MonthlyDayOccurrence.Last;
 									var occurrenceDate = DateTimeHelpers.GetDayOccurrenceOfMonth(userLocalDate, dateTimeDayOfWeek,
 										(int) occurrence, isLastOccurrence);
 
@@ -730,10 +730,10 @@ namespace Yagasoft.Steps.Common
 
 				log.Log("Loading exceptions ...", LogLevel.Debug);
 
-				recurrence.LoadRelation(RecurrenceRule.RelationNames.Exceptions, service, "*");
-				recurrence.LoadRelation(RecurrenceRule.RelationNames.ExceptionGroupings, service, "*");
+				recurrence.LoadRelation(RecurrenceRule.RelationNames.Exceptions, Service, "*");
+				recurrence.LoadRelation(RecurrenceRule.RelationNames.ExceptionGroupings, Service, "*");
 
-				var exceptions = new RecurrenceRuleException[0];
+				var exceptions = Array.Empty<RecurrenceRuleException>();
 
 				if (recurrence.Exceptions != null)
 				{
@@ -746,7 +746,7 @@ namespace Yagasoft.Steps.Common
 
 					foreach (var grouping in recurrence.ExceptionGroupings)
 					{
-						grouping.LoadRelation(RecurrenceRuleExceptionGrouping.RelationNames.Exceptions, service, "*");
+						grouping.LoadRelation(RecurrenceRuleExceptionGrouping.RelationNames.Exceptions, Service, "*");
 
 						if (grouping.Exceptions != null)
 						{
@@ -770,37 +770,37 @@ namespace Yagasoft.Steps.Common
 			}
 		}
 
-		private static DayOfWeek GetDayOfWeek(RecurrenceRule.WeekDayEnum weekDay)
+		private static DayOfWeek GetDayOfWeek(GlobalEnums.WeekDay weekDay)
 		{
 			var dateTimeDayOfWeek = DayOfWeek.Sunday;
 
 			switch (weekDay)
 			{
-				case RecurrenceRule.WeekDayEnum.Sunday:
+				case GlobalEnums.WeekDay.Sunday:
 					dateTimeDayOfWeek = DayOfWeek.Sunday;
 					break;
 
-				case RecurrenceRule.WeekDayEnum.Monday:
+				case GlobalEnums.WeekDay.Monday:
 					dateTimeDayOfWeek = DayOfWeek.Monday;
 					break;
 
-				case RecurrenceRule.WeekDayEnum.Tuesday:
+				case GlobalEnums.WeekDay.Tuesday:
 					dateTimeDayOfWeek = DayOfWeek.Tuesday;
 					break;
 
-				case RecurrenceRule.WeekDayEnum.Wednesday:
+				case GlobalEnums.WeekDay.Wednesday:
 					dateTimeDayOfWeek = DayOfWeek.Wednesday;
 					break;
 
-				case RecurrenceRule.WeekDayEnum.Thursday:
+				case GlobalEnums.WeekDay.Thursday:
 					dateTimeDayOfWeek = DayOfWeek.Thursday;
 					break;
 
-				case RecurrenceRule.WeekDayEnum.Friday:
+				case GlobalEnums.WeekDay.Friday:
 					dateTimeDayOfWeek = DayOfWeek.Friday;
 					break;
 
-				case RecurrenceRule.WeekDayEnum.Saturday:
+				case GlobalEnums.WeekDay.Saturday:
 					dateTimeDayOfWeek = DayOfWeek.Saturday;
 					break;
 			}

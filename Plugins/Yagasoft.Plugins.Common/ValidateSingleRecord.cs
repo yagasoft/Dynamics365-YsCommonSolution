@@ -46,9 +46,9 @@ namespace Yagasoft.Plugins.Common
 
 		protected override void ExecuteLogic()
 		{
-			var image = GetPostImage();
+			var image = PostImage;
 
-			tracingService.Trace("Building query.");
+			TracingService.Trace("Building query.");
 			var query =
 				new QueryExpression(image.LogicalName)
 				{
@@ -56,7 +56,7 @@ namespace Yagasoft.Plugins.Common
 					NoLock = true
 				};
 
-			tracingService.Trace("Adding conditions ...");
+			TracingService.Trace("Adding conditions ...");
 			foreach (var field in fieldsCompare)
 			{
 				var fieldValue = image.GetAttributeValue<object>(field);
@@ -64,12 +64,12 @@ namespace Yagasoft.Plugins.Common
 				// compare null value
 				if (fieldValue == null)
 				{
-					tracingService.Trace($"Adding condition {field} == null.");
+					TracingService.Trace($"Adding condition {field} == null.");
 					query.Criteria.AddCondition(field, ConditionOperator.Null);
 					continue;
 				}
 
-				tracingService.Trace($"Adding condition {field} == {fieldValue}.");
+				TracingService.Trace($"Adding condition {field} == {fieldValue}.");
 
 				// criteria accepts pure values only!!!
 				if (fieldValue is OptionSetValue)
@@ -90,11 +90,11 @@ namespace Yagasoft.Plugins.Common
 
 			var isActivity = image.Contains("activityid");
 
-			query.Criteria.AddCondition(isActivity ? "activityid" : context.PrimaryEntityName + "id",
-				ConditionOperator.NotEqual, context.PrimaryEntityId);
+			query.Criteria.AddCondition(isActivity ? "activityid" : Context.PrimaryEntityName + "id",
+				ConditionOperator.NotEqual, Context.PrimaryEntityId);
 
-			tracingService.Trace("Executing query and getting count.");
-			var count = service.RetrieveMultiple(query).Entities.Count;
+			TracingService.Trace("Executing query and getting count.");
+			var count = Service.RetrieveMultiple(query).Entities.Count;
 
 			// throw an exception if there is more than one record with the same value in this field
 			if (count > 0)
@@ -103,12 +103,12 @@ namespace Yagasoft.Plugins.Common
 					+ fieldsCompare.Aggregate((field1, field2) => "'" + field1 + "', '" + field2 + "'") + ".");
 			}
 
-			tracingService.Trace("DONE!");
+			TracingService.Trace("DONE!");
 		}
 
 		protected override bool IsContextValid()
 		{
-			return context.MessageName == "Create" || context.MessageName == "Update";
+			return Context.MessageName == "Create" || Context.MessageName == "Update";
 		}
 	}
 }
